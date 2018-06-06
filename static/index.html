@@ -1,0 +1,5115 @@
+<!DOCTYPE HTML>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title></title>
+
+  
+    <link rel="icon" href="image/global/favicon.ico"/>
+  
+
+  
+    
+      <link rel="stylesheet" href=".//css/reset.css" type="text/css"/>
+    
+      <link rel="stylesheet" href=".//css/showoff.css" type="text/css"/>
+    
+      <link rel="stylesheet" href=".//css/theme/ui.all.css" type="text/css"/>
+    
+      <link rel="stylesheet" href=".//css/sh_style.css" type="text/css"/>
+    
+      <link rel="stylesheet" href=".//css/onepage.css" type="text/css"/>
+    
+    
+      <link rel="stylesheet" href=".//file/netways.css" type="text/css"/>
+    
+
+    
+      <script type="text/javascript" src=".//js/jquery-2.1.4.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/jquery-print.js"></script>
+    
+      <script type="text/javascript" src=".//js/showoff.js"></script>
+    
+      <script type="text/javascript" src=".//js/onepage.js"></script>
+    
+      <script type="text/javascript" src=".//js/sh_main.min.js"></script>
+    
+      <script type="text/javascript" src=".//js/core.js"></script>
+    
+      <script type="text/javascript" src=".//js/showoffcore.js"></script>
+    
+    
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+        setupOnePage()
+      });
+    </script>
+
+  
+</head>
+
+<body>
+<div id="slides" >
+  <div id="global_Pre_Title_01_Title" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="global/Pre/Title/01_Title/1">
+<h1 class="section_title">Ceph</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<div class="title-page">
+    <div class="title-logo"></div>
+    <div class="title-name">
+<p>Ceph</p>
+    <div class="title-release">Version: v0.9</div>
+    <div class="title-footer">We love Open Source</div>
+    </div>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="global_Pre_Title_02_Toc" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="global/Pre/Title/02_Toc">
+<h1 class="section_title">Ceph</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Table of Contents</h1>
+
+<p><div id="toc">
+<div class="tocentry"><a href="#001_introduction__001_distributed_storage">1 Storage - a quick overview</a></div>
+<div class="tocentry"><a href="#005_ceph_storage_cluster__001_history">2 Ceph - a unified, distributed storage</a></div>
+<div class="tocentry"><a href="#010_rbd__040_rbd">3 Rados Block Device (RBD)</a></div>
+<div class="tocentry"><a href="#015_cephfs__005_overview">4 CephFS</a></div>
+<div class="tocentry"><a href="#020_radosgw__005_overview">5 RADOS Gateway</a></div>
+<div class="tocentry"><a href="#025_cache_tier__001_cache_tier">6 Ceph Cache Tier</a></div>
+<div class="tocentry"><a href="#030_operating__005_operating">7 Monitoring, metrics and more</a></div>
+</div></p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="001_introduction//001_distributed_storage/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>1 Storage - a quick overview</h1>
+
+<div class="notes"><p>
+Introduction: which kinds of storage are used/known?
+<br>
+take notes and categorize into<br>
+DAS, SAN, NAS/ Shared, Block, Object Store<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="001_introduction//001_distributed_storage/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Shared Filesystem</h1>
+
+<ul>
+<li>concurrent access of several clients</li>
+<li>access via network</li>
+<li>usually compatible to POSIX</li>
+<li>integrated as 'local' file system</li>
+<li>e.g. CIFS, NFS and CephFS</li>
+</ul>
+
+<div class="notes">
+<p>
+NFS (usually FS on BlockStorage)<br>
+CephFS (FS on ObjectStore)<br></p>
+
+<p>Files organized via path hierachy and metadata<br>
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="001_introduction//001_distributed_storage/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Block Storage</h1>
+
+<ul>
+<li>local disks, iSCSI, RBD</li>
+<li>accessed locally or via network</li>
+<li>fast</li>
+<li>good in random access</li>
+<li>usually with an FS on top</li>
+</ul>
+
+<div class="notes">
+<p>
+DAS (direct attached storage): e.g. local disks <br>
+SAN (Storage Area Network): extension of DAS, iSCSI, RBD (Block devics)<br>
+NAS (Network Attached Storage): FS via Network (CIFS, NFS, CephFS)<br></p>
+
+<p>NFS (usually FS on BlockStorage)<br>
+CephFS (FS on ObjectStore)<br>
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide lrbullets small" data-transition="none">
+<div class="content lrbullets small" ref="001_introduction//001_distributed_storage/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Object Store</h1>
+
+<ul>
+<li>access via API</li>
+<li>stores data in a flat 'hierarchy' like pools</li>
+<li>used for unstructured data</li>
+<li>used for large amount of data</li>
+<li>no posix tools</li>
+<li>easy to scale</li>
+<li>mostly what is sold as cloud storage</li>
+<li>often used for media, documents, archives, images</li>
+<li>an object comprises of Object-ID, Data, Metadata, Attributes</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide lrbullets small" data-transition="none">
+<div class="content lrbullets small" ref="001_introduction//001_distributed_storage/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Differences Object Store - Block Storage</h1>
+
+<ul>
+<li>no hierarchy by folders</li>
+<li>faster access of unstructured data</li>
+<li>more attributes</li>
+<li>more flexible attributes</li>
+<li>searchable by attributes</li>
+<li>applications have to support different access type</li>
+<li>or storage has to provide gateways</li>
+</ul>
+
+<div class="notes"><p>
+Objects (comprised of Metadata, Data, ID) instead of hierarchy<br>
+Metadata (creation time, size, ownership)
+Attributes (access patterns, content, retention)
+Examples: S3, RADOS, Swift<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="001_introduction//001_distributed_storage/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Visualization</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="001_introduction//001_distributed_storage/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>local</h1>
+
+<p><br></p>
+
+<p></p>
+<center><img src="./file/001_introduction//./_images/storage_1_rotated.png" style="max-width:100%;height:auto" alt="local_storage"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="001_introduction//001_distributed_storage/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>network</h1>
+
+<p><br></p>
+
+<p></p>
+<center><img src="./file/001_introduction//./_images/storage_2_rotated.png" style="max-width:100%;height:auto" alt="network_storage"></center>
+<div class="notes">
+* e.g. NetApp
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="001_introduction//001_distributed_storage/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>network, failover</h1>
+
+<p><br></p>
+
+<p></p>
+<center><img src="./file/001_introduction//./_images/storage_3_rotated.png" style="max-width:100%;height:auto" alt="network_failover"></center>
+
+<div class="notes"><p>
+* e.g. NetApp with two heads
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="001_introduction//001_distributed_storage/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>network, failover, replicated</h1>
+
+<p><br></p>
+
+<p></p>
+<center><img src="./file/001_introduction//./_images/storage_4_rotated.png" style="max-width:100%;height:auto" alt="network_failover_replicated"></center>
+
+<div class="notes"><p>
+* e.g. NetApp MetroCluster?
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="001_introduction__001_distributed_storage" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="001_introduction//001_distributed_storage/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Storage - a quick overview</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>network, replicated,distributed, high-available</h1>
+
+<p><br>
+</p>
+<center><img src="./file/001_introduction//./_images/storage_5_rotated.png" style="max-width:100%;height:auto" alt="ceph"></center>
+
+<div class="notes"><p>
+stress that Ceph offers all three kinds of Storage.
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_history" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="005_ceph_storage_cluster//001_history/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>2 Ceph - a unified, distributed storage</h1>
+
+<p><br> <br> <br> <br> <br>
+</p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_stacked.png" style="max-width:200px; max-height: 150px;width: auto; height: auto;" alt="ceph_stack"></center>
+
+<div class="notes"><p>
+* unified: access on Block Device(rbd) and File (RadosGW/CephFS) and Object
+  Store
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_history" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="005_ceph_storage_cluster//001_history/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>1 The Ceph Project</h1>
+
+<p><br>
+</p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_no_of_commits.png" style="max-width:100%;height:auto" alt="Commits - https://metrics.ceph.com/scm.html"></center>
+<br>
+
+<ul>
+<li>2007: started by Sage Weil for his dissertation at the University of California (2007)</li>
+<li>2012: First stable release and foundation of InkTank</li>
+<li>2014: Takeover by RedHat</li>
+<li>2016, April: Jewel is released with CephFS marked as stable</li>
+<li>2017, January: Kraken is released with experimental BlueStore</li>
+<li>2017, August: Luminous released with ceph-mgr</li>
+</ul>
+
+<div class="notes"><p>
+funded by the United States Department of Energy and National Nuclear Security Administration
+also funded by Canonical
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_history" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//001_history/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Ceph in numbers</h1>
+
+<p></p>
+<center>
+<img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_status_issues_rotated.png" style="max-width:100%;height:auto" alt="Authors - https://metrics.ceph.com/">
+<img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_pkg_dls_rotated.png" style="max-width:100%;height:auto" alt="Tickets - https://metrics.ceph.com/">
+
+<p></p>
+<center><a href="https://metrics.ceph.com/">https://metrics.ceph.com/</a></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</center>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_history" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//001_history/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Who is Ceph?</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_organizations.png" style="height:540px;" alt="Issues by Company - https://metrics.ceph.com/"></center>
+
+<p></p>
+<center><a href="https://metrics.ceph.com/">https://metrics.ceph.com/</a></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_rados" class="slide " data-transition="none">
+<div class="content " ref="005_ceph_storage_cluster//001_rados/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>2 Ceph Storage Cluster</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_rados" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//001_rados/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Components</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/stack_rotated.png" style="height:540px;" alt="ceph_stack"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_rados" class="slide tdbullets" data-transition="none">
+<div class="content tdbullets" ref="005_ceph_storage_cluster//001_rados/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RADOS</h1>
+
+<p><br></p>
+
+<ul>
+<li>R_eliable
+<br>
+</li>
+<li>A_utonomic
+<br>
+</li>
+<li>D_istributed
+<br>
+</li>
+<li>O_bject 
+<br>S_tore</li>
+</ul>
+
+<div class="notes"><p>
+reliable: because it's replicated and can handle failures<br>
+autonomic: self-healing on failures<br>
+distributed: distributed to failure domains =&gt; datacenters, racks, switch, server<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_rados" class="slide lrbullets" data-transition="none">
+<div class="content lrbullets" ref="005_ceph_storage_cluster//001_rados/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RADOS FEATURES</h1>
+
+<ul>
+<li>highly scaleable</li>
+<li>self healing</li>
+<li>flexible</li>
+<li>unified</li>
+<li>no SPoF</li>
+<li>commodity hardware</li>
+</ul>
+
+<div class="notes"><p>
+flexible: data placement (Failure Domains, fast OSDs vs slow OSDs)<br>
+unified und flexible because of block, cephfs and object<br>
+no SPoF correct for RADOS,RBD and RADOSGW BUT not CephFS (mds)<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_rados" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//001_rados/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RADOS Components</h1>
+
+<p><br></p>
+
+<ul>
+<li>
+<p>Object Storage Daemons (OSDs)</p>
+
+<ul>
+<li>essentially represent a disk</li>
+<li>store data (objects)</li>
+</ul>
+</li>
+<li>
+<p>Monitors</p>
+
+<ul>
+<li>are aware of the cluster state</li>
+<li>form the quorum </li>
+</ul>
+</li>
+<li>
+<p>Pools</p>
+
+<ul>
+<li>logical partition of data</li>
+</ul>
+</li>
+<li>
+<p>Placement Groups (PG)</p>
+
+<ul>
+<li>one pool has many PGs</li>
+</ul>
+</li>
+</ul>
+
+<div class="notes"><p>
+osd: reads + writes data. communicate to each other for self-healing.<br>
+osd: communicates to monitors to deliver state<br>
+mons: manage and know the osd states <br>
+pgs: logical abstraction layer, needed for calculation of data placement 
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__002_osd" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//002_osd/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Object Storage Daemon (OSD)</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/osd.png" style="max-width:80%;height:auto;" alt="osd"></center>
+
+<ul>
+<li>one single process managing the data on one single disk</li>
+<li>one server has many OSD processes</li>
+<li>replication and recovery</li>
+</ul>
+
+<div class="notes">
+<p>
+xfs: in production <br>
+btrfs: would be better <br>
+non-fs backend like leveldb are experimental at the moment (Jewel) <br>
+Journal on SSDs or NVRAM <br></p>
+
+<p>communicate with each other and report unreachable OSD to MONs<br>
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__002_osd" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//002_osd/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Monitors</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/monitor.png" style="max-width:70%;height:auto;" alt="osd"></center>
+
+<ul>
+<li>know the cluster state (clustermap)</li>
+<li>form the quorum (should be an odd number)</li>
+<li>provide information to the client
+
+<ul>
+<li>do not provide any data</li>
+</ul>
+</li>
+</ul>
+
+<div class="notes"><p>
+Clustermap: Mon-, OSD-, PG-, Crush- and MDS-Map<br>
+  <a href="http://docs.ceph.com/docs/hammer/architecture/#cluster-map">http://docs.ceph.com/docs/hammer/architecture/#cluster-map</a><br>
+sends Clustermap to Clients. Essential for CRUSH<br>
+Cluster consensus PAXOS Algorithm (good: small number of participants)<br>
+check as unreachable reported OSDs and change Clustermap accordingly<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__002_osd" class="slide " data-transition="none">
+<div class="content " ref="005_ceph_storage_cluster//002_osd/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Ceph Storage Cluster - OSDs + Monitors</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_storage_cluster.png" style="max-width:100%;height:auto;" alt="Ceph Storage Cluster"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__004_pool_pg" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//004_pool+pg/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Pools</h1>
+
+<p><br>
+</p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/pool.png" style="max-width:100%;height:auto;" alt="pools"></center>
+
+<ul>
+<li>logical divided data</li>
+<li>has attributes like
+
+<ul>
+<li>number of replica</li>
+<li>resilience</li>
+<li>rules for data placement</li>
+</ul>
+</li>
+<li>many pools share the same resources</li>
+<li>pool size is infinite</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__004_pool_pg" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//004_pool+pg/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: manage pools</h1>
+
+<p>show pools</p>
+
+<pre><code># ceph osd lspools
+</code></pre>
+
+<p>create a pool</p>
+
+<pre><code># ceph osd pool create &lt;name&gt; &lt;pg-num&gt;
+</code></pre>
+
+<p>show pool usage</p>
+
+<pre><code># rados df
+</code></pre>
+
+<p>delete pool</p>
+
+<pre><code># ceph osd pool delete &lt;name&gt; --yes-i-really-really-mean-it (twice)
+</code></pre>
+
+<div class="notes"><p>
+"#" indicates a CLI command, above is a short explanation
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__004_pool_pg" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//004_pool+pg/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: pool attributes</h1>
+
+<p><br></p>
+
+<p>get attributes</p>
+
+<pre><code># ceph osd pool get &lt;name&gt; size
+# ceph osd pool get &lt;name&gt; min_size
+# ceph osd pool get &lt;name&gt; crush_ruleset
+</code></pre>
+
+<p><br></p>
+
+<p>set attributes</p>
+
+<pre><code># ceph osd pool set &lt;name&gt; min_size 1
+</code></pre>
+
+<div class="notes"><p>
+"#" indicates a CLI command, above is a short explanation
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__004_pool_pg" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//004_pool+pg/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Placement Groups</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/pg.png" style="max-width:100%;height:auto;" alt="pg"></center>
+
+<ul>
+<li>logical collection of objects </li>
+<li>Pools have many PGs</li>
+<li>Number of PGs is specified at creation time</li>
+<li>Number of PGs/OSD depends on number and size of OSDs</li>
+<li>OSDs get mapped to PGs</li>
+</ul>
+
+<div class="notes"><p>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__004_pool_pg" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//004_pool+pg/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Placement Groups ctd.</h1>
+
+<ul>
+<li>PGs get mapped to OSDs via CRUSH<br>
+</li>
+<li>the pool settings are used for the mappings, e.g. size<br>
+</li>
+<li>a single object is mapped to a PG by its name and pool ID<br>
+</li>
+<li><a href="https://ceph.com/pgcalc">https://ceph.com/pgcalc</a></li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__004_pool_pg" class="slide smbullets printonly" data-transition="none">
+<div class="content smbullets printonly" ref="005_ceph_storage_cluster//004_pool+pg/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Pools, PGs and OSDs</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/pool-pg-osd_rotated.png" style="max-width:100%;height:640px" alt="osd"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide " data-transition="none">
+<div class="content " ref="005_ceph_storage_cluster//030_lab_install/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>3 Lab: Install and deploy</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="005_ceph_storage_cluster//030_lab_install/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Installation</h1>
+
+<p>ceph-deploy </p>
+
+<ul>
+<li>helper to deploy cluster and nodes from a central point (e.g. your laptop)</li>
+<li>well documented</li>
+<li>suitable for small and midsized clusters</li>
+</ul>
+
+<p><br></p>
+
+<p>puppet, chef, ansible, whatever</p>
+
+<ul>
+<li>good if you use uniform hardware setups</li>
+<li>Modules/Cookbooks are available and actively maintained</li>
+<li>Puppet: <a href="https://github.com/ceph/puppet-ceph">https://github.com/ceph/puppet-ceph</a>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide " data-transition="none">
+<div class="content " ref="005_ceph_storage_cluster//030_lab_install/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Installation with ceph-deploy</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph-deploy.png" style="max-width:70%;height:auto;" alt="ceph-deploy"></center>
+
+<div class="notes"><p>
+every laptop is Adminnode<br>
+for this we need a common Keyring<br>
+if applicable: participants provision neghbour's node<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//030_lab_install/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Tasks: prepare storage nodes</h1>
+
+<ul>
+<li>test connectivity to all nodes</li>
+<li>add training-XX.netways.local to /etc/hosts</li>
+<li>allow passwordless sudo</li>
+<li>install screen</li>
+<li>disable requiretty for ssh logins</li>
+<li>adjust firewall</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - prepare storage nodes - 1</h1>
+
+<p>test connectivity to all nodes</p>
+
+<pre><code># ping training-xxx.netways.local
+</code></pre>
+
+<p>add training-xxx.netways.local to /etc/hosts</p>
+
+<pre><code># cat /etc/hosts
+192.168.78.1 training-001 training-001.netways.local
+192.168.78.2 training-002 training-002.netways.local
+192.168.78.33 training-033 training-033.netways.local
+</code></pre>
+
+<p>install screen</p>
+
+<pre><code># sudo yum install -y  screen
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - prepare storage nodes - 2</h1>
+
+<p>allow passwordless sudo</p>
+
+<pre><code># echo "training ALL = (root) NOPASSWD:ALL" | sudo tee \
+  /etc/sudoers.d/training
+# sudo chmod 0440 /etc/sudoers.d/training
+</code></pre>
+
+<p>disable requiretty for ssh logins (!requiretty)</p>
+
+<pre><code># sudo visudo 
+</code></pre>
+
+<p>adjust/disable firewall</p>
+
+<pre><code># sudo systemctl stop firewalld.service
+# sudo systemctl disable firewalld.service
+</code></pre>
+
+<p>adjust/disable SELinux/AppArmor</p>
+
+<pre><code># sudo vim /etc/sysconfig/selinux
+</code></pre>
+
+<div class="notes">
+<p>
+sudo rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a><br>
+sudo yum --enablerepo=elrepo-kernel install kernel-ml<br></p>
+
+<p>//sudo yum install yum-plugin-priorities --enablerepo=rhel-7-server-optional-rpms
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: ceph-deploy - 1</h1>
+
+<p><br></p>
+
+<p>push the config to the storage nodes</p>
+
+<pre><code># ceph-deploy config push node-{1,2,3,4,5}
+</code></pre>
+
+<p>list and zap disks</p>
+
+<pre><code># ceph-deploy disk list &lt;node&gt;
+# ceph-deploy disk zap &lt;node&gt;:&lt;device&gt;
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: ceph-deploy - 2</h1>
+
+<p><br></p>
+
+<p>prepare OSDs</p>
+
+<pre><code># ceph-deploy osd prepare &lt;node&gt;:sdb:/dev/ssd
+# ceph-deploy osd prepare &lt;node&gt;:sdc:/dev/ssd
+</code></pre>
+
+<p>activate OSDs (maybe udev handles this automatically)</p>
+
+<pre><code># ceph-deploy osd activate &lt;node&gt;:/dev/sdb1:/dev/ssd1
+# ceph-deploy osd activate &lt;node&gt;:/dev/sdc1:/dev/ssd2
+</code></pre>
+
+<p>or create (prepare+activate)</p>
+
+<pre><code># ceph-deploy osd create &lt;node&gt;:sdb:/dev/ssd1
+# ceph-deploy osd create &lt;node&gt;:sdc:/dev/ssd2
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide smbullets small" data-transition="none">
+<div class="content smbullets small" ref="005_ceph_storage_cluster//030_lab_install/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Tasks: Steps - prepare admin node</h1>
+
+<ul>
+<li>create a password-less key pair on the admin machine and copy the pub key to the nodes</li>
+<li><p>create .ssh/config for easier deployment</p></li>
+<li><p>Install ceph-deploy on your machine</p></li>
+<li>
+<p>generate default config and key</p>
+
+<ul>
+<li>set network config </li>
+<li>we overwrite the key and fsid</li>
+</ul>
+</li>
+<li><p>install ceph on your neighbour's machine</p></li>
+<li><p>deploy a monitor on your neighbour's machine</p></li>
+<li><p>deploy an osd on your neighbour's machine</p></li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - prepare admin node - 1</h1>
+
+<ul>
+<li>ssh into trainers notebook</li>
+<li>start screen session "screen -L -S $name"</li>
+<li>screen -list -&gt; screen -x $Session-ID</li>
+</ul>
+
+<p>create a password-less key pair only on the admin machine and copy the pub key to the previously prepared nodes</p>
+
+<pre><code># ssh-keygen
+# ssh-copy-id training@training-0xx
+</code></pre>
+
+<p><br><br></p>
+
+<p>create .ssh/config for easier deployment </p>
+
+<pre><code># cat .ssh/config
+Host training-*
+ User training
+
+# chmod 0600 .ssh/config
+</code></pre>
+
+<div class="notes"><p>
+no need in Netways Basic setup
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - prepare admin node - 2</h1>
+
+<p><br><br></p>
+
+<p>Install ceph-deploy on your machine</p>
+
+<p>Create ceph-deploy.repo
+<br><br>
+   # cat /etc/yum.repos.d/ceph-deploy.repo</p>
+
+<p>[ceph-noarch] <br>
+  name=Ceph noarch packages <br>
+  baseurl=<a href="http://download.ceph.com/rpm-luminous/el7/noarch">http://download.ceph.com/rpm-luminous/el7/noarch</a> <br>
+  enabled=1 <br>
+  gpgcheck=1 <br>
+  type=rpm-md <br>
+  gpgkey=<a href="https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc">https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc</a><br></p>
+
+<p># sudo yum update &amp;&amp; sudo yum install ceph-deploy-1.5.39-0.noarch</p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/12">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - deploy the cluster - 1</h1>
+
+<p>generate default config and monitor keyring</p>
+
+<pre><code># mkdir my-cluster; cd my-cluster
+# ceph-deploy new training-0xx [training-0xy]
+</code></pre>
+
+<p>set public and cluster network</p>
+
+<pre><code># vim ceph.conf
+...
+[global]
+mon_host: $localIP
+public_network = 192.168.78.0/24
+cluster_network = 192.168.78.0/24
+rbd_default_features = 1
+...
+</code></pre>
+
+<hr>
+
+<p>overwrite <a href="../file/_files/share/ceph.mon.keyring">ceph.mon.keyring</a> (just in the LAB!)</p>
+
+<p>reset clusterid/fsid (just in the LAB!)</p>
+
+<pre><code># fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/13">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - deploy the cluster - 2</h1>
+
+<p><br></p>
+
+<p>install ceph on your other nodes</p>
+
+<pre><code># ceph-deploy install training-0xx [training-0xy]
+</code></pre>
+
+<p><br></p>
+
+<p>deploy the monitor, admin and mgr nodes</p>
+
+<pre><code># ceph-deploy mon create-initial
+# ceph-deploy admin [$HOSTNAME]
+# For Luminous only: ceph-deploy mgr [$HOSTNAME]
+</code></pre>
+
+<div class="notes">
+<p>
+For Luminous (may the Gods be with you) <br></p>
+
+<p>ceph-deploy install training-0xx [training-0xy] --repo-url=<a href="http://download.ceph.com/rpm-luminous/el7">http://download.ceph.com/rpm-luminous/el7</a> --gpg-url=<a href="https://download.ceph.com/keys/release.asc">https://download.ceph.com/keys/release.asc</a>
+<br></p>
+
+<p>ceph-deploy gatherkeys monhost <br></p>
+
+<p>ceph-deploy admin monhost <br></p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/14">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - deploy the cluster - 3</h1>
+
+<p><br><br>
+On all nodes!</p>
+
+<p>create OSD directory (just in the lab! Use block devices in a real setup)</p>
+
+<pre><code># sudo mkdir /var/local/osd-$HOSTNAME
+# sudo chown ceph. /var/local/osd-$HOSTNAME
+</code></pre>
+
+<p><br></p>
+
+<p>deploy OSDs</p>
+
+<pre><code># ceph-deploy osd prepare training-$ID:/var/local/osd-$HOSTNAME
+# ceph-deploy osd activate training-$ID:/var/local/osd-$HOSTNAME
+</code></pre>
+
+<div class="notes">
+<p>
+Luminous: fallocate 10GB .img, loseteup it to loop0 device, mount it, mkf.xfs it, unmount it and try to deploy osd there <br></p>
+
+<p>May break!
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/15">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: Examine your Ceph Storage Cluster - 1</h1>
+
+<p>list all pools</p>
+
+<pre><code># ceph osd lspools
+</code></pre>
+
+<p>get number of replicas for a pool</p>
+
+<pre><code># ceph osd pool get &lt;pool&gt; size
+</code></pre>
+
+<p>get the min_size for a pool</p>
+
+<pre><code># ceph osd pool get &lt;pool&gt; min_size
+</code></pre>
+
+<p>list the PGs</p>
+
+<pre><code># ceph pg dump
+</code></pre>
+
+<p>get PG distribution</p>
+
+<pre><code># ceph osd utilization
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/16">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: Examine your Ceph Storage Cluster - 2</h1>
+
+<p>list all objects</p>
+
+<pre><code># ceph pg ls
+</code></pre>
+
+<p>list the cluster capacity</p>
+
+<pre><code># rados df
+</code></pre>
+
+<p>get osd stat</p>
+
+<pre><code># ceph osd stat
+</code></pre>
+
+<p>get osd usage</p>
+
+<pre><code># ceph osd df
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__035_lab_rados" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//035_lab_rados/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: rados cli</h1>
+
+<p><br></p>
+
+<p>save a $file <file> with name $object_name <object_name> in the $pool</object_name></file></p>
+
+<pre><code># rados -p &lt;pool&gt; put &lt;object_name&gt; &lt;file&gt;
+</code></pre>
+
+<p>list all objects in $pool <pool></pool></p>
+
+<pre><code># rados -p &lt;pool&gt; ls
+</code></pre>
+
+<p>save the object $object_name <object_name> in $file <file></file></object_name></p>
+
+<pre><code># rados -p &lt;pool&gt; get &lt;object_name&gt; &lt;file&gt;
+</code></pre>
+
+<p>remove an object</p>
+
+<pre><code># rados -p &lt;pool&gt; rm &lt;object_name&gt;
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__035_lab_rados" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//035_lab_rados/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Where are my data?</h1>
+
+<ul>
+<li><p>upload a file with rados</p></li>
+<li><p>retrieve an uploaded file from your neighbour</p></li>
+<li>
+<p>find the object in the filesystem of an osd</p>
+
+<ul>
+<li>c.f. <a href="http://docs.ceph.com/docs/master/man/8/ceph/#osd">ceph osd map</a>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="notes"><p>
+ceph osd map pool objectname
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__035_lab_rados" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//035_lab_rados/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Steps - put data into cluster</h1>
+
+<p><br></p>
+
+<p>create a test.file </p>
+
+<p># cat /var/log/boot.log &gt; $HOSTNAME.file</p>
+
+<p>list all pools</p>
+
+<p># ceph osd lspools</p>
+
+<p>put file into pool</p>
+
+<p># rados -p $poolname put $hostnametest $HOSTNAME.file</p>
+
+<p>list objects in $pool</p>
+
+<p># rados -p $pool ls</p>
+
+<p>retrieve file of your neighbour</p>
+
+<p># rados -p $pool get $otherhostnametest \ $otherhostname.file</p>
+
+<p>find object on your OSD</p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide lrbullets small printonly" data-transition="none">
+<div class="content lrbullets small printonly" ref="005_ceph_storage_cluster//039_crush/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>4 CRUSH</h1>
+
+<p><br><br><br></p>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/crush_symbole.png" style="max-width:100%;height:auto" alt="crush"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//039_crush/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CRUSH -</h1>
+
+<h1>Controlled Replication Under Scalable Hashing</h1>
+
+<ul>
+<li>a fast algorithm</li>
+<li>calculated on the client</li>
+<li>to get data placement (OSDs)</li>
+<li>avoids an intermediate broker</li>
+<li>enables direct communication between clients and OSDs</li>
+<li>can consider local conditions and failure domains, e.g. fire compartments</li>
+</ul>
+
+<div class="notes"><p>
+Controlled Replication under scalable Hashing
+Crush takes place on the client side. Input is Clustermap + Objectname + poolID<br>
+Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide lrbullets printonly" data-transition="none">
+<div class="content lrbullets printonly" ref="005_ceph_storage_cluster//039_crush/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Write data</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/crush_rotated.png" style="max-width:100%;height:auto" alt="crush"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//039_crush/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Write process</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/write_process_rotated.png" style="max-width:100%;height:auto" alt="write process"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide smbullets printonly" data-transition="none">
+<div class="content smbullets printonly" ref="005_ceph_storage_cluster//039_crush/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>OSD failure</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/osd_failure_rotated.png" style="max-width:100%;height:640px" alt="osd failure"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//039_crush/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>OSD failure and states</h1>
+
+<p>each OSD can be in the state</p>
+
+<ul>
+<li>in or out
+
+<ul>
+<li>describes the cluster participation</li>
+</ul>
+</li>
+<li>up or down
+
+<ul>
+<li>describes the connectivity</li>
+</ul>
+</li>
+</ul>
+
+<p>State changes on OSD failure</p>
+
+<p><code>in+up =&gt; in+down =&gt; out+down</code></p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide " data-transition="none">
+<div class="content " ref="005_ceph_storage_cluster//039_crush/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Crushmap</h1>
+
+<ul>
+<li>should reflect datacenter components</li>
+<li>CRUSH respects the crushmap for data placement</li>
+<li>part of clustermap</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//039_crush/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Crushmap - components</h1>
+
+<p><br></p>
+
+<ul>
+<li>rules
+
+<ul>
+<li>to define data placement and replication adjusted to your datacenter</li>
+</ul>
+</li>
+<li>buckets (rack, switch, fire compartment, dc)
+
+<ul>
+<li>to map your storage cluster to your datacenter</li>
+<li>racks, fire compartment, switches</li>
+</ul>
+</li>
+<li>devices
+
+<ul>
+<li>hard disks used for the data storage</li>
+</ul>
+</li>
+</ul>
+
+<div class="notes"><p>
+use next slide to explain again
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide printonly smaller" data-transition="none">
+<div class="content printonly smaller" ref="005_ceph_storage_cluster//039_crush/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Crushmap - hierarchy</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/crushmap_rotated.png" style="max-width:100%;height:640px" alt="crushmap"></center>
+
+<p># crushtool -o crushmap --build --num_osds 32 node straw 2 rack straw 2 switch straw 2 datacenter straw 2 root straw 0</p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide printonly smaller smaller" data-transition="none">
+<div class="content printonly smaller smaller" ref="005_ceph_storage_cluster//039_crush/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Crushmap - example</h1>
+
+<pre class=""><code># begin crush map
+tunable choose_local_tries 0
+tunable choose_local_fallback_tries 0
+tunable choose_total_tries 50
+tunable chooseleaf_descend_once 1
+tunable chooseleaf_vary_r 1
+tunable straw_calc_version 1
+
+# devices
+device 0 osd.0
+device 1 osd.1
+device 2 osd.2
+device 3 osd.3
+device 4 osd.4
+device 5 osd.5
+device 6 osd.6
+device 7 osd.7
+device 8 osd.8
+device 9 osd.9
+device 10 osd.10
+device 11 osd.11
+device 12 osd.12
+device 13 osd.13
+device 14 osd.14
+device 15 osd.15
+device 16 osd.16
+device 17 osd.17
+device 18 osd.18
+device 19 osd.19
+device 20 osd.20
+device 21 osd.21
+device 22 osd.22
+device 23 osd.23
+device 24 osd.24
+device 25 osd.25
+device 26 osd.26
+device 27 osd.27
+device 28 osd.28
+device 29 osd.29
+device 30 osd.30
+device 31 osd.31
+
+# types
+type 0 osd
+type 1 node
+type 2 rack
+type 3 switch
+type 4 datacenter
+type 5 root
+
+# buckets
+node node0 {
+    id -1       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.0 weight 1.000
+    item osd.1 weight 1.000
+}
+node node1 {
+    id -2       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.2 weight 1.000
+    item osd.3 weight 1.000
+}
+node node2 {
+    id -3       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.4 weight 1.000
+    item osd.5 weight 1.000
+}
+node node3 {
+    id -4       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.6 weight 1.000
+    item osd.7 weight 1.000
+}
+node node4 {
+    id -5       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.8 weight 1.000
+    item osd.9 weight 1.000
+}
+node node5 {
+    id -6       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.10 weight 1.000
+    item osd.11 weight 1.000
+}
+node node6 {
+    id -7       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.12 weight 1.000
+    item osd.13 weight 1.000
+}
+node node7 {
+    id -8       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.14 weight 1.000
+    item osd.15 weight 1.000
+}
+node node8 {
+    id -9       # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.16 weight 1.000
+    item osd.17 weight 1.000
+}
+node node9 {
+    id -10      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.18 weight 1.000
+    item osd.19 weight 1.000
+}
+node node10 {
+    id -11      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.20 weight 1.000
+    item osd.21 weight 1.000
+}
+node node11 {
+    id -12      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.22 weight 1.000
+    item osd.23 weight 1.000
+}
+node node12 {
+    id -13      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.24 weight 1.000
+    item osd.25 weight 1.000
+}
+node node13 {
+    id -14      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.26 weight 1.000
+    item osd.27 weight 1.000
+}
+node node14 {
+    id -15      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.28 weight 1.000
+    item osd.29 weight 1.000
+}
+node node15 {
+    id -16      # do not change unnecessarily
+    # weight 2.000
+    alg straw
+    hash 0  # rjenkins1
+    item osd.30 weight 1.000
+    item osd.31 weight 1.000
+}
+rack rack0 {
+    id -17      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node0 weight 2.000
+    item node1 weight 2.000
+}
+rack rack1 {
+    id -18      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node2 weight 2.000
+    item node3 weight 2.000
+}
+rack rack2 {
+    id -19      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node4 weight 2.000
+    item node5 weight 2.000
+}
+rack rack3 {
+    id -20      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node6 weight 2.000
+    item node7 weight 2.000
+}
+rack rack4 {
+    id -21      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node8 weight 2.000
+    item node9 weight 2.000
+}
+rack rack5 {
+    id -22      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node10 weight 2.000
+    item node11 weight 2.000
+}
+rack rack6 {
+    id -23      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node12 weight 2.000
+    item node13 weight 2.000
+}
+rack rack7 {
+    id -24      # do not change unnecessarily
+    # weight 4.000
+    alg straw
+    hash 0  # rjenkins1
+    item node14 weight 2.000
+    item node15 weight 2.000
+}
+switch switch0 {
+    id -25      # do not change unnecessarily
+    # weight 8.000
+    alg straw
+    hash 0  # rjenkins1
+    item rack0 weight 4.000
+    item rack1 weight 4.000
+}
+switch switch1 {
+    id -26      # do not change unnecessarily
+    # weight 8.000
+    alg straw
+    hash 0  # rjenkins1
+    item rack2 weight 4.000
+    item rack3 weight 4.000
+}
+switch switch2 {
+    id -27      # do not change unnecessarily
+    # weight 8.000
+    alg straw
+    hash 0  # rjenkins1
+    item rack4 weight 4.000
+    item rack5 weight 4.000
+}
+switch switch3 {
+    id -28      # do not change unnecessarily
+    # weight 8.000
+    alg straw
+    hash 0  # rjenkins1
+    item rack6 weight 4.000
+    item rack7 weight 4.000
+}
+datacenter datacenter0 {
+    id -29      # do not change unnecessarily
+    # weight 16.000
+    alg straw
+    hash 0  # rjenkins1
+    item switch0 weight 8.000
+    item switch1 weight 8.000
+}
+datacenter datacenter1 {
+    id -30      # do not change unnecessarily
+    # weight 16.000
+    alg straw
+    hash 0  # rjenkins1
+    item switch2 weight 8.000
+    item switch3 weight 8.000
+}
+root root {
+    id -31      # do not change unnecessarily
+    # weight 32.000
+    alg straw
+    hash 0  # rjenkins1
+    item datacenter0 weight 16.000
+    item datacenter1 weight 16.000
+}
+
+# rules
+rule replicated_ruleset {
+    ruleset 0
+    type replicated
+    min_size 1
+    max_size 10
+    step take root
+    step chooseleaf firstn 0 type node
+    step emit
+}
+
+
+rule dc1-dc2 {
+  ruleset 1
+  type replicated
+  min_size 3
+  max_size 4
+  step take root
+  step choose firstn 0 type switch
+  step choose firstn 1 type rack
+  step chooseleaf firstn 1 type node
+  step emit
+}
+
+rule single-dc {
+  ruleset 1
+  type replicated
+  min_size 2
+  max_size 4
+  step take root
+  step choose firstn 1 type datacenter
+  step choose firstn 0 type rack
+  step chooseleaf firstn 1 type node
+  step emit
+}
+
+# end crush map
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//039_crush/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Crushmap - rule</h1>
+
+<p><br></p>
+
+<pre><code>rule simple-rule {
+  ruleset 0
+  type replicated
+  min_size 2
+  max_size 4
+  step take default
+  step chooseleaf firstn 0 type host
+  step emit
+}
+</code></pre>
+
+<hr>
+
+<pre><code>step choose firstn &lt;number&gt; type &lt;bucket&gt;
+
+step chooseleaf firstn &lt;number&gt; type &lt;bucket&gt;
+
+&lt;number&gt; = 0: #replicas
+&lt;number&gt; &gt; 0: #num
+&lt;number&gt; &lt; 0: #replicas - #num
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//039_crush/12">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Crushmap Commands: modify</h1>
+
+<p><br></p>
+
+<p>extract crushmap</p>
+
+<pre><code># ceph osd getcrushmap -o map.current
+</code></pre>
+
+<p>decompile crushmap</p>
+
+<pre><code># crushtool -d map.current -o map.txt
+</code></pre>
+
+<p>compile crushmap</p>
+
+<pre><code># crushtool -c map.txt -o map.new
+</code></pre>
+
+<p>set crushmap</p>
+
+<pre><code># ceph osd setcrushmap -i  map.new
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__040_lab_crushmap" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//040_lab_crushmap/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Crushmap</h1>
+
+<ul>
+<li>Write and test a Crushmap with two datacenters
+
+<ul>
+<li>ensure that DC1 will always get 2 out of 3 replicas</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//045_what_else/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>5 What else?</h1>
+
+<p><br></p>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/fragezeichen.png" style="max-width:100%;height:auto" alt="questionmark"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//045_what_else/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Scrubbing</h1>
+
+<p>Ensures data integrity by comparing the replicas of an object. 
+Scrubbing is always performed for all objects within a single PG.</p>
+
+<ul>
+<li>
+<p>scrubbing</p>
+
+<ul>
+<li>verifies metadata</li>
+<li>verifies object size</li>
+<li>daily</li>
+</ul>
+</li>
+<li>
+<p>deep-scrubbing</p>
+
+<ul>
+<li>verifies content</li>
+<li>weekly</li>
+<li>IO intensive</li>
+<li>is started by a common scrub</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//045_what_else/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Scrubbing:</h1>
+
+<h1>reduce IO impact</h1>
+
+<ul>
+<li>osd max scrubs
+
+<ul>
+<li>maximum number of simultaneous scrubs per OSD</li>
+</ul>
+</li>
+<li>osd scrub load threshold
+
+<ul>
+<li>scrub only if load is smaller than given value</li>
+</ul>
+</li>
+<li>osd scrub max interval
+
+<ul>
+<li>ignore all other settings</li>
+</ul>
+</li>
+<li><p>osd deep scrub interval </p></li>
+<li><p>osd scrub begin hour: 0-24</p></li>
+<li><p>osd scrub end hour: 0-24</p></li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//045_what_else/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Encryption: Software, Physical, Not</h1>
+
+<ul>
+<li>
+<p>Software - ceph-deploy create OSD --dmcrypt</p>
+
+<ul>
+<li>both journal and data encrypted</li>
+<li>keys stored in MON database</li>
+<li>unencrypted bootstrap key for communication</li>
+<li>CPU intensive</li>
+</ul>
+</li>
+<li>
+<p>Physical - Self Encrypting Drives</p>
+
+<ul>
+<li>more pricey</li>
+<li>transparent to Ceph</li>
+<li>cumbersome key management</li>
+</ul>
+</li>
+<li>
+<p>Not:</p>
+
+<ul>
+<li>data are split per object size</li>
+<li>over the whole cluster</li>
+<li>according to failure domains</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//045_what_else/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CephX: authentication and authorization</h1>
+
+<p><br></p>
+
+<p>Clients are authenticated with a shared secret method. 
+For communication to OSDs and MDS, the clients retrieve an encrypted ticket from the monitor servers. 
+Monitors, OSDs and MDS share a secret to verify the tickets.</p>
+
+<ul>
+<li>secrets are saved as plaintext</li>
+<li>no data encryption provided</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CephX Commands:</h1>
+
+<h1>ceph auth</h1>
+
+<p>list users</p>
+
+<pre><code># ceph auth list
+</code></pre>
+
+<p>get the key and capabilities for the admin client</p>
+
+<pre><code># ceph auth get client.admin
+</code></pre>
+
+<p>create a new user </p>
+
+<pre><code># ceph auth get-or-create client.paul mon 'allow r' osd 'allow rw pool=liverpool'
+</code></pre>
+
+<p>change != add caps</p>
+
+<pre><code># ceph auth caps client.paul mon 'allow r' osd 'allow rwx pool=swimmingpool'
+</code></pre>
+
+<p>remove a user</p>
+
+<pre><code># ceph auth del client.paul
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="005_ceph_storage_cluster//045_what_else/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>EC: Erasure coded pool</h1>
+
+<ul>
+<li>didn't do exactly well with jewel and RBD</li>
+<li>requires less space (compared to replicated pools)</li>
+<li>often used for cold storage (in combination with a replicated cache tier)</li>
+<li>provides fewer features (compared to replicated pools)</li>
+<li>similar to RAID-5/6</li>
+<li>data are split in data chunks and coding chunks (parity)</li>
+<li>EC(6,3) split data in 6 data chunks and 3 coding chunks
+
+<ul>
+<li>3 OSDs may fail</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>EC Commands:</h1>
+
+<h1>create an EC Pool</h1>
+
+<p>create myprofile and set k, m and the crush rule</p>
+
+<pre><code># ceph osd erasure-code-profile set myprofile k=6 m=3
+# ceph osd erasure-code-profile get myprofile
+</code></pre>
+
+<p>show EC profiles</p>
+
+<pre><code># ceph osd erasure-code-profile ls
+# ceph osd erasure-code-profile get myprofile
+
+# ceph osd erasure-code-profile rm myprofile
+</code></pre>
+
+<p>create pool</p>
+
+<pre><code># ceph osd pool create my-ec-pool 128 128 erasure \
+  myprofile my-crush-root
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small printonly" data-transition="none">
+<div class="content small printonly" ref="005_ceph_storage_cluster//045_what_else/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PG states</h1>
+
+<ul>
+<li>
+<p>active</p>
+
+<p>PG is ready for requests</p>
+</li>
+<li>
+<p>clean</p>
+
+<p>replication state for PG is optimal</p>
+</li>
+<li>
+<p>remapped</p>
+
+<p>PG is mapped to another set of OSDs</p>
+</li>
+<li>
+<p>degraded</p>
+
+<p>replicas are not complete</p>
+</li>
+<li>
+<p>backfilling</p>
+
+<p>ceph is synchronizing the entire content of a PG</p>
+</li>
+<li>
+<p>recovering</p>
+
+<p>PG is synchronizing replicas</p>
+</li>
+<li>
+<p>scrubbing</p>
+
+<p>check PG for consistency</p>
+</li>
+<li>
+<p>stale</p>
+
+<p>PG is in an unknown state</p>
+</li>
+</ul>
+
+<p>See PG states: <a href="http://docs.ceph.com/docs/master/rados/operations/pg-states">http://docs.ceph.com/docs/master/rados/operations/pg-states</a></p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>What if... an OSD is full</h1>
+
+<ul>
+<li>HEALTH_WARN: near full at 85%</li>
+<li>HEALTH_ERR: full at 95%</li>
+<li>ceph prevents from writing data</li>
+<li>Solution: 
+
+<ul>
+<li>add new OSDs</li>
+<li>if not possible, remove PG directories on the full OSD (dangerous) and
+prevent backfilling</li>
+<li>reweight </li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>What if... there are slow requests</h1>
+
+<ul>
+<li>read/write processes are not served within 30 seconds
+
+<ul>
+<li>if necessary set: osd_op_complaint_time</li>
+</ul>
+</li>
+<li>Reasons:
+
+<ul>
+<li>bad drives (dmesg/smart)</li>
+<li>overload (iostat/top)</li>
+<li>bugs (kernel or osd)</li>
+</ul>
+</li>
+<li>Solutions:
+
+<ul>
+<li>restart involved OSDs</li>
+<li>upgrade kernel and ceph (cluster and clients)</li>
+<li>extend the cluster (remove the bottleneck)</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/12">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>What if...</h1>
+
+<p><br></p>
+
+<p>backfilling impacts the client io</p>
+
+<ul>
+<li>reduce the max number of backfill jobs per OSD
+
+<ul>
+<li>osd_max_backfills 1 (default 10)</li>
+</ul>
+</li>
+</ul>
+
+<p>deleting snapshots impacts the client io</p>
+
+<ul>
+<li>throttle snap trimming
+
+<ul>
+<li>osd_snap_trim_sleep</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/13">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Tuning</h1>
+
+<ul>
+<li>osd_op_threads</li>
+<li>TCMalloc vs. JEMalloc</li>
+<li>activate Jumbo Frames</li>
+<li>osd_mount_options_xfs: allocsize=4m,inode64,logbufs=8,logbsize=256k</li>
+<li>rbd: enable rbd cache (hypervisor) and writeback cache (qemu/kvm)</li>
+<li>set tcp_nodelay (man rbd)</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/14">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CBT - Ceph Benchmarking Tool</h1>
+
+<ul>
+<li>CBT is built on FIO and radosbench</li>
+<li>FIO benchmarks with:
+
+<ul>
+<li>librbd</li>
+<li>kvmrbd</li>
+<li>rbdfio</li>
+</ul>
+</li>
+<li>rados benchmarks with rados cli binary</li>
+<li>iperf</li>
+<li>c.f. <a href="https://github.com/ceph/cbt">https://github.com/ceph/cbt</a>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/15">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous</h1>
+
+<ul>
+<li>released in August 2017
+changes regarding 
+
+<ul>
+<li>management </li>
+<li>OSD</li>
+<li>Filesystem</li>
+<li>compression and checksums</li>
+<li>migration</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/16">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous - management</h1>
+
+<ul>
+<li>ceph mgr takes load off of mon</li>
+<li>ceph-deploy has different options</li>
+<li>great performance gains especially in huge environments</li>
+<li><a href="https://ceph.com/releases/v12-2-0-luminous-released/">https://ceph.com/releases/v12-2-0-luminous-released/</a></li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/17">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous - OSD</h1>
+
+<ul>
+<li>device class</li>
+<li>backoff mechanism</li>
+<li>easier replacement</li>
+</ul>
+
+<div class="notes">
+
+<p>Replacing an OSD</p>
+
+<p>When disks fail, or if an admnistrator wants to reprovision OSDs with a new backend, for instance, for switching from FileStore to BlueStore, OSDs need to be replaced. Unlike Removing the OSD, replaced OSD’s id and CRUSH map entry need to be keep intact after the OSD is destroyed for replacement.</p>
+
+<pre><code>Destroy the OSD first:
+
+ceph osd destroy {id} --yes-i-really-mean-it
+
+Zap a disk for the new OSD, if the disk was used before for other purposes. It’s not necessary for a new disk:
+
+ceph-disk zap /dev/sdX
+
+Prepare the disk for replacement by using the previously destroyed OSD id:
+
+ceph-disk prepare --bluestore /dev/sdX  --osd-id {id} --osd-uuid `uuidgen`
+
+And activate the OSD:
+
+ceph-disk activate /dev/sdX1
+</code></pre>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/18">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous - Filesystem</h1>
+
+<ul>
+<li>Bluestore</li>
+<li>introduced with Kraken, January 2017</li>
+<li>default "filesystem" in Luminous
+
+<ul>
+<li><a href="https://ceph.com/community/new-luminous-bluestore/">https://ceph.com/community/new-luminous-bluestore/</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small printonly" data-transition="none">
+<div class="content small printonly" ref="005_ceph_storage_cluster//045_what_else/19">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous - Filesystem ctd.</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/filestore-vs-bluestore-2.png" style="max-width:100%;height:auto" alt="luminous"></center>
+
+<ul>
+<li>RocksDB: key/value database manages internal metadata</li>
+<li>BlueFS: basic file-system-like interface </li>
+<li>I/O directly against block device</li>
+<li>WAL can be implemented</li>
+<li>all components can be "mapped" against different devices</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/20">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous - compression, checksums</h1>
+
+<ul>
+<li>zlib, snappy, or lz4</li>
+<li>disabled by default</li>
+<li>set per pool
+
+<ul>
+<li><a href="http://docs.ceph.com/docs/master/rados/configuration/bluestore-config-ref/#inline-compression">http://docs.ceph.com/docs/master/rados/configuration/bluestore-config-ref/#inline-compression</a></li>
+</ul>
+</li>
+<li>checksums for all data and metadata</li>
+<li>verification per each read access</li>
+<li>default crc32c
+
+<ul>
+<li>optional: xxhash32, xxhash64, truncated crc32c, disabled</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/21">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Luminous - Migration</h1>
+
+<ul>
+<li>current OS with systemd</li>
+<li>cluster can run mix of Bluestore and Filestore</li>
+<li>new OSD will be provisioned with Bluestore by default</li>
+<li>migration possible per OSD or host 
+
+<ul>
+<li><a href="http://docs.ceph.com/docs/master/rados/operations/bluestore-migration/">http://docs.ceph.com/docs/master/rados/operations/bluestore-migration/</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="010_rbd//040_rbd/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>3 Rados Block Device (RBD)</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//040_rbd/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Block Device structure</h1>
+
+<ul>
+<li>split into many sectors</li>
+<li>sectors are the smallest unit</li>
+<li>with a fixed size (512B, 4KiB)</li>
+<li>introduced with magnetic HDDs</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide lrbullets smaller" data-transition="none">
+<div class="content lrbullets smaller" ref="010_rbd//040_rbd/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>HDD structure</h1>
+
+<p></p>
+<center><img src="./file/010_rbd//./_images/disk.svg" style="height:380px;" alt="ceph-deploy"></center>
+
+<ul>
+<li>A: Track</li>
+<li>B: Sector (geometrical)</li>
+<li>C: Sector (Track)</li>
+<li>D: Cluster</li>
+<li>?: Head</li>
+<li>?: Cylinder</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="010_rbd//040_rbd/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Block Device as Objects</h1>
+
+<ul>
+<li>group tracks sectors to objects</li>
+<li>default object size is 4MB</li>
+<li>4MiB/512B = #sectors per Object</li>
+<li><p>a 4MiB object stores 8192 sectors</p></li>
+<li><p>sparse 'file'</p></li>
+<li><p>prefix for each RBD</p></li>
+<li><p>4*4MiB objects</p></li>
+<li><p>list objects with <code>rados ls</code></p></li>
+<li><p>32768 sectors in 16MiB</p></li>
+</ul>
+
+<div class="notes"><p>
+C: 512byte see sgdisk -p /dev/sda
+?: Cylinder are Tracks above each other
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide lrbullets small" data-transition="none">
+<div class="content lrbullets small" ref="010_rbd//040_rbd/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RBD Commands: create, resize and remove</h1>
+
+<pre><code># rbd create training --size 16M
+
+# rbd resize --size 250G [--allow-shrink] training
+
+# rbd info training
+rbd image 'training':
+    size 16384 kB in 4 objects
+    order 22 (4096 kB objects)
+    block_name_prefix: rbd_data.fa6a2ae8944a
+    format: 2
+    features: layering
+
+# rbd rm training
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide lrbullets printonly" data-transition="none">
+<div class="content lrbullets printonly" ref="010_rbd//040_rbd/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Access an RBD</h1>
+
+<p></p>
+<center><img src="./file/010_rbd//./_images/access_rbd.png" style="max-width:100%;height:auto;" alt="RBD Access"></center>
+
+<p><br></p>
+
+<ul>
+<li>Kernel v4.5 (recommeded)</li>
+<li>Qemu &gt;= 0.14.0 </li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide lrbullets small" data-transition="none">
+<div class="content lrbullets small" ref="010_rbd//040_rbd/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Access via kernel module</h1>
+
+<p><br></p>
+
+<pre><code># rbd map training
+/dev/rbd0
+
+# rbd showmapped
+id pool image    snap device    
+0  rbd  training -    /dev/rbd0 
+
+# rbd unmap /dev/rbd0
+</code></pre>
+
+<p><br></p>
+
+<ul>
+<li>rbd0 is a blockdevice</li>
+<li>mapping can be reboot save</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//040_rbd/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Access via qemu-kvm integration</h1>
+
+<ul>
+<li>support is built into qemu</li>
+<li>provide ceph credentials as <a href="https://libvirt.org/formatsecret.html#CephUsageType">libvirt secret</a>
+</li>
+<li>a libvirt secret is linked to an attribute
+
+<ul>
+<li>e.g. an encrypted volume or a ceph pool/rbd</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//040_rbd/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Managing RBDs with qemu-img</h1>
+
+<p><br></p>
+
+<pre><code># qemu-img create -f raw rbd:foo/bar 10G
+
+# qemu-img convert -f qcow2 -O raw my_image.qcow2 \
+  rbd:my_pool/my_pool
+</code></pre>
+
+<ul>
+<li>qemu-img provides support for rbd manipulating images</li>
+<li>does not use the libvirt secret</li>
+<li>searches for default credentials in /etc/ceph/</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//040_rbd/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: RBD Steps - 1</h1>
+
+<p>create and map an RBD</p>
+
+<pre><code># rbd create --size 2G myrbd
+# rbd map myrbd
+</code></pre>
+
+<p>create FS on the RBD</p>
+
+<pre><code># rbd showmapped
+# mkfs.ext4 /dev/rbd0
+
+# mount /dev/rbd0 /mnt
+</code></pre>
+
+<p>list connected clients</p>
+
+<pre><code># rbd status myrbd
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//040_rbd/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: RBD Steps - 2</h1>
+
+<p>count the objects used by the RBD</p>
+
+<pre><code># rbd info myrbd
+# rados ls | grep &lt;prefix&gt; | wc -l
+</code></pre>
+
+<p>insert data and count again</p>
+
+<pre><code># rados ls | grep &lt;prefix&gt; | wc -l
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//040_rbd/12">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: snapshot rbd</h1>
+
+<p>create</p>
+
+<pre><code># rbd snap create &lt;poolname&gt;/&lt;image&gt;@&lt;snapname&gt;
+</code></pre>
+
+<p>list</p>
+
+<pre><code># rbd snap ls rbd/myimage
+</code></pre>
+
+<p>rollback</p>
+
+<pre><code># rbd snap rollback rbd/myimage@snapshot
+</code></pre>
+
+<p>delete</p>
+
+<pre><code># rbd snap rm rbd/myimage@snapshot
+</code></pre>
+
+<p>purge</p>
+
+<pre><code># rbd snap purge rbd/myimage
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//040_rbd/13">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Layering</h1>
+
+<ul>
+<li>a snapshot is a read-only image</li>
+<li>a protected snapshot cannot be deleted</li>
+<li>a clone from a snapshot is a read-write image</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//040_rbd/14">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Layering: use case</h1>
+
+<ul>
+<li>golden images</li>
+<li>applications with hierarchical structure</li>
+<li>template pool for cloning into other pools</li>
+<li>image migration/recovery</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//040_rbd/15">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Layering Commands: protect, clone and flatten</h1>
+
+<p>protect</p>
+
+<pre><code># rbd snap protect &lt;pool&gt;/&lt;image&gt;@&lt;snap&gt;
+# rbd snap unprotect &lt;pool&gt;/&lt;image&gt;@&lt;snap&gt;
+</code></pre>
+
+<p>clone</p>
+
+<pre><code># rbd clone &lt;pool&gt;/&lt;image&gt;@&lt;snap&gt; &lt;pool&gt;/&lt;child&gt;
+</code></pre>
+
+<p>list </p>
+
+<pre><code># rbd children &lt;pool&gt;/&lt;image&gt;@&lt;snap&gt;
+</code></pre>
+
+<p>flatten</p>
+
+<pre><code>#  rbd flatten &lt;pool&gt;/&lt;image&gt;
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//040_rbd/16">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RBD Commands: export/import</h1>
+
+<p>export/import</p>
+
+<pre><code># rbd export &lt;pool&gt;/&lt;image&gt;[@&lt;snap&gt;] &lt;file&gt;
+# rbd import &lt;file&gt; &lt;pool&gt;/&lt;image&gt;
+</code></pre>
+
+<p>export/import diff</p>
+
+<pre><code># rbd export-diff  --from-snap 1472105045 \ 
+  rbd/myimage@1472176282 - | ssh dr-cluster.netways.local  \
+  rbd import-diff - rbd_dr/myimage
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__040_rbd" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//040_rbd/17">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RBD Commands: lock</h1>
+
+<p>rbd show locks</p>
+
+<pre><code># rbd lock list my-image
+</code></pre>
+
+<p>rbd add lock</p>
+
+<pre><code># rbd lock add my-pool/my-image foobar
+</code></pre>
+
+<p>rbd remove lock</p>
+
+<pre><code># rbd lock remove my-pool/my-image \
+  foobar &lt;locker&gt;
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//060_lab_libvirt/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: QEMU and libvirt integration</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//060_lab_libvirt/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: libvirt</h1>
+
+<ul>
+<li>prepare virsh, libvirt and QEMU-KVM</li>
+<li>start a VM for testing libvirt</li>
+<li>create a new pool for libvirt</li>
+<li>provide the ceph credentials as libvirt secret</li>
+<li>install a VM on your rbd</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//060_lab_libvirt/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Steps: prepare virsh, libvirt and QEMU-KVM</h1>
+
+<p><br></p>
+
+<p>install qemu-kvm virsh and virt-install</p>
+
+<pre><code># yum install -y kvm virt-manager libvirt virt-install \
+  qemu-kvm xauth dejavu-lgc-sans-fonts
+</code></pre>
+
+<p>enable ip_forward</p>
+
+<pre><code># echo "net.ipv4.ip_forward=1" &gt; /etc/sysctl.d/99-forward.conf
+# sysctl -p /etc/sysctl.d/99-forward.conf
+# net.ipv4.ip_forward = 1
+</code></pre>
+
+<p>test virsh</p>
+
+<pre><code># virsh list
+</code></pre>
+
+<div class="notes"><p>
+sudo -i might be needed for echo command <br>
+ovirt - <a href="http://paste.openstack.org/show/163327/">http://paste.openstack.org/show/163327/</a>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//060_lab_libvirt/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Steps: testing libvirt</h1>
+
+<p>download debian netinstaller</p>
+
+<pre><code># wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso -O /tmp/debian-9.3.0-amd64-netinst.iso
+</code></pre>
+
+<p>start a VM with virt-install</p>
+
+<pre><code># sudo virt-install --connect qemu:///system -n vmdeb -r 512 \
+--disk path=/var/lib/libvirt/images/vmdeb.img,size=2 \
+--graphics vnc,listen=0.0.0.0 --noautoconsole --os-type linux \
+--os-variant generic --accelerate --network=bridge:virbr0 \
+--cdrom /tmp/debian-9.3.0-amd64-netinst.iso --vcpus=1 --hvm 
+</code></pre>
+
+<p>get VNC port</p>
+
+<pre><code># sudo virsh vncdisplay vmdeb
+</code></pre>
+
+<div class="notes"><p>
+VNC Viewer e.g. remmina, default port 5900, Ctrl+Alt uncaptures mouse
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//060_lab_libvirt/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands: testing for RBD support</h1>
+
+<p><br></p>
+
+<p>test qemu-kvm for RBD support</p>
+
+<pre><code># /usr/libexec/qemu-kvm -drive format=?
+# /usr/bin/qemu-system-x86_64 -drive format=?
+</code></pre>
+
+<p>test qemu-img for RBD support</p>
+
+<pre><code># qemu-img -h | grep "Supported formats"
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide small" data-transition="none">
+<div class="content small" ref="010_rbd//060_lab_libvirt/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab Steps: create a new pool for libvirt</h1>
+
+<p><br></p>
+
+<p>create a pool with 128 PGs</p>
+
+<pre><code># ceph osd pool create libvirt 128
+</code></pre>
+
+<p>create an image within the pool</p>
+
+<pre><code># qemu-img create -f rbd rbd:libvirt/new-libvirt-image 2G
+</code></pre>
+
+<div class="notes"><p>
+qemu-img uses admin keyring
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="010_rbd//060_lab_libvirt/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: ceph integration Step 1</h1>
+
+<p>create libvirt secret.xml</p>
+
+<pre><code># cat &gt; secret.xml &lt;&lt;EOF
+&lt;secret ephemeral='no' private='no'&gt;
+        &lt;usage type='ceph'&gt;
+                &lt;name&gt;client.libvirt secret&lt;/name&gt;
+        &lt;/usage&gt;
+&lt;/secret&gt;
+EOF
+</code></pre>
+
+<p><br></p>
+
+<p>import secret.xml ($secret holds an UUID)</p>
+
+<pre><code># secret=$(virsh secret-define --file secret.xml | cut -d " " -f 2)
+# echo $secret
+</code></pre>
+
+<p><br></p>
+
+<p>get the key for the libvirt ceph client (needs keyring in /etc/ceph)</p>
+
+<pre><code># ceph auth get-or-create client.libvirt mon 'allow r' \
+  osd 'allow class-read object_prefix rbd_children, allow rwx pool=libvirt'
+
+# ceph auth get-key client.libvirt &gt; client.libvirt.key
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="010_rbd//060_lab_libvirt/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: ceph integration Step 2</h1>
+
+<p>set the libvirt ceph client key to our new libvirt secret</p>
+
+<pre><code># virsh secret-set-value --secret $secret --base64 $(cat client.libvirt.key)
+# rm client.libvirt.key secret.xml
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="010_rbd//060_lab_libvirt/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: create VM helper script</h1>
+
+<p><a href="../file/_files/share/install-vm.sh">install-vm.sh</a></p>
+
+<pre class=""><code>#!/bin/bash
+
+set -x
+
+# start the vm
+virt-install \
+  --name="$(hostname)-vm" \
+  --ram=1024 \
+  --vcpus=2 \
+  --accelerate \
+  --cdrom /tmp/debian-9.3.0-amd64-netinst.iso \
+  --os-type=linux \
+  --os-variant=debian \
+  --network=bridge=virbr0,model=virtio \
+  --graphics=vnc,listen=0.0.0.0 \
+  --virt-type=kvm \
+  --noautoconsole \
+  --nodisks
+
+# virsh-install does not support rbd style format, yet
+# attach disk immediately after start
+virsh attach-device $(hostname)-vm disk.xml --persistent
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="010_rbd//060_lab_libvirt/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: libvirt: rbd disk definition</h1>
+
+<p><br></p>
+
+<p>adapt <a href="../file/_files/share/disk.xml">disk.xml</a> to your host name and libvirt secret </p>
+
+<pre class=""><code>&lt;disk type='network' device='disk'&gt;
+#use the pool and image you have created before
+ &lt;source protocol='rbd' name='poolCHANGEME/imagenameCHANGEME'&gt;
+#use an active mon server here
+ &lt;host name='training-011.netways.local(CHANGEME)' port='6789'/&gt; 
+    &lt;/source&gt;
+    &lt;auth username='libvirt'&gt;
+#you've access to this via echo $secret
+ &lt;secret type='ceph' uuid='8420b99b-0661-4972-8912-d0dcfca4d692CHANGEME'/&gt;
+    &lt;/auth&gt;
+  &lt;target dev='vda' bus='virtio'/&gt;
+    &lt;driver name='qemu' type='raw' cache='writeback'/&gt;
+&lt;/disk&gt;
+</code></pre>
+
+<p><br>
+<br></p>
+
+<p>watch the disk growing</p>
+
+<pre><code># rbd -p libvirt info $(hostname)-vm
+# rados -p libvirt ls | grep &lt;prefix&gt; | wc -l
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//060_lab_libvirt/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Snapshot</h1>
+
+<ul>
+<li>create a clone of your VM</li>
+<li>create a new VM using the clone</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="010_rbd__060_lab_libvirt" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//060_lab_libvirt/12">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: VM live resize</h1>
+
+<ul>
+<li>resize your VM</li>
+<li>extend the RBD and the FS inside the VM</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__005_overview" class="slide subsection" data-transition="none">
+<div class="content subsection" ref="015_cephfs//005_overview/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>4 CephFS</h1>
+
+<div class="notes"><p>
+<a href="https://www.sebastien-han.fr/blog/2012/12/03/ceph-and-mds/">https://www.sebastien-han.fr/blog/2012/12/03/ceph-and-mds/</a>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__005_overview" class="slide " data-transition="none">
+<div class="content " ref="015_cephfs//005_overview/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CephFS</h1>
+
+<ul>
+<li>POSIX compatible filesystem</li>
+<li>shared filesystem</li>
+<li>stable since Jewel release (April 2016)</li>
+<li>be cautious with snapshotting</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__010_components" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="015_cephfs//010_components/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Components</h1>
+
+<p></p>
+<center><img src="./file/015_cephfs//./_images/cephfs_components_rotated.png" style="max-width:100%;height:640px;" alt="cephfs components"></center>
+
+<div class="notes">
+<p>
+CephFS needs: 1x md pool, 1x data pool, 1+ MDS, Clients(Kernel or Fuse)</p>
+
+<p>quadrates symbolize processes: OSD, MDS
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__013_md" class="slide lrbullets" data-transition="none">
+<div class="content lrbullets" ref="015_cephfs//013_md/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Metadata Server</h1>
+
+<ul>
+<li>handles metadata </li>
+<li>saves metadata in RADOS</li>
+<li>POSIX compatible interface</li>
+<li>does not provide data</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__013_md" class="slide lrbullets" data-transition="none">
+<div class="content lrbullets" ref="015_cephfs//013_md/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Metadata</h1>
+
+<ul>
+<li>hierarchy</li>
+<li>permissions</li>
+<li>names</li>
+<li>timestamp</li>
+<li>owners</li>
+<li>modes</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__013_md" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="015_cephfs//013_md/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Objects</h1>
+
+<ul>
+<li>file content directly from the clients</li>
+<li>files are saved as object and get striped over objects</li>
+<li>objectname is the inode number of a file</li>
+<li>object names follow the schema <code>inode</code>.<code>offset</code>
+</li>
+<li>offset is used for files &gt;4MiB</li>
+</ul>
+
+<div class="notes"><p>
+inode equals object name 
+objects &gt;4MB have a counter added
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__013_md" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="015_cephfs//013_md/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Hierarchy</h1>
+
+<p></p>
+<center><img src="./file/015_cephfs//./_images/cephfs_metadata_rotated.png" style="max-width:100%;height:640px;" alt="cephfs components"></center>
+
+<div class="notes">
+<p>
+see TechTalk by John Spray
+metadatapool: directory entries are stored as key value as rados omap 
+(currently one leveldb per osd). 
+
+Objects comprise of 3 areas: XAttrs, LevelDB (one instance per OSD), Plain data</p>
+
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__015_best_practice" class="slide lrbullets" data-transition="none">
+<div class="content lrbullets" ref="015_cephfs//015_best_practice">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>best practice</h1>
+
+<ul>
+<li>Jewel or newer</li>
+<li>don't use snapshots</li>
+<li>1+ active MDS</li>
+<li>1+ standby MDS</li>
+</ul>
+
+<p><br></p>
+
+<p>kernel &gt;= 4.x use the kernel module</p>
+
+<p>kernel &lt;  4   use fuse client</p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__020_mds_fs" class="slide small" data-transition="none">
+<div class="content small" ref="015_cephfs//020_mds+fs">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands to create a CephFS filesystem</h1>
+
+<p><br><br></p>
+
+<p>create pools</p>
+
+<pre><code># ceph osd pool create metadata 128
+# ceph osd pool create data 128
+</code></pre>
+
+<p>create MDS</p>
+
+<pre><code># ceph-deploy mds create server1 server2 server3
+# ceph mds stat
+e60: 1/1/1 up {0=server2=up:active}, 2 up:standby
+</code></pre>
+
+<p>create filesystem</p>
+
+<pre><code># ceph fs new share metadata data
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="015_cephfs__30_ceph_clients" class="slide small" data-transition="none">
+<div class="content small" ref="015_cephfs//30_ceph_clients">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ CephFS</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>CephFS clients commands</h1>
+
+<p><br><br></p>
+
+<p>Kernel module:</p>
+
+<pre><code># mount -t ceph monitor:6789: /mnt \
+  -o name=admin,secret=SUpeRAQDishwaems/fritzenfoob0elg==
+
+# mount -t ceph monitor:6789: /mnt \
+  -o name=admin,secretfile=/etc/ceph/mysecret
+</code></pre>
+
+<p><br></p>
+
+<p>Fuse clients (needs ceph.conf and keyring):</p>
+
+<pre><code># ceph-fuse -m monitor:6789 /mnt
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide &gt; subsection" data-transition="none">
+<div class="content &gt; subsection" ref="020_radosgw//005_overview/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>5 RADOS Gateway</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide lrbullets" data-transition="none">
+<div class="content lrbullets" ref="020_radosgw//005_overview/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RADOS Gateway</h1>
+
+<ul>
+<li>Object Store</li>
+<li>REST Interface</li>
+<li>S3/SWIFT dialect</li>
+<li>Quota and Usage tracking</li>
+<li>Auth and User management</li>
+<li>Multi-site deployment</li>
+<li>Disaster recovery</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide " data-transition="none">
+<div class="content " ref="020_radosgw//005_overview/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Components</h1>
+
+<ul>
+<li>1+ radosgw</li>
+<li>RADOS pools for
+
+<ul>
+<li>data</li>
+<li>bucket indices</li>
+<li>user management</li>
+<li>quota</li>
+<li>logs</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="020_radosgw//005_overview/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>radosgw</h1>
+
+<p><br></p>
+
+<p>a single process ties together</p>
+
+<ul>
+<li>frontend
+
+<ul>
+<li>Civetweb (default)</li>
+<li>Apache +fastcgi</li>
+</ul>
+</li>
+<li>auth</li>
+<li>quota</li>
+<li>librados</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide lrbullets" data-transition="none">
+<div class="content lrbullets" ref="020_radosgw//005_overview/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RADOS vs RGW</h1>
+
+<p><br></p>
+
+<table>
+<thead>
+<tr>
+<th>RADOS</th>
+<th>RGW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>not indexed</td>
+<td>index needed</td>
+</tr>
+<tr>
+<td>permissions per pool/rbd</td>
+<td>permissions per object</td>
+</tr>
+<tr>
+<td>mutable</td>
+<td>immutable</td>
+</tr>
+</tbody>
+</table>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide " data-transition="none">
+<div class="content " ref="020_radosgw//005_overview/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>RGW objects</h1>
+
+<ul>
+<li>
+<p>Head</p>
+
+<ul>
+<li>metadata</li>
+<li>acls</li>
+<li>user attributes</li>
+<li>start of data</li>
+</ul>
+</li>
+<li>
+<p>Tail</p>
+
+<ul>
+<li>data striped</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide " data-transition="none">
+<div class="content " ref="020_radosgw//005_overview/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Bucket Index</h1>
+
+<ul>
+<li>index of objects</li>
+<li>sorted list of objects in the bucket</li>
+<li>multizone replication</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide small" data-transition="none">
+<div class="content small" ref="020_radosgw//005_overview/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands to deploy a radosgw</h1>
+
+<p><br></p>
+
+<p>install and create an RGW</p>
+
+<pre><code># ceph-deploy install --rgw radosgw-1
+# ceph-deploy rgw create radosgw-1
+
+# ceph osd lspools
+</code></pre>
+
+<p>create an S3 user</p>
+
+<pre><code># radosgw-admin user create --uid="training" \
+  --display-name="Training User"
+</code></pre>
+
+<p>review</p>
+
+<pre><code>http://radosgw-1:7480
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide smaller" data-transition="none">
+<div class="content smaller" ref="020_radosgw//005_overview/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>S3 python example</h1>
+
+<pre class=""><code>import boto
+import boto.s3.connection
+
+access_key = 'C2R939TLYZ2MUOMP1IS9'
+secret_key = '5HQREJtoUS6vVNwaCZRgwEXqGiugeaLSJitKA4Sy'
+hostname = 'radosgw-1.local'
+
+conn = boto.connect_s3(
+        aws_access_key_id = access_key,
+        aws_secret_access_key = secret_key,
+        host = hostname, port = 7480,
+        is_secure=False, calling_format = boto.s3.connection.OrdinaryCallingFormat(),
+        )
+
+
+# Create a bucket
+bucket = conn.create_bucket('my-bucket')
+for bucket in conn.get_all_buckets():
+  print "{name} {created}".format(name = bucket.name, created = bucket.creation_date,)
+
+# get bucket and push/retrieve file
+bucket = conn.get_bucket('my-bucket')
+from boto.s3.key import Key
+k = Key(bucket)
+
+# myfile is the object name
+k.key='myfile'
+k.set_contents_from_filename('example.jpg')
+k.get_contents_to_filename('still_a_example.jpg')
+
+</code></pre>
+
+<pre><code># radosgw-admin bucket list --bucket=my-bucket
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="020_radosgw__005_overview" class="slide small" data-transition="none">
+<div class="content small" ref="020_radosgw//005_overview/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>S3 python example</h1>
+
+<ul>
+<li>get <a href="../file/_files/share/s3_example.py">s3_example.py</a>
+</li>
+<li>add credentials, host and a file and execute</li>
+<li>install missing python module</li>
+</ul>
+
+<p> </p>
+
+<pre><code># sudo yum/apt-get install python-boto
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; subsection" data-transition="none">
+<div class="content &gt; subsection" ref="025_cache_tier//001_cache_tier/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>6 Ceph Cache Tier</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide " data-transition="none">
+<div class="content " ref="025_cache_tier//001_cache_tier/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Ceph Cache Tier</h1>
+
+<ul>
+<li>Overlay pool with faster hardware</li>
+<li>can provide better I/O performance</li>
+<li>transparent to ceph-clients</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide smbullets printonly" data-transition="none">
+<div class="content smbullets printonly" ref="025_cache_tier//001_cache_tier/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Schema</h1>
+
+<p></p>
+<center><img src="./file/025_cache_tier//./_images/cache_tier_rotated.png" style="max-width:100%;height:640px;" alt="matrixofhell"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide " data-transition="none">
+<div class="content " ref="025_cache_tier//001_cache_tier/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Available modes</h1>
+
+<ul>
+<li>Writeback mode
+
+<ul>
+<li>writes and reads go to the cache pool</li>
+<li>cache pool manages the promotion</li>
+</ul>
+</li>
+<li>Read-proxy mode
+
+<ul>
+<li>every read is proxied to the storage pool</li>
+<li>useful for disabling the cache</li>
+</ul>
+</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide " data-transition="none">
+<div class="content " ref="025_cache_tier//001_cache_tier/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Caution!</h1>
+
+<ul>
+<li>performance highly depends on workload</li>
+<li>difficult to benchmark</li>
+<li>slower if workload is not cache-tiering-friendly</li>
+<li>complexity, increases probability of hitting bugs</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="025_cache_tier//001_cache_tier/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Workloads</h1>
+
+<p>Known Good Workload</p>
+
+<ul>
+<li>RGW time-skewed: Lots of reads go to recently written objects</li>
+</ul>
+
+<p>Known Bad Workload</p>
+
+<ul>
+<li>RBD with replicated cache and erasure-coded base: probably small writes 4K to cold objects</li>
+<li>RBD with replicated cache and base: performs better, but struggles with the same problem</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; small" data-transition="none">
+<div class="content &gt; small" ref="025_cache_tier//001_cache_tier/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Commands for creating a cache tier</h1>
+
+<p><br></p>
+
+<p>combine cache and storage pool</p>
+
+<pre><code># ceph osd tier add &lt;storage-pool&gt; &lt;cache-pool&gt;
+</code></pre>
+
+<p>set the mode </p>
+
+<pre><code># ceph osd tier cache-mode &lt;cache-pool&gt; writeback
+</code></pre>
+
+<p>activate the cache</p>
+
+<pre><code># ceph osd tier set-overlay &lt;storage-pool&gt; &lt;cache-pool&gt;
+</code></pre>
+
+<div class="notes"><p>
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; small" data-transition="none">
+<div class="content &gt; small" ref="025_cache_tier//001_cache_tier/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Age vs Temperature</h1>
+
+<p>set bloom filter for hit set tracking (what are my hot objects)</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; hit_set_type bloom
+</code></pre>
+
+<p>the number of hits to store for cache pools</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; hit_set_count 12
+</code></pre>
+
+<p>the duration for a hit set to be valid (in seconds)</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; hit_set_period 14400
+</code></pre>
+
+<p>set read recency to promote  an object</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; min_read_recency_for_promote 2
+# ceph osd pool set &lt;cache-pool&gt; min_write_recency_for_promote 2
+</code></pre>
+
+<p>Note: The longer and the higher the values are set, the more RAM is used by the OSD</p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; small" data-transition="none">
+<div class="content &gt; small" ref="025_cache_tier//001_cache_tier/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Cache Sizing</h1>
+
+<p>start flushing and evicting objects when count is reached</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; target_max_bytes 1099511627776
+</code></pre>
+
+<p>or when number of objects is reached</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; target_max_objects 1000000
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; small" data-transition="none">
+<div class="content &gt; small" ref="025_cache_tier//001_cache_tier/10">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Relative Sizing</h1>
+
+<p>percentage relative to max bytes/objects set</p>
+
+<p>begin flushing dirty at 40% (low watermark)</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; cache_target_dirty_ratio 0.4
+</code></pre>
+
+<p>begin flushing dirty objects faster at 60%</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; cache_target_dirty_high_ratio 0.6
+</code></pre>
+
+<p>begin to evict clean objects at least at 80%</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; cache_target_full_ratio 0.8
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; small" data-transition="none">
+<div class="content &gt; small" ref="025_cache_tier//001_cache_tier/11">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Cache Age</h1>
+
+<p>the time before the cache tier would flush/evict objects (seconds)</p>
+
+<pre><code># ceph osd pool set &lt;cache-pool&gt; cache_min_flush_age 600
+# ceph osd pool set &lt;cache-pool&gt; cache_min_evict_age 1800
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="025_cache_tier__001_cache_tier" class="slide &gt; small" data-transition="none">
+<div class="content &gt; small" ref="025_cache_tier//001_cache_tier/12">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph Cache Tier</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Remove Writeback Cache Tier</h1>
+
+<p>set cache-mode to forward (proxy)</p>
+
+<pre><code># ceph osd tier cache-mode &lt;cache-pool&gt; forward
+</code></pre>
+
+<p>ensure objects have been flushed</p>
+
+<pre><code># rados -p &lt;cache-pool&gt; ls
+# rados -p &lt;cache-pool&gt; cache-flush-evict-all
+</code></pre>
+
+<p>remove overlay (clients will use the storage-pool directly)</p>
+
+<pre><code># ceph osd tier remove-overlay &lt;storage-pool&gt;
+</code></pre>
+
+<p>separate the storage from the cache pool   </p>
+
+<pre><code># ceph osd tier remove &lt;storage-pool&gt; &lt;cache-pool&gt;
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__005_operating" class="slide &gt; subsection" data-transition="none">
+<div class="content &gt; subsection" ref="030_operating//005_operating/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>7 Monitoring, metrics and more</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__010_monitoring" class="slide " data-transition="none">
+<div class="content " ref="030_operating//010_monitoring/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>1 Monitoring</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__010_monitoring" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="030_operating//010_monitoring/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>ceph health</h1>
+
+<p><br></p>
+
+<p>ceph status translated to Icinga states</p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/ceph_health.png" style="max-width:80%;height:auto;" alt="ceph monitoring"></center>
+
+<p><br></p>
+
+<ul>
+<li>warning: action needed</li>
+<li>critical: outage of PGs (read-only, at best)</li>
+</ul>
+
+<p>e.g. <a href="https://github.com/valerytschopp/ceph-nagios-plugins">ceph-plugins</a></p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__010_monitoring" class="slide " data-transition="none">
+<div class="content " ref="030_operating//010_monitoring/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>ceph health osd</h1>
+
+<p><br></p>
+
+<p>monitor all OSDs on a server</p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/ceph_health_osd.png" style="max-width:80%;height:auto;" alt="ceph osd health"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__010_monitoring" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="030_operating//010_monitoring/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>SSD monitoring</h1>
+
+<p><br></p>
+
+<p>SSD journals - sentenced to death</p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/ssd_mwi.png" style="max-width:80%;height:auto;" alt="ssd mwi"></center>
+
+<p><br></p>
+
+<ul>
+<li>Intel: Media Wearout Indicator (100-0)</li>
+<li>Samsung: Wear Leveling Count (0+)</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__015_metrics" class="slide " data-transition="none">
+<div class="content " ref="030_operating//015_metrics/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>2 Metrics</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__015_metrics" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="030_operating//015_metrics/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>cluster performance metrics</h1>
+
+<p><code>ceph status -f json{-pretty}</code></p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/ceph_performance_rotated.png" style="height:500px;" alt="cephfs performance"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__015_metrics" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="030_operating//015_metrics/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>PGs state</h1>
+
+<p><code>ceph status -f json</code></p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/pg_states_rotated.png" style="max-width:100%;height:640px;" alt="ceph PG"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__015_metrics" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="030_operating//015_metrics/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>OSD performance</h1>
+
+<p>disk timings</p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/disk_timings_rotated.png" style="max-width:100%;height:640px;" alt="timings"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__015_metrics" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="030_operating//015_metrics/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>OSD usage</h1>
+
+<p>disk usage</p>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/osd_usage_rotated.png" style="max-width:100%;height:640px;" alt="usage"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__015_metrics" class="slide " data-transition="none">
+<div class="content " ref="030_operating//015_metrics/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>cluster usage</h1>
+
+<p>pool statistics</p>
+
+<pre><code># rados df --format json
+</code></pre>
+
+<p><br></p>
+
+<pre><code># ceph df --format json
+</code></pre>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide " data-transition="none">
+<div class="content " ref="030_operating//025_sizing/1">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>3 Sizing</h1>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="030_operating//025_sizing/2">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>General</h1>
+
+<ul>
+<li>mirroring of OS</li>
+<li>Luminous and Ubuntu 14.04 cumbersome</li>
+<li>enough space for logging</li>
+<li>Hands off /var/lib/ceph/mon/$/store.db</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="030_operating//025_sizing/3">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>OSD</h1>
+
+<p>OSD</p>
+
+<ul>
+<li>500MB for the process</li>
+<li>1GB RAM per TB Storage</li>
+<li>middle CPU consumption (DualCore+) </li>
+<li>disks (depends)</li>
+<li>SSD: 1 Core per OSD</li>
+<li>avoid RAID-Controller</li>
+<li>keep OSD upgrade in mind -&gt; more RAM</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="030_operating//025_sizing/4">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Journal</h1>
+
+<p>Journal</p>
+
+<ul>
+<li>SSD should have a high throughput for sequential read/write</li>
+<li>120 - 240GB is enough for small and mid-sized setups</li>
+<li><code>osd journal size = 2 * (throughput * max sync interval)</code></li>
+<li><code>6GB = 2 * (100MB/s * 30)</code></li>
+<li>no more need with OSD on SSD</li>
+<li>perhaps NVMe -&gt; less slots occupied</li>
+</ul>
+
+<div class="notes">
+<p>
+Network speed vs. HDD speed</p>
+
+<p>Consumer SSDs e.g. Intel 520/530/540 can be ok, Samsung EVO were dead sooner.
+Improved with 3DNAND et. al.
+</p>
+</div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide smbullets" data-transition="none">
+<div class="content smbullets" ref="030_operating//025_sizing/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Monitor + MDS</h1>
+
+<p>MDS</p>
+
+<ul>
+<li>1GB RAM per process</li>
+<li>high CPU consumption (QuadCore+)</li>
+</ul>
+
+<p>Monitor</p>
+
+<ul>
+<li>1GB RAM per process</li>
+<li>low CPU consumption</li>
+</ul>
+
+<div class="notes"><p>
+transition to network
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide " data-transition="none">
+<div class="content " ref="030_operating//025_sizing/6">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Network</h1>
+
+<ul>
+<li>should be able to handle OSD bandwidth</li>
+<li>consider bandwidth for replication</li>
+<li>consider bandwidth for healing</li>
+<li>at least 2 1GB NICs (frontend + backend)</li>
+<li>enable Jumbo Frames</li>
+<li>matching MTU settings</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide " data-transition="none">
+<div class="content " ref="030_operating//025_sizing/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Jewel vs. Luminous</h1>
+
+<ul>
+<li>more focus on RedHat</li>
+<li>ceph mgr</li>
+<li>more plugins (zabbix)</li>
+<li>Dashboard</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

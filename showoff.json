@@ -1,0 +1,30 @@
+{
+  "name": "Ceph",
+  "date": "",
+  "location": "created by NETWAYS GmbH",
+  "author": "Original Authors: Achim Ledermüller, Sebastian Saemann, Tim Albert",
+  "release": "v0.9",
+
+  "favicon": "image/global/favicon.ico",
+
+  "protected": ["presenter", "onepage", "print"],
+  "user": "presenter",
+  "password": "changeme",
+
+  "templates" : {
+       "default"   : "global/templates/default.tpl"
+  },
+
+  "sections": [
+
+   {"section":"global/Pre/Title"},
+   {"section":"001_introduction/"},
+   {"section":"005_ceph_storage_cluster/"},
+   {"section":"010_rbd/"},
+   {"section":"015_cephfs/"},
+   {"section":"020_radosgw/"},
+   {"section":"025_cache_tier/"},
+   {"section":"030_operating/"}
+
+  ]
+}

@@ -1,0 +1,18 @@
+!SLIDE 
+#~~~SECTION:MINOR~~~ What else?
+
+!SLIDE noprint
+# Benchmarks
+
+!SLIDE noprint
+# Flags
+noout, noin, deep-scrubbing....
+
+
+!SLIDE
+# near full
+
+!SLIDE 
+# scrubs verteilt über den Tag
+    # IFS=$'\n'; for date in `ceph pg dump | grep active | awk '{print $23" "$24}'`;
+do date "+%Y-%m-%d %H" -d "$date"; done | sort | uniq -c
