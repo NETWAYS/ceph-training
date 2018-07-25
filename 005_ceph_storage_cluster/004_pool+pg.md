@@ -1,3 +1,6 @@
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 !SLIDE smbullets
 # Pools 
@@ -59,6 +62,9 @@ set attributes
 "#" indicates a CLI command, above is a short explanation
 ~~~ENDSECTION~~~
 
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 !SLIDE smbullets
 # Placement Groups

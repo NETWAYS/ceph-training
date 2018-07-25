@@ -16,6 +16,11 @@
   * Pools
   * Placement Groups
 
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
+
+
 
 !SLIDE noprint
 # Components

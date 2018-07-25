@@ -250,7 +250,8 @@ deploy the monitor, admin and mgr nodes
 
     # ceph-deploy mon create-initial
     # ceph-deploy admin [$HOSTNAME]
-    # For Luminous only: ceph-deploy mgr [$HOSTNAME]
+    # ceph-deploy mgr [$HOSTNAME]
+Mgr only for Luminous! 
 ~~~SECTION:notes~~~
 For Luminous (may the Gods be with you) <br/>
 
@@ -285,6 +286,9 @@ Luminous: fallocate 10GB .img, loseteup it to loop0 device, mount it, mkf.xfs it
 May break!
 ~~~ENDSECTION~~~
 
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 !SLIDE small
 # Commands: Examine your Ceph Storage Cluster - 1

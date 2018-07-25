@@ -8,7 +8,7 @@ virt-install \
   --ram=1024 \
   --vcpus=2 \
   --accelerate \
-  --cdrom /tmp/debian-9.3.0-amd64-netinst.iso \
+  --cdrom /tmp/debian-netinst.iso \
   --os-type=linux \
   --os-variant=debian \
   --network=bridge=virbr0,model=virtio \

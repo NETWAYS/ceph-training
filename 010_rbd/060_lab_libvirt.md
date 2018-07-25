@@ -49,7 +49,7 @@ ovirt - http://paste.openstack.org/show/163327/
 
 download debian netinstaller
 
-    # wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso -O /tmp/debian-9.3.0-amd64-netinst.iso
+    # wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.5.0-amd64-netinst.iso -O /tmp/debian-netinst.iso
 
 start a VM with virt-install
 
@@ -57,7 +57,7 @@ start a VM with virt-install
     --disk path=/var/lib/libvirt/images/vmdeb.img,size=2 \
     --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type linux \
     --os-variant generic --accelerate --network=bridge:virbr0 \
-    --cdrom /tmp/debian-9.3.0-amd64-netinst.iso --vcpus=1 --hvm 
+    --cdrom /tmp/debian-netinst.iso --vcpus=1 --hvm 
 
 get VNC port
 
@@ -95,6 +95,9 @@ create an image within the pool
 
     # qemu-img create -f rbd rbd:libvirt/new-libvirt-image 2G
 
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 ~~~SECTION:notes~~~
 qemu-img uses admin keyring

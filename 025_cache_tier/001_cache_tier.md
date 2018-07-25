@@ -16,6 +16,10 @@
 * transparent to ceph-clients
 
 !SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
+
+!SLIDE noprint
 # Schema
 
 <center><img src="./_images/cache_tier.png" style="max-width:100%;height:auto;" alt="matrixofhell"/></center>

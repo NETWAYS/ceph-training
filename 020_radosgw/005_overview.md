@@ -19,6 +19,9 @@
 * Multi-site deployment
 * Disaster recovery
 
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 !SLIDE
 # Components

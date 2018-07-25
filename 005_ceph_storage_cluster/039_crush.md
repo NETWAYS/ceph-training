@@ -42,6 +42,8 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br/>
 ~~~ENDSECTION~~~
 
 !SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 !SLIDE lrbullets noprint
 # Write data
@@ -113,6 +115,9 @@ State changes on OSD failure
 * CRUSH respects the crushmap for data placement
 * part of clustermap
 
+!SLIDE noprint
+# Holistic
+<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
 
 !SLIDE smbullets
 # Crushmap - components
