@@ -11,9 +11,11 @@
 !SLIDE lrbullets
 # RADOS Gateway
 
-* Object Store
+* basically webserver
+* Object Store as backend
 * REST Interface
 * S3/SWIFT dialect
+* easy to integrate in applications, e.g. Nextcloud
 * Quota and Usage tracking
 * Auth and User management
 * Multi-site deployment
@@ -83,8 +85,8 @@ a single process ties together
 
 install and create an RGW
 
-    # ceph-deploy install --rgw radosgw-1
-    # ceph-deploy rgw create radosgw-1
+    $ ceph-deploy install --rgw $HOSTNAME
+    $ ceph-deploy rgw create $HOSTNAME
 
     # ceph osd lspools
 
@@ -92,25 +94,46 @@ create an S3 user
 
     # radosgw-admin user create --uid="training" \
       --display-name="Training User"
-
 review
 
-    http://radosgw-1:7480
-
-!SLIDE  smaller
-# S3 python example
-
-~~~FILE:share/s3_example.py~~~
-
-    # radosgw-admin bucket list --bucket=my-bucket
+    http://$HOSTNAME:7480
 
 !SLIDE small
-# S3 python example
+# Access your radosgw
 
-* get [s3_example.py](../file/_files/share/s3_example.py)
-* add credentials, host and a file and execute
-* install missing python module
+install s3cmd
 
-&nbsp;
+    # yum install -y s3cmd
 
-    # sudo yum/apt-get install python-boto
+configure s3cmd
+   
+    $ s3cmd --configure
+
+add access_key, secret_key, host_base including port (default: 443)
+
+create a bucket
+   
+    $ s3cmd mb s3://$HOSTNAME
+
+put file into it as object
+   
+    $ s3cmd put $file_name s3://$bucket/$object_name
+
+review your bucket
+   
+    § s3cmd ls s3://$bucket
+
+!SLIDE small
+# Add your radosgw to the dashboard
+
+create a system user
+
+    # radosgw-admin user create --uid=<user_id> --display-name=<name> --system
+
+provide credentials 
+
+    # ceph dashboard set-rgw-api-access-key <access_key><br/>
+    # ceph dashboard set-rgw-api-secret-key <secret_key>
+
+go have a look!
+  

@@ -1316,12 +1316,13 @@ rbd_default_features = 1
 
 <pre><code># ceph-deploy mon create-initial
 # ceph-deploy admin [$HOSTNAME]
-# For Luminous only: ceph-deploy mgr [$HOSTNAME]
+# ceph-deploy mgr [$HOSTNAME]
 </code></pre>
 
+<p>Mgr only for Luminous! 
+</p>
 <div class="notes">
-<p>
-For Luminous (may the Gods be with you) <br></p>
+For Luminous (may the Gods be with you) <br>
 
 <p>ceph-deploy install training-0xx [training-0xy] --repo-url=<a href="http://download.ceph.com/rpm-luminous/el7">http://download.ceph.com/rpm-luminous/el7</a> --gpg-url=<a href="https://download.ceph.com/keys/release.asc">https://download.ceph.com/keys/release.asc</a>
 <br></p>
@@ -3525,7 +3526,7 @@ ovirt - <a href="http://paste.openstack.org/show/163327/">http://paste.openstack
 
 <p>download debian netinstaller</p>
 
-<pre><code># wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso -O /tmp/debian-9.3.0-amd64-netinst.iso
+<pre><code># wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.5.0-amd64-netinst.iso -O /tmp/debian-netinst.iso
 </code></pre>
 
 <p>start a VM with virt-install</p>
@@ -3534,7 +3535,7 @@ ovirt - <a href="http://paste.openstack.org/show/163327/">http://paste.openstack
 --disk path=/var/lib/libvirt/images/vmdeb.img,size=2 \
 --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type linux \
 --os-variant generic --accelerate --network=bridge:virbr0 \
---cdrom /tmp/debian-9.3.0-amd64-netinst.iso --vcpus=1 --hvm 
+--cdrom /tmp/debian-netinst.iso --vcpus=1 --hvm 
 </code></pre>
 
 <p>get VNC port</p>
@@ -3600,10 +3601,6 @@ VNC Viewer e.g. remmina, default port 5900, Ctrl+Alt uncaptures mouse
 
 <pre><code># qemu-img create -f rbd rbd:libvirt/new-libvirt-image 2G
 </code></pre>
-
-<div class="notes"><p>
-qemu-img uses admin keyring
-</p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -3697,7 +3694,7 @@ virt-install \
   --ram=1024 \
   --vcpus=2 \
   --accelerate \
-  --cdrom /tmp/debian-9.3.0-amd64-netinst.iso \
+  --cdrom /tmp/debian-netinst.iso \
   --os-type=linux \
   --os-variant=debian \
   --network=bridge=virbr0,model=virtio \

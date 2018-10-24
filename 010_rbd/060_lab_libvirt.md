@@ -33,7 +33,7 @@ enable ip_forward
 
     # echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/99-forward.conf
     # sysctl -p /etc/sysctl.d/99-forward.conf
-    # net.ipv4.ip_forward = 1
+    net.ipv4.ip_forward = 1
 
 test virsh
 
@@ -53,7 +53,7 @@ download debian netinstaller
 
 start a VM with virt-install
 
-    # sudo virt-install --connect qemu:///system -n vmdeb -r 512 \
+    # virt-install --connect qemu:///system -n vmdeb -r 512 \
     --disk path=/var/lib/libvirt/images/vmdeb.img,size=2 \
     --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type linux \
     --os-variant generic --accelerate --network=bridge:virbr0 \
@@ -61,11 +61,17 @@ start a VM with virt-install
 
 get VNC port
 
-    # sudo virsh vncdisplay vmdeb
+    # virsh vncdisplay vmdeb
     
 
 ~~~SECTION:notes~~~
-VNC Viewer e.g. remmina, default port 5900, Ctrl+Alt uncaptures mouse
+VNC Viewer e.g. remmina, default port 5900, Ctrl+Alt uncaptures mouse<br\>
+if using vinagre F10<br\>
+get rid of VM via<br\>
+virsh list<br\>
+virsh shutdown <index><br\>
+virsh undefine <index><br\>
+virsh destroy <index><br\>
 ~~~ENDSECTION~~~
 
 !SLIDE small
@@ -156,7 +162,7 @@ set the libvirt ceph client key to our new libvirt secret
 
 <br/>
 
-adapt [disk.xml](../file/_files/share/disk.xml) to your host name and libvirt secret 
+adapt [disk.xml](../file/_files/share/disk.xml) to your host name. pool/image name  and libvirt secret 
 
 ~~~FILE:share/disk.xml~~~
 

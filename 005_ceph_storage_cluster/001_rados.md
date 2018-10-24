@@ -69,7 +69,6 @@ no SPoF correct for RADOS,RBD and RADOSGW BUT not CephFS (mds)<br/>
 
 !SLIDE smbullets
 # RADOS Components
-<br/>
 
 * Object Storage Daemons (OSDs)
  * essentially represent a disk

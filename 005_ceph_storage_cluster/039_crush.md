@@ -83,7 +83,7 @@ Stress Network FrontEnd and Backend again<br/>
 
 ~~~SECTION:notes~~~
 Example aims at one PG<br/>
-blacke Line: cimmunicating OSDs, because they share PGs<br/>
+blacke Line: communicating OSDs, because they share PGs<br/>
 red Line: OSDs report faulty OSDs<br/>
 monitors double-check and remove reported OSDs<br/>
 clients: send Requests against new primary<br/>
@@ -104,9 +104,23 @@ each OSD can be in the state
 * up or down
  * describes the connectivity
 
+!SLIDE small
+# OSD failure and states ctd.
+
+Examples:<br/>
+ cluster [INF] osd.52 10.XX.XX.XX:6804/3870 failed (2 reporters from different host after 23.000484 >= grace 20.000000)<br/>
+ heartbeat_check: no reply from 10.XX.XX.XX:6811 osd.52<br/>
+
+however:<br/>
+   osd.52 10.XX.XX.XX:6804/3870 5151 : cluster [WRN] map e4406229 wrongly marked me down<br/>
+
+but:<br/>
+[1 Geisterfahrer? Hundreds!] (../file/_files/share/heartbeat.log)
+
+
 State changes on OSD failure
 
-`in+up => in+down => out+down`
+in+up => in+down => out+down
 
 
 !SLIDE

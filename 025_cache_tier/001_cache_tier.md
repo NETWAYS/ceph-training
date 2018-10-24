@@ -4,6 +4,8 @@
 !SLIDE noprint smbullets
 # Objectives
 
+For educational purposes only, use SSD instead
+
 * after this section you will know
  * the structure of ceph cache tiers
  * the benefits and disadvantages

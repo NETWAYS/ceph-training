@@ -24,4 +24,4 @@ https://www.sebastien-han.fr/blog/2012/12/03/ceph-and-mds/
 * POSIX compatible filesystem
 * shared filesystem
 * stable since Jewel release (April 2016)
-* be cautious with snapshotting
+* be cautious with snapshotting (still valid with Mimic)

@@ -13,7 +13,7 @@
 !SLIDE printonly
 # cluster performance metrics
 
-`ceph status -f json{-pretty}`
+    # ceph status -f json{-pretty}
 
 
 <center><img src="./_images/ceph_performance_rotated.png" style="height:500px;" alt="cephfs performance"/></center>
@@ -21,14 +21,14 @@
 !SLIDE noprint
 # PGs state
 
-`ceph status -f json`
+    # ceph status -f json
 
 <center><img src="./_images/pg_states.png" style="max-width:100%;height:auto;" alt="ceph PG"/></center>
 
 !SLIDE printonly
 # PGs state
 
-`ceph status -f json`
+    # ceph status -f json
 
 <center><img src="./_images/pg_states_rotated.png" style="max-width:100%;height:640px;" alt="ceph PG"/></center>
 

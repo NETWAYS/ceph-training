@@ -298,6 +298,7 @@ changes regarding
    * Filesystem
    * compression and checksums
    * migration
+* meanwhile Mimic with improved Tagging and Dashboard
 
 
 !SLIDE small
@@ -306,7 +307,13 @@ changes regarding
   * ceph mgr takes load off of mon
   * ceph-deploy has different options
   * great performance gains especially in huge environments
+  * plugin support improved
   * https://ceph.com/releases/v12-2-0-luminous-released/
+
+~~~SECTION:notes~~~
+ceph mgr module ls
+
+~~~ENDSECTION~~~
 
 !SLIDE small
 # Luminous - OSD
@@ -393,4 +400,37 @@ When disks fail, or if an admnistrator wants to reprovision OSDs with a new back
 
  
 
+!SLIDE small
+# Dashboard - Overview
+  
+  * basically a plugin
+  * Mimic: huge influence by openATTIC
+  * overall cluster health
+  * performance counter
+
+
+!SLIDE small
+# Dashboard - setup
+
+enable plugin
+  
+  # ceph mgr module enable dashboard
+
+create certificate
+
+  # ceph dashboard create-self-signed-cert
+
+create an admistrative user for login
+
+  # ceph dashboard ac-user-create <username> <password> administrator
+
+restart dashboard for mgr respawn
+
+  # ceph mgr module disable dashboard && ceph mgr module enable dashboard
+
+login
+   
+  https://$mgr-node:8443
+
+more: http://docs.ceph.com/docs/master/mgr/dashboard/
 

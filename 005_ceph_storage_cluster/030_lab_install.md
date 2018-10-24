@@ -50,7 +50,7 @@ puppet, chef, ansible, whatever
 ~~~SECTION:notes~~~
 every laptop is Adminnode<br/>
 for this we need a common Keyring<br/>
-if applicable: participants provision neghbour's node<br/>
+if applicable: participants provision neighbour's node<br/>
 ~~~ENDSECTION~~~
 
 !SLIDE smbullets
@@ -92,22 +92,24 @@ allow passwordless sudo
 
 disable requiretty for ssh logins (!requiretty)
 
-    # sudo visudo 
+    # visudo 
 
 adjust/disable firewall
 
-    # sudo systemctl stop firewalld.service
-    # sudo systemctl disable firewalld.service
+    # systemctl stop firewalld.service
+    # systemctl disable firewalld.service
 
 adjust/disable SELinux/AppArmor
 
-    # sudo vim /etc/sysconfig/selinux
+    # setenforce 0
 
 ~~~SECTION:notes~~~
+not needed in Netways Ecosphere:<br/>
 sudo rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm<br/>
 sudo yum --enablerepo=elrepo-kernel install kernel-ml<br/>
-
-//sudo yum install yum-plugin-priorities --enablerepo=rhel-7-server-optional-rpms
+sudo yum install yum-plugin-priorities --enablerepo=rhel-7-server-optional-rpms<br/>
+passwordless sudo/disable requiretty<br/>
+Absolutely disable firewall!
 ~~~ENDSECTION~~~
 
 !SLIDE small
@@ -117,12 +119,12 @@ sudo yum --enablerepo=elrepo-kernel install kernel-ml<br/>
 
 push the config to the storage nodes
 
-    # ceph-deploy config push node-{1,2,3,4,5}
+    $ ceph-deploy config push node-{1,2,3,4,5}
 
 list and zap disks
 
-    # ceph-deploy disk list <node>
-    # ceph-deploy disk zap <node>:<device>
+    $ ceph-deploy disk list <node>
+    $ ceph-deploy disk zap <node>:<device>
      
 
 !SLIDE small
@@ -133,20 +135,23 @@ list and zap disks
 
 prepare OSDs
 
-    # ceph-deploy osd prepare <node>:sdb:/dev/ssd
-    # ceph-deploy osd prepare <node>:sdc:/dev/ssd
+    $ ceph-deploy osd prepare <node>:sdb:/dev/ssd
+    $ ceph-deploy osd prepare <node>:sdc:/dev/ssd
 
 activate OSDs (maybe udev handles this automatically)
 
-    # ceph-deploy osd activate <node>:/dev/sdb1:/dev/ssd1
-    # ceph-deploy osd activate <node>:/dev/sdc1:/dev/ssd2
+    $ ceph-deploy osd activate <node>:/dev/sdb1:/dev/ssd1
+    $ ceph-deploy osd activate <node>:/dev/sdc1:/dev/ssd2
 
 or create (prepare+activate)
 
-    # ceph-deploy osd create <node>:sdb:/dev/ssd1
-    # ceph-deploy osd create <node>:sdc:/dev/ssd2
+    $ ceph-deploy osd create <node>:sdb:/dev/ssd1
+    $ ceph-deploy osd create <node>:sdc:/dev/ssd2
 
-
+swift and easy:
+   
+    $ ceph-deploy osd create --data /dev/sdX $hostname
+    
 !SLIDE smbullets small
 # Tasks: Steps - prepare admin node
 
@@ -170,14 +175,14 @@ or create (prepare+activate)
 
 create a password-less key pair only on the admin machine and copy the pub key to the previously prepared nodes
 
-    # ssh-keygen
-    # ssh-copy-id training@training-0xx
+    $ ssh-keygen
+    $ ssh-copy-id training@training-0xx
 
-<br/><br/>
+<br/>
 
 create .ssh/config for easier deployment 
 
-    # cat .ssh/config
+    $ cat .ssh/config
     Host training-*
      User training
 
@@ -195,30 +200,34 @@ Install ceph-deploy on your machine
 
 Create ceph-deploy.repo
 <br/><br/>
-   # cat /etc/yum.repos.d/ceph-deploy.repo
-   
-  [ceph-noarch] <br/>
-  name=Ceph noarch packages <br/>
-  baseurl=http://download.ceph.com/rpm-luminous/el7/noarch <br/>
-  enabled=1 <br/>
-  gpgcheck=1 <br/>
-  type=rpm-md <br/>
-  gpgkey=https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc<br/>
 
- # sudo yum update && sudo yum install ceph-deploy-1.5.39-0.noarch
+    # cat << EOM > /etc/yum.repos.d/ceph-deploy.repo<br/>
+      [ceph-noarch]<br/>
+      name=Ceph noarch packages<br/>
+      baseurl=https://download.ceph.com/rpm-mimic/el7/noarch<br/>
+      enabled=1<br/>
+      gpgcheck=1<br/>
+      type=rpm-md<br/>
+      gpgkey=https://download.ceph.com/keys/release.asc<br/>
+      EOM<br/>
 
+    # yum update -y && yum install ntp ntpdate ntp-doc ceph-deploy screen -y
+
+~~~SECTION:notes~~~
+swift check with 'yum provides ceph-deploy'
+~~~ENDSECTION~~~
 
 !SLIDE small
 # Lab: Steps - deploy the cluster - 1
 
 generate default config and monitor keyring
 
-    # mkdir my-cluster; cd my-cluster
-    # ceph-deploy new training-0xx [training-0xy]
+    $ mkdir my-cluster; cd my-cluster
+    $ ceph-deploy new training-0xx [training-0xy]
 
 set public and cluster network
     
-    # vim ceph.conf
+    $ vim ceph.conf
     ...
     [global]
     mon_host: $localIP
@@ -227,14 +236,14 @@ set public and cluster network
     rbd_default_features = 1
     ...
 
+reset clusterid/fsid (just in the LAB!)
+
+    fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
+
 ---
 
 overwrite [ceph.mon.keyring](../file/_files/share/ceph.mon.keyring) (just in the LAB!)
 
-
-reset clusterid/fsid (just in the LAB!)
-
-    # fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
 
 !SLIDE small
 # Lab: Steps - deploy the cluster - 2
@@ -242,48 +251,82 @@ reset clusterid/fsid (just in the LAB!)
 
 install ceph on your other nodes
 
-    # ceph-deploy install training-0xx [training-0xy]
+    $ ceph-deploy install training-0xx [training-0xy]
 
 <br/>
 
 deploy the monitor, admin and mgr nodes
 
-    # ceph-deploy mon create-initial
-    # ceph-deploy admin [$HOSTNAME]
-    # ceph-deploy mgr [$HOSTNAME]
-Mgr only for Luminous! 
+    $ ceph-deploy mon create-initial
+    $ ceph-deploy admin [$HOSTNAME]
+    $ ceph-deploy mgr [$HOSTNAME]
+ 
 ~~~SECTION:notes~~~
-For Luminous (may the Gods be with you) <br/>
-
-ceph-deploy install training-0xx [training-0xy] --repo-url=http://download.ceph.com/rpm-luminous/el7 --gpg-url=https://download.ceph.com/keys/release.asc
-<br/>
-
-ceph-deploy gatherkeys monhost <br/>
-
-ceph-deploy admin monhost <br/>
 
 ~~~ENDSECTION~~~
 
 !SLIDE small
 # Lab: Steps - deploy the cluster - 3
-<br/><br/>
+<br/>
 On all nodes!
 
-create OSD directory (just in the lab! Use block devices in a real setup)
+create OSD directory (just in the lab! Use "real" block devices in a real setup)
+    
+    $ mkdir -p ~/my-cluster/osd-$HOSTNAME
 
-    # sudo mkdir /var/local/osd-$HOSTNAME
-    # sudo chown ceph. /var/local/osd-$HOSTNAME
+create a file for later use
+    
+    $ fallocate -l 30G 30GB.img
 
+test it 
+
+    # losetup -l -P /dev/loop1 "/home/training/my-cluster/osd-$HOSTNAME/30GB.img"
+    # wipefs -a /dev/loop1
+    # lsblk
+
+!SLIDE small
+# Lab: Steps - deploy the cluster - 4
+<br/>
+make it reboot safe via [rebloop.sh](../file/_files/share/rebloop.sh) and [rebloop.service](../file/_files/share/rebloop.service)
+    
+    # chmod +x rebloop.*
+    # cp rebloop.sh /usr/bin/rebloop.sh
+    # cp rebloop.service /etc/systemd/system
+    # systemctl enable rebloop.service
+    # systemctl start rebloop.service
+
+replace cephs original disk.py with the modified [disk.py](../file/_files/share/disk.py)
+    
+    # cp disk.py /usr/lib/python2.7/site-packages/ceph_volume/util/disk.py
+
+~~~SECTION:notes~~~
+you may want to use /etc/rc.local instead
+~~~ENDSECTION~~~
+
+!SLIDE small
+# Lab: Steps - deploy the cluster - 4
 <br/>
 
 deploy OSDs
 
-    # ceph-deploy osd prepare training-$ID:/var/local/osd-$HOSTNAME
-    # ceph-deploy osd activate training-$ID:/var/local/osd-$HOSTNAME
-~~~SECTION:notes~~~
-Luminous: fallocate 10GB .img, loseteup it to loop0 device, mount it, mkf.xfs it, unmount it and try to deploy osd there <br/>
+    $ ceph-deploy osd create --data /dev/loop1 $HOSTNAME
 
-May break!
+create your first pool
+     
+    # ceph osd pool create rbd 100 100 replicated
+
+examine ceph status
+    
+    # ceph status
+
+tag the pool with an application
+
+    # ceph osd pool application enable rbd rbd      
+
+   
+~~~SECTION:notes~~~
+rbd pool init <poolname> might work as well<br/>
+Tagging's not necessary yet. Meant to prevent confusion within the admins.
 ~~~ENDSECTION~~~
 
 !SLIDE noprint

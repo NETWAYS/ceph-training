@@ -1,0 +1,9 @@
+[Unit]
+Description=Reattach loop device after reboot
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/rebloop.sh
+
+[Install]
+WantedBy=multi-user.target

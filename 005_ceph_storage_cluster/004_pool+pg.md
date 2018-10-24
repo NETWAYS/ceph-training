@@ -25,6 +25,7 @@ show pools
 create a pool
     
     # ceph osd pool create <name> <pg-num>
+    # sudo ceph osd pool application enable <name> <app>
 
 show pool usage
 
@@ -36,7 +37,7 @@ delete pool
 
 
 ~~~SECTION:notes~~~
-"#" indicates a CLI command, above is a short explanation
+"#" indicates a CLI command, executed with elevated rights,  above is a short explanation
 ~~~ENDSECTION~~~
 
 
@@ -59,7 +60,7 @@ set attributes
 
 
 ~~~SECTION:notes~~~
-"#" indicates a CLI command, above is a short explanation
+"#" indicates a CLI command, executed with elevated rights, above is a short explanation
 ~~~ENDSECTION~~~
 
 !SLIDE noprint
@@ -71,10 +72,9 @@ set attributes
 <center><img src="./_images/pg.png" style="max-width:100%;height:auto;" alt="pg"/></center>
 
 * logical collection of objects 
-* Pools have many PGs
+* Pools have many PGs, OSDs get mapped to them
 * Number of PGs is specified at creation time
 * Number of PGs/OSD depends on number and size of OSDs
-* OSDs get mapped to PGs
 
 ~~~SECTION:notes~~~
 ~~~ENDSECTION~~~

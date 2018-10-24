@@ -19,12 +19,15 @@
 * 2012: First stable release and foundation of InkTank
 * 2014: Takeover by RedHat
 * 2016, April: Jewel is released with CephFS marked as stable
-* 2017, January: Kraken is released with experimental BlueStore
 * 2017, August: Luminous released with ceph-mgr
+* 2018, May: Mimic released with new release cycle
 
 ~~~SECTION:notes~~~
 funded by the United States Department of Energy and National Nuclear Security Administration
-also funded by Canonical
+also funded by Canonical <br/>
+new cycle since Mimic: LTS every 9 Months, before: every second release was LTS/stable<br/>
+taken initially from https://metrics.ceph.com/scm.html, <br/>
+now http://stackalytics.com/?release=all&project_type=ceph-group&metric=loc can be an alternative
 ~~~ENDSECTION~~~
 
 

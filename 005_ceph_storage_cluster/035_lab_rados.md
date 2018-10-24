@@ -58,5 +58,4 @@ retrieve file of your neighbour
 
  # rados -p $pool get $otherhostnametest \ $otherhostname.file
 
-find object on your OSD
 
