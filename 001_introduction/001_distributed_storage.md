@@ -165,9 +165,9 @@ Examples: S3, RADOS, Swift<br/>
 ~~~ENDSECTION~~~
 
 !SLIDE printonly
-# network, replicated,distributed, high-available
+# network, replicated, distributed, high-available
 <br/>
-<center><img src="./_images/storage_5_rotated.png" style="max-width:100%;height:auto" alt="ceph"/></center>
+<center><img src="./_images/storage_5_rotated.png" style="max-width:100%;height:500px" alt="ceph"/></center>
 
 ~~~SECTION:notes~~~
 stress that Ceph offers all three kinds of Storage.

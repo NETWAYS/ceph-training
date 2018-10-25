@@ -400,9 +400,19 @@ When disks fail, or if an admnistrator wants to reprovision OSDs with a new back
 
  
 
-!SLIDE small
+!SLIDE small noprint
 # Dashboard - Overview
-  
+
+<center><img src="./_images/ceph_dashboard_overview.png" style="max-width:100%;height:auto" alt="dashb_ov"/></center>
+
+!SLIDE small printonly
+
+# Dashboard - Overview
+<center><img src="./_images/ceph_dashboard_overview_rotated.png" style="max-width:100%;height:550px" alt="dashb_ov"/></center>
+
+!SLIDE small
+# Dashboard - Overview ctd
+
   * basically a plugin
   * Mimic: huge influence by openATTIC
   * overall cluster health
@@ -414,23 +424,24 @@ When disks fail, or if an admnistrator wants to reprovision OSDs with a new back
 
 enable plugin
   
-  # ceph mgr module enable dashboard
+    # ceph mgr module enable dashboard
 
 create certificate
 
-  # ceph dashboard create-self-signed-cert
+    # ceph dashboard create-self-signed-cert
 
 create an admistrative user for login
 
-  # ceph dashboard ac-user-create <username> <password> administrator
+    # ceph dashboard ac-user-create <username> <password> administrator
 
 restart dashboard for mgr respawn
 
-  # ceph mgr module disable dashboard && ceph mgr module enable dashboard
+    # ceph mgr module disable dashboard
+    # ceph mgr module enable dashboard
 
 login
    
-  https://$mgr-node:8443
+    https://$mgr-node:8443
 
 more: http://docs.ceph.com/docs/master/mgr/dashboard/
 

@@ -36,29 +36,33 @@ now http://stackalytics.com/?release=all&project_type=ceph-group&metric=loc can 
 
 <center><img src="./_images/ceph_project/ceph_status_issues.png" style="max-width:100%;height:auto;" alt="Tickets - https://metrics.ceph.com/"/></center>
 
----
+!SLIDE noprint
+# Ceph in numbers ctd.
 
-<center><img src="./_images/ceph_project/ceph_pkg_dls.png" style="max-width:100%;height:auto;" alt="Messages - https://metrics.ceph.com/"/></center>
+<center><img src="./_images/ceph_project/ceph_pkg_dls.png" style="max-width:100%;height:auto;" alt="Downloads - https://metrics.ceph.com/"/></center>
 
 <center>https://metrics.ceph.com/</center>
 
 !SLIDE printonly
 # Ceph in numbers
 
-<center><img src="./_images/ceph_project/ceph_status_issues_rotated.png" style="max-width:100%;height:auto" alt="Authors - https://metrics.ceph.com/"/>
-<img src="./_images/ceph_project/ceph_pkg_dls_rotated.png" style="max-width:100%;height:auto" alt="Tickets - https://metrics.ceph.com/"/>
+<center><img src="./_images/ceph_project/ceph_status_issues_rotated.png" style="max-width:100%;height:500px" alt="Tickets - https://metrics.ceph.com/"/>
+
+!SLIDE printonly
+# Ceph in numbers ctd.
+<img src="./_images/ceph_project/ceph_pkg_dls_rotated.png" style="max-width:100%;height:auto" alt="Downloads - https://metrics.ceph.com/"/>
 
 <center>https://metrics.ceph.com/</center>
 
 !SLIDE noprint
 # Who is Ceph?
-<center><img src="./_images/ceph_project/ceph_organizations.png" style="max-width:100%;height:auto;" alt="Issues by Company - https://metrics.ceph.com/"/></center>
+<center><img src="./_images/ceph_project/ceph_organizations.png" style="max-width:100%;height:auto;" alt="Authors - https://metrics.ceph.com/"/></center>
 
 <center>https://metrics.ceph.com/</center>
 
 !SLIDE printonly
 # Who is Ceph?
-<center><img src="./_images/ceph_project/ceph_organizations.png" style="height:540px;" alt="Issues by Company - https://metrics.ceph.com/"/></center>
+<center><img src="./_images/ceph_project/ceph_organizations.png" style="height:540px;" alt="Authors - https://metrics.ceph.com/"/></center>
 
 <center>https://metrics.ceph.com/</center>
 

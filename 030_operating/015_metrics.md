@@ -30,7 +30,7 @@
 
     # ceph status -f json
 
-<center><img src="./_images/pg_states_rotated.png" style="max-width:100%;height:640px;" alt="ceph PG"/></center>
+<center><img src="./_images/pg_states_rotated.png" style="max-width:100%;height:520px;" alt="ceph PG"/></center>
 
 !SLIDE noprint
 # OSD performance
@@ -43,7 +43,7 @@ disk timings
 # OSD performance
 disk timings
 
-<center><img src="./_images/disk_timings_rotated.png" style="max-width:100%;height:640px;" alt="timings"/></center>
+<center><img src="./_images/disk_timings_rotated.png" style="max-width:100%;height:520px;" alt="timings"/></center>
 
 !SLIDE noprint 
 # OSD usage
@@ -57,7 +57,7 @@ disk usage
 
 disk usage
 
-<center><img src="./_images/osd_usage_rotated.png" style="max-width:100%;height:640px;" alt="usage"/></center>
+<center><img src="./_images/osd_usage_rotated.png" style="max-width:100%;height:520px;" alt="usage"/></center>
 
 !SLIDE
 # cluster usage

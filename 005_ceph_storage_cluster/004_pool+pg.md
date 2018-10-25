@@ -104,7 +104,7 @@ Info for one PG: ceph pg 4.0 query<br/>
 
 !SLIDE smbullets printonly
 # Pools, PGs and OSDs 
-<center><img src="./_images/pool-pg-osd_rotated.png" style="max-width:100%;height:640px" alt="osd"/></center>
+<center><img src="./_images/pool-pg-osd_rotated.png" style="max-width:100%;height:550px" alt="osd"/></center>
 
 !SLIDE smbullets noprint
 # Lunch?! smoking break?!

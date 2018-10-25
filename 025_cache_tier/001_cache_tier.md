@@ -28,7 +28,7 @@ For educational purposes only, use SSD instead
 
 !SLIDE smbullets printonly
 # Schema 
-<center><img src="./_images/cache_tier_rotated.png" style="max-width:100%;height:640px;"  alt="matrixofhell"/></center>
+<center><img src="./_images/cache_tier_rotated.png" style="max-width:100%;height:550px;"  alt="matrixofhell"/></center>
 
 
 

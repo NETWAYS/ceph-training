@@ -33,7 +33,7 @@ enable ip_forward
 
     # echo "net.ipv4.ip_forward=1" > /etc/sysctl.d/99-forward.conf
     # sysctl -p /etc/sysctl.d/99-forward.conf
-    net.ipv4.ip_forward = 1
+      net.ipv4.ip_forward = 1
 
 test virsh
 

@@ -64,7 +64,7 @@
     <div class="title-logo"></div>
     <div class="title-name">
 <p>Ceph</p>
-    <div class="title-release">Version: v0.9</div>
+    <div class="title-release">Version: v1.2</div>
     <div class="title-footer">We love Open Source</div>
     </div>
 </div>
@@ -360,11 +360,11 @@ Examples: S3, RADOS, Swift<br>
     <div class="logo"></div>
 </div>
 
-<h1>network, replicated,distributed, high-available</h1>
+<h1>network, replicated, distributed, high-available</h1>
 
 <p><br>
 </p>
-<center><img src="./file/001_introduction//./_images/storage_5_rotated.png" style="max-width:100%;height:auto" alt="ceph"></center>
+<center><img src="./file/001_introduction//./_images/storage_5_rotated.png" style="max-width:100%;height:500px" alt="ceph"></center>
 
 <div class="notes"><p>
 stress that Ceph offers all three kinds of Storage.
@@ -419,13 +419,16 @@ stress that Ceph offers all three kinds of Storage.
 <li>2012: First stable release and foundation of InkTank</li>
 <li>2014: Takeover by RedHat</li>
 <li>2016, April: Jewel is released with CephFS marked as stable</li>
-<li>2017, January: Kraken is released with experimental BlueStore</li>
 <li>2017, August: Luminous released with ceph-mgr</li>
+<li>2018, May: Mimic released with new release cycle</li>
 </ul>
 
 <div class="notes"><p>
 funded by the United States Department of Energy and National Nuclear Security Administration
-also funded by Canonical
+also funded by Canonical <br>
+new cycle since Mimic: LTS every 9 Months, before: every second release was LTS/stable<br>
+taken initially from <a href="https://metrics.ceph.com/scm.html">https://metrics.ceph.com/scm.html</a>, <br>
+now <a href="http://stackalytics.com/?release=all&amp;project_type=ceph-group&amp;metric=loc">http://stackalytics.com/?release=all&amp;project_type=ceph-group&amp;metric=loc</a> can be an alternative
 </p></div>
 
 <div id="net-footer">
@@ -445,11 +448,7 @@ also funded by Canonical
 
 <p></p>
 <center>
-<img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_status_issues_rotated.png" style="max-width:100%;height:auto" alt="Authors - https://metrics.ceph.com/">
-<img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_pkg_dls_rotated.png" style="max-width:100%;height:auto" alt="Tickets - https://metrics.ceph.com/">
-
-<p></p>
-<center><a href="https://metrics.ceph.com/">https://metrics.ceph.com/</a></center>
+<img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_status_issues_rotated.png" style="max-width:100%;height:500px" alt="Tickets - https://metrics.ceph.com/">
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -465,10 +464,30 @@ also funded by Canonical
     <div class="logo"></div>
 </div>
 
+<h1>Ceph in numbers ctd.</h1>
+
+<p><img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_pkg_dls_rotated.png" style="max-width:100%;height:auto" alt="Downloads - https://metrics.ceph.com/"></p>
+
+<p></p>
+<center><a href="https://metrics.ceph.com/">https://metrics.ceph.com/</a></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__001_history" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="005_ceph_storage_cluster//001_history/5">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
 <h1>Who is Ceph?</h1>
 
 <p></p>
-<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_organizations.png" style="height:540px;" alt="Issues by Company - https://metrics.ceph.com/"></center>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_project/ceph_organizations.png" style="height:540px;" alt="Authors - https://metrics.ceph.com/"></center>
 
 <p></p>
 <center><a href="https://metrics.ceph.com/">https://metrics.ceph.com/</a></center>
@@ -588,8 +607,6 @@ no SPoF correct for RADOS,RBD and RADOSGW BUT not CephFS (mds)<br>
 
 <h1>RADOS Components</h1>
 
-<p><br></p>
-
 <ul>
 <li>
 <p>Object Storage Daemons (OSDs)</p>
@@ -654,16 +671,14 @@ pgs: logical abstraction layer, needed for calculation of data placement
 <li>replication and recovery</li>
 </ul>
 
-<div class="notes">
-<p>
+<div class="notes"><p>
 xfs: in production <br>
 btrfs: would be better <br>
 non-fs backend like leveldb are experimental at the moment (Jewel) <br>
-Journal on SSDs or NVRAM <br></p>
-
-<p>communicate with each other and report unreachable OSD to MONs<br>
-</p>
-</div>
+Journal on SSDs or NVRAM <br>
+Luminous+: bluestore as file storage<br> 
+communicate with each other and report unreachable OSD to MONs<br>
+</p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -776,6 +791,7 @@ check as unreachable reported OSDs and change Clustermap accordingly<br>
 <p>create a pool</p>
 
 <pre><code># ceph osd pool create &lt;name&gt; &lt;pg-num&gt;
+# sudo ceph osd pool application enable &lt;name&gt; &lt;app&gt;
 </code></pre>
 
 <p>show pool usage</p>
@@ -789,7 +805,7 @@ check as unreachable reported OSDs and change Clustermap accordingly<br>
 </code></pre>
 
 <div class="notes"><p>
-"#" indicates a CLI command, above is a short explanation
+"#" indicates a CLI command, executed with elevated rights,  above is a short explanation
 </p></div>
 
 <div id="net-footer">
@@ -824,7 +840,7 @@ check as unreachable reported OSDs and change Clustermap accordingly<br>
 </code></pre>
 
 <div class="notes"><p>
-"#" indicates a CLI command, above is a short explanation
+"#" indicates a CLI command, executed with elevated rights, above is a short explanation
 </p></div>
 
 <div id="net-footer">
@@ -847,10 +863,9 @@ check as unreachable reported OSDs and change Clustermap accordingly<br>
 
 <ul>
 <li>logical collection of objects </li>
-<li>Pools have many PGs</li>
+<li>Pools have many PGs, OSDs get mapped to them</li>
 <li>Number of PGs is specified at creation time</li>
 <li>Number of PGs/OSD depends on number and size of OSDs</li>
-<li>OSDs get mapped to PGs</li>
 </ul>
 
 <div class="notes"><p>
@@ -897,7 +912,7 @@ check as unreachable reported OSDs and change Clustermap accordingly<br>
 <h1>Pools, PGs and OSDs</h1>
 
 <p></p>
-<center><img src="./file/005_ceph_storage_cluster//./_images/pool-pg-osd_rotated.png" style="max-width:100%;height:640px" alt="osd"></center>
+<center><img src="./file/005_ceph_storage_cluster//./_images/pool-pg-osd_rotated.png" style="max-width:100%;height:550px" alt="osd"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -969,7 +984,7 @@ check as unreachable reported OSDs and change Clustermap accordingly<br>
 <div class="notes"><p>
 every laptop is Adminnode<br>
 for this we need a common Keyring<br>
-if applicable: participants provision neghbour's node<br>
+if applicable: participants provision neighbour's node<br>
 </p></div>
 
 <div id="net-footer">
@@ -1053,28 +1068,28 @@ if applicable: participants provision neghbour's node<br>
 
 <p>disable requiretty for ssh logins (!requiretty)</p>
 
-<pre><code># sudo visudo 
+<pre><code># visudo 
 </code></pre>
 
 <p>adjust/disable firewall</p>
 
-<pre><code># sudo systemctl stop firewalld.service
-# sudo systemctl disable firewalld.service
+<pre><code># systemctl stop firewalld.service
+# systemctl disable firewalld.service
 </code></pre>
 
 <p>adjust/disable SELinux/AppArmor</p>
 
-<pre><code># sudo vim /etc/sysconfig/selinux
+<pre><code># setenforce 0
 </code></pre>
 
-<div class="notes">
-<p>
+<div class="notes"><p>
+not needed in Netways Ecosphere:<br>
 sudo rpm -Uvh <a href="http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm">http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm</a><br>
-sudo yum --enablerepo=elrepo-kernel install kernel-ml<br></p>
-
-<p>//sudo yum install yum-plugin-priorities --enablerepo=rhel-7-server-optional-rpms
-</p>
-</div>
+sudo yum --enablerepo=elrepo-kernel install kernel-ml<br>
+sudo yum install yum-plugin-priorities --enablerepo=rhel-7-server-optional-rpms<br>
+passwordless sudo/disable requiretty<br>
+Absolutely disable firewall!
+</p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1095,13 +1110,13 @@ sudo yum --enablerepo=elrepo-kernel install kernel-ml<br></p>
 
 <p>push the config to the storage nodes</p>
 
-<pre><code># ceph-deploy config push node-{1,2,3,4,5}
+<pre><code>$ ceph-deploy config push node-{1,2,3,4,5}
 </code></pre>
 
 <p>list and zap disks</p>
 
-<pre><code># ceph-deploy disk list &lt;node&gt;
-# ceph-deploy disk zap &lt;node&gt;:&lt;device&gt;
+<pre><code>$ ceph-deploy disk list &lt;node&gt;
+$ ceph-deploy disk zap &lt;node&gt;:&lt;device&gt;
 </code></pre>
 
 <div id="net-footer">
@@ -1123,20 +1138,25 @@ sudo yum --enablerepo=elrepo-kernel install kernel-ml<br></p>
 
 <p>prepare OSDs</p>
 
-<pre><code># ceph-deploy osd prepare &lt;node&gt;:sdb:/dev/ssd
-# ceph-deploy osd prepare &lt;node&gt;:sdc:/dev/ssd
+<pre><code>$ ceph-deploy osd prepare &lt;node&gt;:sdb:/dev/ssd
+$ ceph-deploy osd prepare &lt;node&gt;:sdc:/dev/ssd
 </code></pre>
 
 <p>activate OSDs (maybe udev handles this automatically)</p>
 
-<pre><code># ceph-deploy osd activate &lt;node&gt;:/dev/sdb1:/dev/ssd1
-# ceph-deploy osd activate &lt;node&gt;:/dev/sdc1:/dev/ssd2
+<pre><code>$ ceph-deploy osd activate &lt;node&gt;:/dev/sdb1:/dev/ssd1
+$ ceph-deploy osd activate &lt;node&gt;:/dev/sdc1:/dev/ssd2
 </code></pre>
 
 <p>or create (prepare+activate)</p>
 
-<pre><code># ceph-deploy osd create &lt;node&gt;:sdb:/dev/ssd1
-# ceph-deploy osd create &lt;node&gt;:sdc:/dev/ssd2
+<pre><code>$ ceph-deploy osd create &lt;node&gt;:sdb:/dev/ssd1
+$ ceph-deploy osd create &lt;node&gt;:sdc:/dev/ssd2
+</code></pre>
+
+<p>swift and easy:</p>
+
+<pre><code>$ ceph-deploy osd create --data /dev/sdX $hostname
 </code></pre>
 
 <div id="net-footer">
@@ -1194,15 +1214,15 @@ sudo yum --enablerepo=elrepo-kernel install kernel-ml<br></p>
 
 <p>create a password-less key pair only on the admin machine and copy the pub key to the previously prepared nodes</p>
 
-<pre><code># ssh-keygen
-# ssh-copy-id training@training-0xx
+<pre><code>$ ssh-keygen
+$ ssh-copy-id training@training-0xx
 </code></pre>
 
-<p><br><br></p>
+<p><br></p>
 
 <p>create .ssh/config for easier deployment </p>
 
-<pre><code># cat .ssh/config
+<pre><code>$ cat .ssh/config
 Host training-*
  User training
 
@@ -1233,18 +1253,24 @@ no need in Netways Basic setup
 <p>Install ceph-deploy on your machine</p>
 
 <p>Create ceph-deploy.repo
-<br><br>
-   # cat /etc/yum.repos.d/ceph-deploy.repo</p>
+<br><br></p>
 
-<p>[ceph-noarch] <br>
-  name=Ceph noarch packages <br>
-  baseurl=<a href="http://download.ceph.com/rpm-luminous/el7/noarch">http://download.ceph.com/rpm-luminous/el7/noarch</a> <br>
-  enabled=1 <br>
-  gpgcheck=1 <br>
-  type=rpm-md <br>
-  gpgkey=<a href="https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc">https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc</a><br></p>
+<pre><code># cat &lt;&lt; EOM &gt; /etc/yum.repos.d/ceph-deploy.repo&lt;br/&gt;
+  [ceph-noarch]&lt;br/&gt;
+  name=Ceph noarch packages&lt;br/&gt;
+  baseurl=https://download.ceph.com/rpm-mimic/el7/noarch&lt;br/&gt;
+  enabled=1&lt;br/&gt;
+  gpgcheck=1&lt;br/&gt;
+  type=rpm-md&lt;br/&gt;
+  gpgkey=https://download.ceph.com/keys/release.asc&lt;br/&gt;
+  EOM&lt;br/&gt;
 
-<p># sudo yum update &amp;&amp; sudo yum install ceph-deploy-1.5.39-0.noarch</p>
+# yum update -y &amp;&amp; yum install ntp ntpdate ntp-doc ceph-deploy screen -y
+</code></pre>
+
+<div class="notes"><p>
+swift check with 'yum provides ceph-deploy'
+</p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1263,13 +1289,13 @@ no need in Netways Basic setup
 
 <p>generate default config and monitor keyring</p>
 
-<pre><code># mkdir my-cluster; cd my-cluster
-# ceph-deploy new training-0xx [training-0xy]
+<pre><code>$ mkdir my-cluster; cd my-cluster
+$ ceph-deploy new training-0xx [training-0xy]
 </code></pre>
 
 <p>set public and cluster network</p>
 
-<pre><code># vim ceph.conf
+<pre><code>$ vim ceph.conf
 ...
 [global]
 mon_host: $localIP
@@ -1279,14 +1305,14 @@ rbd_default_features = 1
 ...
 </code></pre>
 
+<p>reset clusterid/fsid (just in the LAB!)</p>
+
+<pre><code>fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
+</code></pre>
+
 <hr>
 
 <p>overwrite <a href="../file/_files/share/ceph.mon.keyring">ceph.mon.keyring</a> (just in the LAB!)</p>
-
-<p>reset clusterid/fsid (just in the LAB!)</p>
-
-<pre><code># fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
-</code></pre>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1307,29 +1333,19 @@ rbd_default_features = 1
 
 <p>install ceph on your other nodes</p>
 
-<pre><code># ceph-deploy install training-0xx [training-0xy]
+<pre><code>$ ceph-deploy install training-0xx [training-0xy]
 </code></pre>
 
 <p><br></p>
 
 <p>deploy the monitor, admin and mgr nodes</p>
 
-<pre><code># ceph-deploy mon create-initial
-# ceph-deploy admin [$HOSTNAME]
-# ceph-deploy mgr [$HOSTNAME]
+<pre><code>$ ceph-deploy mon create-initial
+$ ceph-deploy admin [$HOSTNAME]
+$ ceph-deploy mgr [$HOSTNAME]
 </code></pre>
 
-<p>Mgr only for Luminous! 
-</p>
 <div class="notes">
-For Luminous (may the Gods be with you) <br>
-
-<p>ceph-deploy install training-0xx [training-0xy] --repo-url=<a href="http://download.ceph.com/rpm-luminous/el7">http://download.ceph.com/rpm-luminous/el7</a> --gpg-url=<a href="https://download.ceph.com/keys/release.asc">https://download.ceph.com/keys/release.asc</a>
-<br></p>
-
-<p>ceph-deploy gatherkeys monhost <br></p>
-
-<p>ceph-deploy admin monhost <br></p>
 
 </div>
 
@@ -1348,30 +1364,25 @@ For Luminous (may the Gods be with you) <br>
 
 <h1>Lab: Steps - deploy the cluster - 3</h1>
 
-<p><br><br>
+<p><br>
 On all nodes!</p>
 
-<p>create OSD directory (just in the lab! Use block devices in a real setup)</p>
+<p>create OSD directory (just in the lab! Use "real" block devices in a real setup)</p>
 
-<pre><code># sudo mkdir /var/local/osd-$HOSTNAME
-# sudo chown ceph. /var/local/osd-$HOSTNAME
+<pre><code>$ mkdir -p ~/my-cluster/osd-$HOSTNAME
 </code></pre>
 
-<p><br></p>
+<p>create a file for later use</p>
 
-<p>deploy OSDs</p>
-
-<pre><code># ceph-deploy osd prepare training-$ID:/var/local/osd-$HOSTNAME
-# ceph-deploy osd activate training-$ID:/var/local/osd-$HOSTNAME
+<pre><code>$ fallocate -l 30G 30GB.img
 </code></pre>
 
-<div class="notes">
-<p>
-Luminous: fallocate 10GB .img, loseteup it to loop0 device, mount it, mkf.xfs it, unmount it and try to deploy osd there <br></p>
+<p>test it </p>
 
-<p>May break!
-</p>
-</div>
+<pre><code># losetup -l -P /dev/loop1 "/home/training/my-cluster/osd-$HOSTNAME/30GB.img"
+# wipefs -a /dev/loop1
+# lsblk
+</code></pre>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1381,6 +1392,82 @@ Luminous: fallocate 10GB .img, loseteup it to loop0 device, mount it, mkf.xfs it
 </div>
 <div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
 <div class="content small" ref="005_ceph_storage_cluster//030_lab_install/15">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - deploy the cluster - 4</h1>
+
+<p><br>
+make it reboot safe via <a href="../file/_files/share/rebloop.sh">rebloop.sh</a> and <a href="../file/_files/share/rebloop.service">rebloop.service</a></p>
+
+<pre><code># chmod +x rebloop.*
+# cp rebloop.sh /usr/bin/rebloop.sh
+# cp rebloop.service /etc/systemd/system
+# systemctl enable rebloop.service
+# systemctl start rebloop.service
+</code></pre>
+
+<p>replace cephs original disk.py with the modified <a href="../file/_files/share/disk.py">disk.py</a></p>
+
+<pre><code># cp disk.py /usr/lib/python2.7/site-packages/ceph_volume/util/disk.py
+</code></pre>
+
+<div class="notes"><p>
+you may want to use /etc/rc.local instead
+</p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/16">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Lab: Steps - deploy the cluster - 4</h1>
+
+<p><br></p>
+
+<p>deploy OSDs</p>
+
+<pre><code>$ ceph-deploy osd create --data /dev/loop1 $HOSTNAME
+</code></pre>
+
+<p>create your first pool</p>
+
+<pre><code># ceph osd pool create rbd 100 100 replicated
+</code></pre>
+
+<p>examine ceph status</p>
+
+<pre><code># ceph status
+</code></pre>
+
+<p>tag the pool with an application</p>
+
+<pre><code># ceph osd pool application enable rbd rbd      
+</code></pre>
+
+<div class="notes"><p>
+rbd pool init <poolname> might work as well<br>
+Tagging's not necessary yet. Meant to prevent confusion within the admins.
+</poolname></p></div>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/17">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -1420,7 +1507,7 @@ Luminous: fallocate 10GB .img, loseteup it to loop0 device, mount it, mkf.xfs it
 </div>
 </div>
 <div id="005_ceph_storage_cluster__030_lab_install" class="slide small" data-transition="none">
-<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/16">
+<div class="content small" ref="005_ceph_storage_cluster//030_lab_install/18">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -1554,8 +1641,6 @@ ceph osd map pool objectname
 
 <p># rados -p $pool get $otherhostnametest \ $otherhostname.file</p>
 
-<p>find object on your OSD</p>
-
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
     <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
@@ -1624,7 +1709,7 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
 <h1>Write data</h1>
 
 <p></p>
-<center><img src="./file/005_ceph_storage_cluster//./_images/crush_rotated.png" style="max-width:100%;height:auto" alt="crush"></center>
+<center><img src="./file/005_ceph_storage_cluster//./_images/crush_rotated.png" style="max-width:100%;height:550px" alt="crush"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1642,7 +1727,7 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
 <h1>Write process</h1>
 
 <p></p>
-<center><img src="./file/005_ceph_storage_cluster//./_images/write_process_rotated.png" style="max-width:100%;height:auto" alt="write process"></center>
+<center><img src="./file/005_ceph_storage_cluster//./_images/write_process_rotated.png" style="max-width:100%;height:550px" alt="write process"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1660,7 +1745,7 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
 <h1>OSD failure</h1>
 
 <p></p>
-<center><img src="./file/005_ceph_storage_cluster//./_images/osd_failure_rotated.png" style="max-width:100%;height:640px" alt="osd failure"></center>
+<center><img src="./file/005_ceph_storage_cluster//./_images/osd_failure_rotated.png" style="max-width:100%;height:550px" alt="osd failure"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1694,9 +1779,35 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
 </li>
 </ul>
 
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__039_crush" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//039_crush/7">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>OSD failure and states ctd.</h1>
+
+<p>Examples:<br>
+     cluster [INF] osd.52 10.XX.XX.XX:6804/3870 failed (2 reporters from different host after 23.000484 &gt;= grace 20.000000)<br>
+     heartbeat_check: no reply from 10.XX.XX.XX:6811 osd.52<br></p>
+
+<p>however:<br>
+     osd.52 10.XX.XX.XX:6804/3870 5151 : cluster [WRN] map e4406229 wrongly marked me down<br></p>
+
+<p>but:<br>
+<a href="../file/_files/share/heartbeat.log">1 Geisterfahrer? Hundreds!</a></p>
+
 <p>State changes on OSD failure</p>
 
-<p><code>in+up =&gt; in+down =&gt; out+down</code></p>
+<pre><code>in+up =&gt; in+down =&gt; out+down
+</code></pre>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -1705,7 +1816,7 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
 </div>
 </div>
 <div id="005_ceph_storage_cluster__039_crush" class="slide " data-transition="none">
-<div class="content " ref="005_ceph_storage_cluster//039_crush/7">
+<div class="content " ref="005_ceph_storage_cluster//039_crush/8">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -1726,7 +1837,7 @@ Metadataserver (broker) Problems: Bottleneck, spof, lookup takes some time<br>
 </div>
 </div>
 <div id="005_ceph_storage_cluster__039_crush" class="slide smbullets" data-transition="none">
-<div class="content smbullets" ref="005_ceph_storage_cluster//039_crush/8">
+<div class="content smbullets" ref="005_ceph_storage_cluster//039_crush/9">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -1769,7 +1880,7 @@ use next slide to explain again
 </div>
 </div>
 <div id="005_ceph_storage_cluster__039_crush" class="slide printonly smaller" data-transition="none">
-<div class="content printonly smaller" ref="005_ceph_storage_cluster//039_crush/9">
+<div class="content printonly smaller" ref="005_ceph_storage_cluster//039_crush/10">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -1778,7 +1889,7 @@ use next slide to explain again
 <h1>Crushmap - hierarchy</h1>
 
 <p></p>
-<center><img src="./file/005_ceph_storage_cluster//./_images/crushmap_rotated.png" style="max-width:100%;height:640px" alt="crushmap"></center>
+<center><img src="./file/005_ceph_storage_cluster//./_images/crushmap_rotated.png" style="max-width:100%;height:520px" alt="crushmap"></center>
 
 <p># crushtool -o crushmap --build --num_osds 32 node straw 2 rack straw 2 switch straw 2 datacenter straw 2 root straw 0</p>
 
@@ -1789,7 +1900,7 @@ use next slide to explain again
 </div>
 </div>
 <div id="005_ceph_storage_cluster__039_crush" class="slide printonly smaller smaller" data-transition="none">
-<div class="content printonly smaller smaller" ref="005_ceph_storage_cluster//039_crush/10">
+<div class="content printonly smaller smaller" ref="005_ceph_storage_cluster//039_crush/11">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -2143,7 +2254,7 @@ rule single-dc {
 </div>
 </div>
 <div id="005_ceph_storage_cluster__039_crush" class="slide small" data-transition="none">
-<div class="content small" ref="005_ceph_storage_cluster//039_crush/11">
+<div class="content small" ref="005_ceph_storage_cluster//039_crush/12">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -2182,7 +2293,7 @@ step chooseleaf firstn &lt;number&gt; type &lt;bucket&gt;
 </div>
 </div>
 <div id="005_ceph_storage_cluster__039_crush" class="slide small" data-transition="none">
-<div class="content small" ref="005_ceph_storage_cluster//039_crush/12">
+<div class="content small" ref="005_ceph_storage_cluster//039_crush/13">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
 <div id="net-header">
     <div class="logo"></div>
@@ -2769,6 +2880,7 @@ changes regarding
 <li>migration</li>
 </ul>
 </li>
+<li>meanwhile Mimic with improved Tagging and Dashboard</li>
 </ul>
 
 <div id="net-footer">
@@ -2790,8 +2902,15 @@ changes regarding
 <li>ceph mgr takes load off of mon</li>
 <li>ceph-deploy has different options</li>
 <li>great performance gains especially in huge environments</li>
+<li>plugin support improved</li>
 <li><a href="https://ceph.com/releases/v12-2-0-luminous-released/">https://ceph.com/releases/v12-2-0-luminous-released/</a></li>
 </ul>
+
+<div class="notes">
+<p>
+ceph mgr module ls</p>
+
+</div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -2958,6 +3077,89 @@ ceph-disk activate /dev/sdX1
 </div>
 </div>
 </div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small printonly" data-transition="none">
+<div class="content small printonly" ref="005_ceph_storage_cluster//045_what_else/22">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Dashboard - Overview</h1>
+
+<p></p>
+<center><img src="./file/005_ceph_storage_cluster//./_images/ceph_dashboard_overview_rotated.png" style="max-width:100%;height:550px" alt="dashb_ov"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/23">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Dashboard - Overview ctd</h1>
+
+<ul>
+<li>basically a plugin</li>
+<li>Mimic: huge influence by openATTIC</li>
+<li>overall cluster health</li>
+<li>performance counter</li>
+</ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="005_ceph_storage_cluster__045_what_else" class="slide small" data-transition="none">
+<div class="content small" ref="005_ceph_storage_cluster//045_what_else/24">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Ceph - a unified, distributed storage</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Dashboard - setup</h1>
+
+<p>enable plugin</p>
+
+<pre><code># ceph mgr module enable dashboard
+</code></pre>
+
+<p>create certificate</p>
+
+<pre><code># ceph dashboard create-self-signed-cert
+</code></pre>
+
+<p>create an admistrative user for login</p>
+
+<pre><code># ceph dashboard ac-user-create &lt;username&gt; &lt;password&gt; administrator
+</code></pre>
+
+<p>restart dashboard for mgr respawn</p>
+
+<pre><code># ceph mgr module disable dashboard
+# ceph mgr module enable dashboard
+</code></pre>
+
+<p>login</p>
+
+<pre><code>https://$mgr-node:8443
+</code></pre>
+
+<p>more: <a href="http://docs.ceph.com/docs/master/mgr/dashboard/">http://docs.ceph.com/docs/master/mgr/dashboard/</a></p>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
 <div id="010_rbd__040_rbd" class="slide subsection" data-transition="none">
 <div class="content subsection" ref="010_rbd//040_rbd/1">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
@@ -3099,7 +3301,7 @@ rbd image 'training':
 <p><br></p>
 
 <ul>
-<li>Kernel v4.5 (recommeded)</li>
+<li>Kernel v4.5 (recommended)</li>
 <li>Qemu &gt;= 0.14.0 </li>
 </ul>
 
@@ -3496,7 +3698,7 @@ id pool image    snap device
 
 <pre><code># echo "net.ipv4.ip_forward=1" &gt; /etc/sysctl.d/99-forward.conf
 # sysctl -p /etc/sysctl.d/99-forward.conf
-# net.ipv4.ip_forward = 1
+  net.ipv4.ip_forward = 1
 </code></pre>
 
 <p>test virsh</p>
@@ -3531,7 +3733,7 @@ ovirt - <a href="http://paste.openstack.org/show/163327/">http://paste.openstack
 
 <p>start a VM with virt-install</p>
 
-<pre><code># sudo virt-install --connect qemu:///system -n vmdeb -r 512 \
+<pre><code># virt-install --connect qemu:///system -n vmdeb -r 512 \
 --disk path=/var/lib/libvirt/images/vmdeb.img,size=2 \
 --graphics vnc,listen=0.0.0.0 --noautoconsole --os-type linux \
 --os-variant generic --accelerate --network=bridge:virbr0 \
@@ -3540,12 +3742,18 @@ ovirt - <a href="http://paste.openstack.org/show/163327/">http://paste.openstack
 
 <p>get VNC port</p>
 
-<pre><code># sudo virsh vncdisplay vmdeb
+<pre><code># virsh vncdisplay vmdeb
 </code></pre>
 
 <div class="notes"><p>
-VNC Viewer e.g. remmina, default port 5900, Ctrl+Alt uncaptures mouse
-</p></div>
+VNC Viewer e.g. remmina, default port 5900, Ctrl+Alt uncaptures mouse<br>
+if using vinagre F10<br>
+get rid of VM via<br>
+virsh list<br>
+virsh shutdown <index><br>
+virsh undefine <index><br>
+virsh destroy <index><br>
+</index></index></index></p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -3725,7 +3933,7 @@ virsh attach-device $(hostname)-vm disk.xml --persistent
 
 <p><br></p>
 
-<p>adapt <a href="../file/_files/share/disk.xml">disk.xml</a> to your host name and libvirt secret </p>
+<p>adapt <a href="../file/_files/share/disk.xml">disk.xml</a> to your host name. pool/image name  and libvirt secret </p>
 
 <pre class=""><code>&lt;disk type='network' device='disk'&gt;
 #use the pool and image you have created before
@@ -3829,7 +4037,7 @@ virsh attach-device $(hostname)-vm disk.xml --persistent
 <li>POSIX compatible filesystem</li>
 <li>shared filesystem</li>
 <li>stable since Jewel release (April 2016)</li>
-<li>be cautious with snapshotting</li>
+<li>be cautious with snapshotting (still valid with Mimic)</li>
 </ul>
 
 <div id="net-footer">
@@ -3848,7 +4056,7 @@ virsh attach-device $(hostname)-vm disk.xml --persistent
 <h1>Components</h1>
 
 <p></p>
-<center><img src="./file/015_cephfs//./_images/cephfs_components_rotated.png" style="max-width:100%;height:640px;" alt="cephfs components"></center>
+<center><img src="./file/015_cephfs//./_images/cephfs_components_rotated.png" style="max-width:100%;height:550px;" alt="cephfs components"></center>
 
 <div class="notes">
 <p>
@@ -3949,7 +4157,7 @@ objects &gt;4MB have a counter added
 <h1>Hierarchy</h1>
 
 <p></p>
-<center><img src="./file/015_cephfs//./_images/cephfs_metadata_rotated.png" style="max-width:100%;height:640px;" alt="cephfs components"></center>
+<center><img src="./file/015_cephfs//./_images/cephfs_metadata_rotated.png" style="max-width:100%;height:550px;" alt="cephfs components"></center>
 
 <div class="notes">
 <p>
@@ -4088,9 +4296,11 @@ e60: 1/1/1 up {0=server2=up:active}, 2 up:standby
 <h1>RADOS Gateway</h1>
 
 <ul>
-<li>Object Store</li>
+<li>basically webserver</li>
+<li>Object Store as backend</li>
 <li>REST Interface</li>
 <li>S3/SWIFT dialect</li>
+<li>easy to integrate in applications, e.g. Nextcloud</li>
 <li>Quota and Usage tracking</li>
 <li>Auth and User management</li>
 <li>Multi-site deployment</li>
@@ -4273,8 +4483,8 @@ e60: 1/1/1 up {0=server2=up:active}, 2 up:standby
 
 <p>install and create an RGW</p>
 
-<pre><code># ceph-deploy install --rgw radosgw-1
-# ceph-deploy rgw create radosgw-1
+<pre><code>$ ceph-deploy install --rgw $HOSTNAME
+$ ceph-deploy rgw create $HOSTNAME
 
 # ceph osd lspools
 </code></pre>
@@ -4287,7 +4497,7 @@ e60: 1/1/1 up {0=server2=up:active}, 2 up:standby
 
 <p>review</p>
 
-<pre><code>http://radosgw-1:7480
+<pre><code>http://$HOSTNAME:7480
 </code></pre>
 
 <div id="net-footer">
@@ -4296,48 +4506,40 @@ e60: 1/1/1 up {0=server2=up:active}, 2 up:standby
 </div>
 </div>
 </div>
-<div id="020_radosgw__005_overview" class="slide smaller" data-transition="none">
-<div class="content smaller" ref="020_radosgw//005_overview/9">
+<div id="020_radosgw__005_overview" class="slide small" data-transition="none">
+<div class="content small" ref="020_radosgw//005_overview/9">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ RADOS Gateway</h1>
 <div id="net-header">
     <div class="logo"></div>
 </div>
 
-<h1>S3 python example</h1>
+<h1>Access your radosgw</h1>
 
-<pre class=""><code>import boto
-import boto.s3.connection
+<p>install s3cmd</p>
 
-access_key = 'C2R939TLYZ2MUOMP1IS9'
-secret_key = '5HQREJtoUS6vVNwaCZRgwEXqGiugeaLSJitKA4Sy'
-hostname = 'radosgw-1.local'
-
-conn = boto.connect_s3(
-        aws_access_key_id = access_key,
-        aws_secret_access_key = secret_key,
-        host = hostname, port = 7480,
-        is_secure=False, calling_format = boto.s3.connection.OrdinaryCallingFormat(),
-        )
-
-
-# Create a bucket
-bucket = conn.create_bucket('my-bucket')
-for bucket in conn.get_all_buckets():
-  print "{name} {created}".format(name = bucket.name, created = bucket.creation_date,)
-
-# get bucket and push/retrieve file
-bucket = conn.get_bucket('my-bucket')
-from boto.s3.key import Key
-k = Key(bucket)
-
-# myfile is the object name
-k.key='myfile'
-k.set_contents_from_filename('example.jpg')
-k.get_contents_to_filename('still_a_example.jpg')
-
+<pre><code># yum install -y s3cmd
 </code></pre>
 
-<pre><code># radosgw-admin bucket list --bucket=my-bucket
+<p>configure s3cmd</p>
+
+<pre><code>$ s3cmd --configure
+</code></pre>
+
+<p>add access_key, secret_key, host_base including port (default: 443)</p>
+
+<p>create a bucket</p>
+
+<pre><code>$ s3cmd mb s3://$HOSTNAME
+</code></pre>
+
+<p>put file into it as object</p>
+
+<pre><code>$ s3cmd put $file_name s3://$bucket/$object_name
+</code></pre>
+
+<p>review your bucket</p>
+
+<pre><code>§ s3cmd ls s3://$bucket
 </code></pre>
 
 <div id="net-footer">
@@ -4353,19 +4555,20 @@ k.get_contents_to_filename('still_a_example.jpg')
     <div class="logo"></div>
 </div>
 
-<h1>S3 python example</h1>
+<h1>Add your radosgw to the dashboard</h1>
 
-<ul>
-<li>get <a href="../file/_files/share/s3_example.py">s3_example.py</a>
-</li>
-<li>add credentials, host and a file and execute</li>
-<li>install missing python module</li>
-</ul>
+<p>create a system user</p>
 
-<p> </p>
-
-<pre><code># sudo yum/apt-get install python-boto
+<pre><code># radosgw-admin user create --uid=&lt;user_id&gt; --display-name=&lt;name&gt; --system
 </code></pre>
+
+<p>provide credentials </p>
+
+<pre><code># ceph dashboard set-rgw-api-access-key &lt;access_key&gt;&lt;br/&gt;
+# ceph dashboard set-rgw-api-secret-key &lt;secret_key&gt;
+</code></pre>
+
+<p>go have a look!</p>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -4419,7 +4622,7 @@ k.get_contents_to_filename('still_a_example.jpg')
 <h1>Schema</h1>
 
 <p></p>
-<center><img src="./file/025_cache_tier//./_images/cache_tier_rotated.png" style="max-width:100%;height:640px;" alt="matrixofhell"></center>
+<center><img src="./file/025_cache_tier//./_images/cache_tier_rotated.png" style="max-width:100%;height:550px;" alt="matrixofhell"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -4832,7 +5035,8 @@ k.get_contents_to_filename('still_a_example.jpg')
 
 <h1>cluster performance metrics</h1>
 
-<p><code>ceph status -f json{-pretty}</code></p>
+<pre><code># ceph status -f json{-pretty}
+</code></pre>
 
 <p></p>
 <center><img src="./file/030_operating//./_images/ceph_performance_rotated.png" style="height:500px;" alt="cephfs performance"></center>
@@ -4852,10 +5056,11 @@ k.get_contents_to_filename('still_a_example.jpg')
 
 <h1>PGs state</h1>
 
-<p><code>ceph status -f json</code></p>
+<pre><code># ceph status -f json
+</code></pre>
 
 <p></p>
-<center><img src="./file/030_operating//./_images/pg_states_rotated.png" style="max-width:100%;height:640px;" alt="ceph PG"></center>
+<center><img src="./file/030_operating//./_images/pg_states_rotated.png" style="max-width:100%;height:520px;" alt="ceph PG"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -4875,7 +5080,7 @@ k.get_contents_to_filename('still_a_example.jpg')
 <p>disk timings</p>
 
 <p></p>
-<center><img src="./file/030_operating//./_images/disk_timings_rotated.png" style="max-width:100%;height:640px;" alt="timings"></center>
+<center><img src="./file/030_operating//./_images/disk_timings_rotated.png" style="max-width:100%;height:520px;" alt="timings"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -4895,7 +5100,7 @@ k.get_contents_to_filename('still_a_example.jpg')
 <p>disk usage</p>
 
 <p></p>
-<center><img src="./file/030_operating//./_images/osd_usage_rotated.png" style="max-width:100%;height:640px;" alt="usage"></center>
+<center><img src="./file/030_operating//./_images/osd_usage_rotated.png" style="max-width:100%;height:520px;" alt="usage"></center>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -4956,7 +5161,7 @@ k.get_contents_to_filename('still_a_example.jpg')
 <li>mirroring of OS</li>
 <li>Luminous and Ubuntu 14.04 cumbersome</li>
 <li>enough space for logging</li>
-<li>Hands off /var/lib/ceph/mon/$/store.db</li>
+<li>/var/lib/ceph/mon/$/store.db -&gt; Hands off!</li>
 </ul>
 
 <div id="net-footer">
@@ -5099,6 +5304,44 @@ transition to network
 <li>more plugins (zabbix)</li>
 <li>Dashboard</li>
 </ul>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide printonly" data-transition="none">
+<div class="content printonly" ref="030_operating//025_sizing/8">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Holistic</h1>
+
+<p></p>
+<center><img src="./file/030_operating//./_images/holistic_rotated.png" style="width:100%;height:550px " alt="matrixofhell"></center>
+
+<div id="net-footer">
+    <p id="footer-left">Ceph Training</p>
+    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
+</div>
+</div>
+</div>
+<div id="030_operating__025_sizing" class="slide " data-transition="none">
+<div class="content " ref="030_operating//025_sizing/9">
+<h1 class="section_title">~~~SECTION:MAJOR~~~ Monitoring, metrics and more</h1>
+<div id="net-header">
+    <div class="logo"></div>
+</div>
+
+<h1>Sources</h1>
+
+<p><a href="http://docs.ceph.com/docs/master/">http://docs.ceph.com/docs/master/</a><br><br>
+<a href="https://ceph.com/community/blog/">https://ceph.com/community/blog/</a><br><br>
+<a href="http://tracker.ceph.com/projects/ceph/wiki/Guides">http://tracker.ceph.com/projects/ceph/wiki/Guides</a><br><br>
+<a href="https://github.com/NETWAYS/ceph-training">https://github.com/NETWAYS/ceph-training</a></p>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>

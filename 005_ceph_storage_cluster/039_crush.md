@@ -61,7 +61,7 @@ If Primary fails, are Replica on secondary and tertiary OSD. Clustermap is rebui
 !SLIDE lrbullets printonly
 # Write data
 
-<center><img src="./_images/crush_rotated.png" style="max-width:100%;height:auto" alt="crush"/></center>
+<center><img src="./_images/crush_rotated.png" style="max-width:100%;height:550px" alt="crush"/></center>
 
 !SLIDE noprint
 # Write process
@@ -75,7 +75,7 @@ Stress Network FrontEnd and Backend again<br/>
 
 !SLIDE printonly
 # Write process
-<center><img src="./_images/write_process_rotated.png" style="max-width:100%;height:auto" alt="write process"/></center>
+<center><img src="./_images/write_process_rotated.png" style="max-width:100%;height:550px" alt="write process"/></center>
 
 !SLIDE smbullets noprint
 # OSD failure
@@ -92,7 +92,7 @@ OSDs: can restore replicas<br/>
 
 !SLIDE smbullets printonly
 # OSD failure
-<center><img src="./_images/osd_failure_rotated.png" style="max-width:100%;height:640px" alt="osd failure"/></center>
+<center><img src="./_images/osd_failure_rotated.png" style="max-width:100%;height:550px" alt="osd failure"/></center>
 
 !SLIDE smbullets
 # OSD failure and states
@@ -108,11 +108,11 @@ each OSD can be in the state
 # OSD failure and states ctd.
 
 Examples:<br/>
- cluster [INF] osd.52 10.XX.XX.XX:6804/3870 failed (2 reporters from different host after 23.000484 >= grace 20.000000)<br/>
- heartbeat_check: no reply from 10.XX.XX.XX:6811 osd.52<br/>
+     cluster [INF] osd.52 10.XX.XX.XX:6804/3870 failed (2 reporters from different host after 23.000484 >= grace 20.000000)<br/>
+     heartbeat_check: no reply from 10.XX.XX.XX:6811 osd.52<br/>
 
 however:<br/>
-   osd.52 10.XX.XX.XX:6804/3870 5151 : cluster [WRN] map e4406229 wrongly marked me down<br/>
+     osd.52 10.XX.XX.XX:6804/3870 5151 : cluster [WRN] map e4406229 wrongly marked me down<br/>
 
 but:<br/>
 [1 Geisterfahrer? Hundreds!] (../file/_files/share/heartbeat.log)
@@ -120,7 +120,7 @@ but:<br/>
 
 State changes on OSD failure
 
-in+up => in+down => out+down
+    in+up => in+down => out+down
 
 
 !SLIDE
@@ -164,7 +164,7 @@ show dataplacement
 !SLIDE printonly smaller
 # Crushmap - hierarchy
 
-<center><img src="./_images/crushmap_rotated.png" style="max-width:100%;height:640px" alt="crushmap"/></center>
+<center><img src="./_images/crushmap_rotated.png" style="max-width:100%;height:520px" alt="crushmap"/></center>
 
  # crushtool -o crushmap --build --num_osds 32 node straw 2 rack straw 2 switch straw 2 datacenter straw 2 root straw 0
 

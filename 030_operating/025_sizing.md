@@ -11,7 +11,7 @@
 * mirroring of OS
 * Luminous and Ubuntu 14.04 cumbersome
 * enough space for logging
-* Hands off /var/lib/ceph/mon/$/store.db
+* /var/lib/ceph/mon/$/store.db -> Hands off!
 
 
 !SLIDE smbullets
@@ -86,6 +86,19 @@ transition to network
 
 !SLIDE noprint
 # Questions?
-!SLIDE noprint
+!SLIDE noprint 
 # Holistic
-<center><img src="./../../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
+<center><img src="./../_images/holistic.png" style="width:800px;height:600px " alt="matrixofhell"/></center>
+
+!SLIDE printonly
+# Holistic
+<center><img src="./_images/holistic_rotated.png" style="width:100%;height:550px " alt="matrixofhell"/></center>
+
+
+!SLIDE
+# Sources
+
+http://docs.ceph.com/docs/master/<br/><br/>
+https://ceph.com/community/blog/<br/><br/>
+http://tracker.ceph.com/projects/ceph/wiki/Guides<br/><br/>
+https://github.com/NETWAYS/ceph-training
