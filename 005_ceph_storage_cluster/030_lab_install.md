@@ -201,15 +201,15 @@ Install ceph-deploy on your machine
 Create ceph-deploy.repo
 <br/><br/>
 
-    # cat << EOM > /etc/yum.repos.d/ceph-deploy.repo<br/>
-      [ceph-noarch]<br/>
-      name=Ceph noarch packages<br/>
-      baseurl=https://download.ceph.com/rpm-mimic/el7/noarch<br/>
-      enabled=1<br/>
-      gpgcheck=1<br/>
-      type=rpm-md<br/>
-      gpgkey=https://download.ceph.com/keys/release.asc<br/>
-      EOM<br/>
+    # cat << EOM > /etc/yum.repos.d/ceph-deploy.repo
+      [ceph-noarch]
+      name=Ceph noarch packages
+      baseurl=https://download.ceph.com/rpm-mimic/el7/noarch
+      enabled=1
+      gpgcheck=1
+      type=rpm-md
+      gpgkey=https://download.ceph.com/keys/release.asc
+      EOM
 
     # yum update -y && yum install ntp ntpdate ntp-doc ceph-deploy screen -y
 
@@ -230,6 +230,9 @@ set public and cluster network
     $ vim ceph.conf
     ...
     [global]
+    mon_max_pg_per_osd = 800  # arbitrary number for training purposes
+    osd max pg per osd hard ratio = 10 # also arbitrary, introduced with mimic
+    mon allow pool delete = true # without it you can't remove a pool
     mon_host: $localIP
     public_network = 192.168.78.0/24
     cluster_network = 192.168.78.0/24
@@ -259,7 +262,7 @@ deploy the monitor, admin and mgr nodes
 
     $ ceph-deploy mon create-initial
     $ ceph-deploy admin [$HOSTNAME]
-    $ ceph-deploy mgr [$HOSTNAME]
+    $ ceph-deploy mgr create [$HOSTNAME]
  
 ~~~SECTION:notes~~~
 
@@ -273,6 +276,7 @@ On all nodes!
 create OSD directory (just in the lab! Use "real" block devices in a real setup)
     
     $ mkdir -p ~/my-cluster/osd-$HOSTNAME
+    $ cd ~/my-cluster/osd-$HOSTNAME/
 
 create a file for later use
     
@@ -325,6 +329,7 @@ tag the pool with an application
 
    
 ~~~SECTION:notes~~~
+ceph osd pool application get rbd<br/>
 rbd pool init <poolname> might work as well<br/>
 Tagging's not necessary yet. Meant to prevent confusion within the admins.
 ~~~ENDSECTION~~~

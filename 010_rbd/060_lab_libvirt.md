@@ -82,7 +82,6 @@ virsh destroy <index><br\>
 test qemu-kvm for RBD support
 
     # /usr/libexec/qemu-kvm -drive format=?
-    # /usr/bin/qemu-system-x86_64 -drive format=?
     
 test qemu-img for RBD support
 
@@ -96,6 +95,14 @@ test qemu-img for RBD support
 create a pool with 128 PGs
 
     # ceph osd pool create libvirt 128
+
+retrieve application tags
+
+    # ceph osd pool application get libvirt
+
+mark as rbd
+
+    # rbd pool init libvirt
 
 create an image within the pool
 
@@ -122,15 +129,10 @@ create libvirt secret.xml
     </secret>
     EOF
 
-<br/>
-
 import secret.xml ($secret holds an UUID)
 
     # secret=$(virsh secret-define --file secret.xml | cut -d " " -f 2)
     # echo $secret
-
-<br/>
-
 
 get the key for the libvirt ceph client (needs keyring in /etc/ceph)
 
@@ -139,14 +141,25 @@ get the key for the libvirt ceph client (needs keyring in /etc/ceph)
 
     # ceph auth get-key client.libvirt > client.libvirt.key
 
-!SLIDE smaller
-# Lab: ceph integration Step 2
-
 set the libvirt ceph client key to our new libvirt secret
 
     # virsh secret-set-value --secret $secret --base64 $(cat client.libvirt.key)
-    # rm client.libvirt.key secret.xml
 
+~~~SECTION:notes~~~
+in production you should delete client.libvirt.key and secret.xml
+~~~ENDSECTION~~~
+
+!SLIDE smaller
+# Lab: libvirt: rbd disk definition
+
+<br/>
+
+adapt [disk.xml](../file/_files/share/disk.xml) to your host name. pool/image name and libvirt secret 
+
+~~~FILE:share/disk.xml~~~
+
+<br/>
+<br/>
 
 !SLIDE smaller
 # Lab: create VM helper script
@@ -156,32 +169,35 @@ set the libvirt ceph client key to our new libvirt secret
 
 ~~~FILE:share/install-vm.sh~~~
 
-
-!SLIDE smaller
-# Lab: libvirt: rbd disk definition
-
-<br/>
-
-adapt [disk.xml](../file/_files/share/disk.xml) to your host name. pool/image name  and libvirt secret 
-
-~~~FILE:share/disk.xml~~~
-
-<br/>
-<br/>
-
-watch the disk growing
-
-    # rbd -p libvirt info $(hostname)-vm
-    # rados -p libvirt ls | grep <prefix> | wc -l
-
 !SLIDE
 # Lab: Snapshot
 
 * create a clone of your VM
 * create a new VM using the clone
 
+watch the disk growing
+
+    # rbd -p libvirt info new-libvirt-image
+    # rados -p libvirt ls | grep <prefix> | wc -l
+
+~~~SECTION:notes~~~
+have a look at your dashboard!
+~~~ENDSECTION~~~
+
+
 !SLIDE
 # Lab: VM live resize
 
 * resize your VM
 * extend the RBD and the FS inside the VM
+
+~~~SECTION:notes~~~
+rbd -p libvirt resize new-libvirt-image --size 500G<br/>
+virsh list for $id<br/>
+virsh domblklist $id<br/>
+virsh blockresize --domain $id --path vda --size 500G<br/>
+root@resized-VM:~/# cfdisk /dev/vda <br/>
+root@resized-VM:~/# resize2fs /dev/vda <br/>
+
+~~~ENDSECTION~~~
+

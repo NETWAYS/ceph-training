@@ -432,7 +432,7 @@ create certificate
 
 create an admistrative user for login
 
-    # ceph dashboard ac-user-create <username> <password> administrator
+    # ceph dashboard set-login-credentials <username> <password> 
 
 restart dashboard for mgr respawn
 

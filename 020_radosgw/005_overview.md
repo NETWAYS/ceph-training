@@ -123,6 +123,10 @@ review your bucket
    
     § s3cmd ls s3://$bucket
 
+~~~SECTION:notes~~~
+if it doesn't work, a helpful .s3cfg is at "_files/share_"
+~~~ENDSECTION~~~
+
 !SLIDE small
 # Add your radosgw to the dashboard
 
@@ -132,7 +136,7 @@ create a system user
 
 provide credentials 
 
-    # ceph dashboard set-rgw-api-access-key <access_key><br/>
+    # ceph dashboard set-rgw-api-access-key <access_key>
     # ceph dashboard set-rgw-api-secret-key <secret_key>
 
 go have a look!
