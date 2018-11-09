@@ -1255,15 +1255,15 @@ no need in Netways Basic setup
 <p>Create ceph-deploy.repo
 <br><br></p>
 
-<pre><code># cat &lt;&lt; EOM &gt; /etc/yum.repos.d/ceph-deploy.repo&lt;br/&gt;
-  [ceph-noarch]&lt;br/&gt;
-  name=Ceph noarch packages&lt;br/&gt;
-  baseurl=https://download.ceph.com/rpm-mimic/el7/noarch&lt;br/&gt;
-  enabled=1&lt;br/&gt;
-  gpgcheck=1&lt;br/&gt;
-  type=rpm-md&lt;br/&gt;
-  gpgkey=https://download.ceph.com/keys/release.asc&lt;br/&gt;
-  EOM&lt;br/&gt;
+<pre><code># cat &lt;&lt; EOM &gt; /etc/yum.repos.d/ceph-deploy.repo
+  [ceph-noarch]
+  name=Ceph noarch packages
+  baseurl=https://download.ceph.com/rpm-mimic/el7/noarch
+  enabled=1
+  gpgcheck=1
+  type=rpm-md
+  gpgkey=https://download.ceph.com/keys/release.asc
+  EOM
 
 # yum update -y &amp;&amp; yum install ntp ntpdate ntp-doc ceph-deploy screen -y
 </code></pre>
@@ -1298,6 +1298,9 @@ $ ceph-deploy new training-0xx [training-0xy]
 <pre><code>$ vim ceph.conf
 ...
 [global]
+mon_max_pg_per_osd = 800  # arbitrary number for training purposes
+osd max pg per osd hard ratio = 10 # also arbitrary, introduced with mimic
+mon allow pool delete = true # without it you can't remove a pool
 mon_host: $localIP
 public_network = 192.168.78.0/24
 cluster_network = 192.168.78.0/24
@@ -1342,7 +1345,7 @@ rbd_default_features = 1
 
 <pre><code>$ ceph-deploy mon create-initial
 $ ceph-deploy admin [$HOSTNAME]
-$ ceph-deploy mgr [$HOSTNAME]
+$ ceph-deploy mgr create [$HOSTNAME]
 </code></pre>
 
 <div class="notes">
@@ -1370,6 +1373,7 @@ On all nodes!</p>
 <p>create OSD directory (just in the lab! Use "real" block devices in a real setup)</p>
 
 <pre><code>$ mkdir -p ~/my-cluster/osd-$HOSTNAME
+$ cd ~/my-cluster/osd-$HOSTNAME/
 </code></pre>
 
 <p>create a file for later use</p>
@@ -1456,6 +1460,7 @@ you may want to use /etc/rc.local instead
 </code></pre>
 
 <div class="notes"><p>
+ceph osd pool application get rbd<br>
 rbd pool init <poolname> might work as well<br>
 Tagging's not necessary yet. Meant to prevent confusion within the admins.
 </poolname></p></div>
@@ -3138,7 +3143,7 @@ ceph-disk activate /dev/sdX1
 
 <p>create an admistrative user for login</p>
 
-<pre><code># ceph dashboard ac-user-create &lt;username&gt; &lt;password&gt; administrator
+<pre><code># ceph dashboard set-login-credentials &lt;username&gt; &lt;password&gt; 
 </code></pre>
 
 <p>restart dashboard for mgr respawn</p>
@@ -3265,9 +3270,9 @@ C: 512byte see sgdisk -p /dev/sda
 
 <h1>RBD Commands: create, resize and remove</h1>
 
-<pre><code># rbd create training --size 16M
+<pre><code># rbd -p rbd create training --size 16M
 
-# rbd resize --size 250G [--allow-shrink] training
+# rbd resize --size 250G [--allow-shrink] rbd/training
 
 # rbd info training
 rbd image 'training':
@@ -3277,7 +3282,7 @@ rbd image 'training':
     format: 2
     features: layering
 
-# rbd rm training
+# rbd rm rbd/training
 </code></pre>
 
 <div id="net-footer">
@@ -3322,7 +3327,7 @@ rbd image 'training':
 
 <p><br></p>
 
-<pre><code># rbd map training
+<pre><code># rbd map rbd/training
 /dev/rbd0
 
 # rbd showmapped
@@ -3412,8 +3417,8 @@ id pool image    snap device
 
 <p>create and map an RBD</p>
 
-<pre><code># rbd create --size 2G myrbd
-# rbd map myrbd
+<pre><code># rbd -p rbd create --size 2G myrbd
+# rbd map rbd/myrbd
 </code></pre>
 
 <p>create FS on the RBD</p>
@@ -3775,7 +3780,6 @@ virsh destroy <index><br>
 <p>test qemu-kvm for RBD support</p>
 
 <pre><code># /usr/libexec/qemu-kvm -drive format=?
-# /usr/bin/qemu-system-x86_64 -drive format=?
 </code></pre>
 
 <p>test qemu-img for RBD support</p>
@@ -3803,6 +3807,16 @@ virsh destroy <index><br>
 <p>create a pool with 128 PGs</p>
 
 <pre><code># ceph osd pool create libvirt 128
+</code></pre>
+
+<p>retrieve application tags</p>
+
+<pre><code># ceph osd pool application get libvirt
+</code></pre>
+
+<p>mark as rbd</p>
+
+<pre><code># rbd pool init libvirt
 </code></pre>
 
 <p>create an image within the pool</p>
@@ -3836,15 +3850,11 @@ virsh destroy <index><br>
 EOF
 </code></pre>
 
-<p><br></p>
-
 <p>import secret.xml ($secret holds an UUID)</p>
 
 <pre><code># secret=$(virsh secret-define --file secret.xml | cut -d " " -f 2)
 # echo $secret
 </code></pre>
-
-<p><br></p>
 
 <p>get the key for the libvirt ceph client (needs keyring in /etc/ceph)</p>
 
@@ -3853,6 +3863,15 @@ EOF
 
 # ceph auth get-key client.libvirt &gt; client.libvirt.key
 </code></pre>
+
+<p>set the libvirt ceph client key to our new libvirt secret</p>
+
+<pre><code># virsh secret-set-value --secret $secret --base64 $(cat client.libvirt.key)
+</code></pre>
+
+<div class="notes"><p>
+in production you should delete client.libvirt.key and secret.xml
+</p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -3867,13 +3886,29 @@ EOF
     <div class="logo"></div>
 </div>
 
-<h1>Lab: ceph integration Step 2</h1>
+<h1>Lab: libvirt: rbd disk definition</h1>
 
-<p>set the libvirt ceph client key to our new libvirt secret</p>
+<p><br></p>
 
-<pre><code># virsh secret-set-value --secret $secret --base64 $(cat client.libvirt.key)
-# rm client.libvirt.key secret.xml
+<p>adapt <a href="../file/_files/share/disk.xml">disk.xml</a> to your host name. pool/image name and libvirt secret </p>
+
+<pre class=""><code>&lt;disk type='network' device='disk'&gt;
+#use the pool and image you have created before
+ &lt;source protocol='rbd' name='poolCHANGEME/imagenameCHANGEME'&gt;
+#use an active mon server here
+ &lt;host name='training-011.netways.local(CHANGEME)' port='6789'/&gt; 
+    &lt;/source&gt;
+    &lt;auth username='libvirt'&gt;
+#you've access to this via echo $secret
+ &lt;secret type='ceph' uuid='8420b99b-0661-4972-8912-d0dcfca4d692CHANGEME'/&gt;
+    &lt;/auth&gt;
+  &lt;target dev='vda' bus='virtio'/&gt;
+    &lt;driver name='qemu' type='raw' cache='writeback'/&gt;
+&lt;/disk&gt;
 </code></pre>
+
+<p><br>
+<br></p>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -3922,42 +3957,29 @@ virsh attach-device $(hostname)-vm disk.xml --persistent
 </div>
 </div>
 </div>
-<div id="010_rbd__060_lab_libvirt" class="slide smaller" data-transition="none">
-<div class="content smaller" ref="010_rbd//060_lab_libvirt/10">
+<div id="010_rbd__060_lab_libvirt" class="slide " data-transition="none">
+<div class="content " ref="010_rbd//060_lab_libvirt/10">
 <h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
 <div id="net-header">
     <div class="logo"></div>
 </div>
 
-<h1>Lab: libvirt: rbd disk definition</h1>
+<h1>Lab: Snapshot</h1>
 
-<p><br></p>
-
-<p>adapt <a href="../file/_files/share/disk.xml">disk.xml</a> to your host name. pool/image name  and libvirt secret </p>
-
-<pre class=""><code>&lt;disk type='network' device='disk'&gt;
-#use the pool and image you have created before
- &lt;source protocol='rbd' name='poolCHANGEME/imagenameCHANGEME'&gt;
-#use an active mon server here
- &lt;host name='training-011.netways.local(CHANGEME)' port='6789'/&gt; 
-    &lt;/source&gt;
-    &lt;auth username='libvirt'&gt;
-#you've access to this via echo $secret
- &lt;secret type='ceph' uuid='8420b99b-0661-4972-8912-d0dcfca4d692CHANGEME'/&gt;
-    &lt;/auth&gt;
-  &lt;target dev='vda' bus='virtio'/&gt;
-    &lt;driver name='qemu' type='raw' cache='writeback'/&gt;
-&lt;/disk&gt;
-</code></pre>
-
-<p><br>
-<br></p>
+<ul>
+<li>create a clone of your VM</li>
+<li>create a new VM using the clone</li>
+</ul>
 
 <p>watch the disk growing</p>
 
-<pre><code># rbd -p libvirt info $(hostname)-vm
+<pre><code># rbd -p libvirt info new-libvirt-image
 # rados -p libvirt ls | grep &lt;prefix&gt; | wc -l
 </code></pre>
+
+<div class="notes"><p>
+have a look at your dashboard!
+</p></div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -3972,32 +3994,23 @@ virsh attach-device $(hostname)-vm disk.xml --persistent
     <div class="logo"></div>
 </div>
 
-<h1>Lab: Snapshot</h1>
-
-<ul>
-<li>create a clone of your VM</li>
-<li>create a new VM using the clone</li>
-</ul>
-
-<div id="net-footer">
-    <p id="footer-left">Ceph Training</p>
-    <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
-</div>
-</div>
-</div>
-<div id="010_rbd__060_lab_libvirt" class="slide " data-transition="none">
-<div class="content " ref="010_rbd//060_lab_libvirt/12">
-<h1 class="section_title">~~~SECTION:MAJOR~~~ Rados Block Device (RBD)</h1>
-<div id="net-header">
-    <div class="logo"></div>
-</div>
-
 <h1>Lab: VM live resize</h1>
 
 <ul>
 <li>resize your VM</li>
 <li>extend the RBD and the FS inside the VM</li>
 </ul>
+
+<div class="notes">
+<p>
+rbd -p libvirt resize new-libvirt-image --size 500G<br>
+virsh list for $id<br>
+virsh domblklist $id<br>
+virsh blockresize --domain $id --path vda --size 500G<br>
+root@resized-VM:~/# cfdisk /dev/vda <br>
+root@resized-VM:~/# resize2fs /dev/vda <br></p>
+
+</div>
 
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
@@ -4542,6 +4555,10 @@ $ ceph-deploy rgw create $HOSTNAME
 <pre><code>§ s3cmd ls s3://$bucket
 </code></pre>
 
+<div class="notes"><p>
+if it doesn't work, a helpful .s3cfg is at "<u>files/share</u>"
+</p></div>
+
 <div id="net-footer">
     <p id="footer-left">Ceph Training</p>
     <p id="footer-right">by NETWAYS GmbH (www.netways.de)</p>
@@ -4564,7 +4581,7 @@ $ ceph-deploy rgw create $HOSTNAME
 
 <p>provide credentials </p>
 
-<pre><code># ceph dashboard set-rgw-api-access-key &lt;access_key&gt;&lt;br/&gt;
+<pre><code># ceph dashboard set-rgw-api-access-key &lt;access_key&gt;
 # ceph dashboard set-rgw-api-secret-key &lt;secret_key&gt;
 </code></pre>
 

@@ -4735,6 +4735,381 @@
         "elapsed": 105.507,
         "timestamp": 1540465257,
         "presenter": ""
+      },
+      {
+        "elapsed": 6.062,
+        "timestamp": 1541765072,
+        "presenter": ""
+      },
+      {
+        "elapsed": 1.232,
+        "timestamp": 1541765080,
+        "presenter": "005_ceph_storage_cluster//000_toc"
+      },
+      {
+        "elapsed": 1.679,
+        "timestamp": 1541765085,
+        "presenter": "005_ceph_storage_cluster//001_history/4"
+      },
+      {
+        "elapsed": 1.032,
+        "timestamp": 1541765087,
+        "presenter": "005_ceph_storage_cluster//001_rados/1"
+      },
+      {
+        "elapsed": 1.272,
+        "timestamp": 1541765090,
+        "presenter": "005_ceph_storage_cluster//001_rados/5"
+      },
+      {
+        "elapsed": 1.664,
+        "timestamp": 1541765093,
+        "presenter": "005_ceph_storage_cluster//001_rados/7"
+      },
+      {
+        "elapsed": 7.4,
+        "timestamp": 1541765100,
+        "presenter": "005_ceph_storage_cluster//002_osd/2"
+      },
+      {
+        "elapsed": 1.16,
+        "timestamp": 1541765102,
+        "presenter": "005_ceph_storage_cluster//002_osd/3"
+      },
+      {
+        "elapsed": 1.791,
+        "timestamp": 1541765104,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/1"
+      },
+      {
+        "elapsed": 1.912,
+        "timestamp": 1541765106,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/2"
+      },
+      {
+        "elapsed": 4.258,
+        "timestamp": 1541765114,
+        "presenter": ""
+      },
+      {
+        "elapsed": 1.415,
+        "timestamp": 1541765115,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/3"
+      },
+      {
+        "elapsed": 1.153,
+        "timestamp": 1541765116,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/4"
+      },
+      {
+        "elapsed": 11.793,
+        "timestamp": 1541765130,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/8"
+      },
+      {
+        "elapsed": 3.384,
+        "timestamp": 1541765138,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/3"
+      },
+      {
+        "elapsed": 1.559,
+        "timestamp": 1541765140,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/5"
+      },
+      {
+        "elapsed": 7.561,
+        "timestamp": 1541765148,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 2.886,
+        "timestamp": 1541765151,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/8"
+      },
+      {
+        "elapsed": 10.4,
+        "timestamp": 1541765161,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/9"
+      },
+      {
+        "elapsed": 2.384,
+        "timestamp": 1541765165,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/11"
+      },
+      {
+        "elapsed": 1.169,
+        "timestamp": 1541765167,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/11"
+      },
+      {
+        "elapsed": 1.68,
+        "timestamp": 1541765169,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/12"
+      },
+      {
+        "elapsed": 7.768,
+        "timestamp": 1541765176,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 3.362,
+        "timestamp": 1541765181,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/15"
+      },
+      {
+        "elapsed": 1.126,
+        "timestamp": 1541765182,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/16"
+      },
+      {
+        "elapsed": 7.633,
+        "timestamp": 1541765189,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/17"
+      },
+      {
+        "elapsed": 3.351,
+        "timestamp": 1541765197,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/2"
+      },
+      {
+        "elapsed": 2.096,
+        "timestamp": 1541765199,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/3"
+      },
+      {
+        "elapsed": 4.784,
+        "timestamp": 1541765205,
+        "presenter": "005_ceph_storage_cluster//039_crush/3"
+      },
+      {
+        "elapsed": 2.655,
+        "timestamp": 1541765212,
+        "presenter": "005_ceph_storage_cluster//039_crush/5"
+      },
+      {
+        "elapsed": 4.161,
+        "timestamp": 1541765216,
+        "presenter": "005_ceph_storage_cluster//039_crush/6"
+      },
+      {
+        "elapsed": 1.25,
+        "timestamp": 1541765217,
+        "presenter": "005_ceph_storage_cluster//039_crush/7"
+      },
+      {
+        "elapsed": 1.209,
+        "timestamp": 1541765219,
+        "presenter": "005_ceph_storage_cluster//039_crush/9"
+      },
+      {
+        "elapsed": 1.792,
+        "timestamp": 1541765223,
+        "presenter": "005_ceph_storage_cluster//039_crush/12"
+      },
+      {
+        "elapsed": 1.216,
+        "timestamp": 1541765224,
+        "presenter": "005_ceph_storage_cluster//039_crush/13"
+      },
+      {
+        "elapsed": 1.785,
+        "timestamp": 1541765226,
+        "presenter": "005_ceph_storage_cluster//039_crush/13"
+      },
+      {
+        "elapsed": 3.039,
+        "timestamp": 1541765235,
+        "presenter": "005_ceph_storage_cluster//045_what_else/5"
+      },
+      {
+        "elapsed": 2.688,
+        "timestamp": 1541765238,
+        "presenter": "005_ceph_storage_cluster//045_what_else/7"
+      },
+      {
+        "elapsed": 2.777,
+        "timestamp": 1541765241,
+        "presenter": "005_ceph_storage_cluster//045_what_else/8"
+      },
+      {
+        "elapsed": 2.262,
+        "timestamp": 1541765243,
+        "presenter": "005_ceph_storage_cluster//045_what_else/9"
+      },
+      {
+        "elapsed": 1.52,
+        "timestamp": 1541765246,
+        "presenter": "005_ceph_storage_cluster//045_what_else/13"
+      },
+      {
+        "elapsed": 1.224,
+        "timestamp": 1541765247,
+        "presenter": "005_ceph_storage_cluster//045_what_else/14"
+      },
+      {
+        "elapsed": 9.169,
+        "timestamp": 1541765259,
+        "presenter": "005_ceph_storage_cluster//045_what_else/15"
+      },
+      {
+        "elapsed": 1.175,
+        "timestamp": 1541765260,
+        "presenter": "005_ceph_storage_cluster//045_what_else/16"
+      },
+      {
+        "elapsed": 2.584,
+        "timestamp": 1541765262,
+        "presenter": "005_ceph_storage_cluster//045_what_else/17"
+      },
+      {
+        "elapsed": 1.824,
+        "timestamp": 1541765264,
+        "presenter": "005_ceph_storage_cluster//045_what_else/18"
+      },
+      {
+        "elapsed": 1.28,
+        "timestamp": 1541765265,
+        "presenter": "005_ceph_storage_cluster//045_what_else/19"
+      },
+      {
+        "elapsed": 2.168,
+        "timestamp": 1541765269,
+        "presenter": "005_ceph_storage_cluster//045_what_else/19"
+      },
+      {
+        "elapsed": 5.367,
+        "timestamp": 1541765274,
+        "presenter": "005_ceph_storage_cluster//045_what_else/20"
+      },
+      {
+        "elapsed": 2.664,
+        "timestamp": 1541765279,
+        "presenter": "005_ceph_storage_cluster//045_what_else/21"
+      },
+      {
+        "elapsed": 2.48,
+        "timestamp": 1541765281,
+        "presenter": "005_ceph_storage_cluster//045_what_else/22"
+      },
+      {
+        "elapsed": 8.088,
+        "timestamp": 1541765289,
+        "presenter": "005_ceph_storage_cluster//045_what_else/23"
+      },
+      {
+        "elapsed": 1.4,
+        "timestamp": 1541765291,
+        "presenter": "005_ceph_storage_cluster//045_what_else/24"
+      },
+      {
+        "elapsed": 3.616,
+        "timestamp": 1541765294,
+        "presenter": "005_ceph_storage_cluster//045_what_else/25"
+      },
+      {
+        "elapsed": 4.208,
+        "timestamp": 1541765299,
+        "presenter": "005_ceph_storage_cluster//045_what_else/26"
+      },
+      {
+        "elapsed": 1.672,
+        "timestamp": 1541765304,
+        "presenter": "010_rbd//040_rbd/7"
+      },
+      {
+        "elapsed": 1.512,
+        "timestamp": 1541765306,
+        "presenter": "010_rbd//040_rbd/9"
+      },
+      {
+        "elapsed": 1.984,
+        "timestamp": 1541765308,
+        "presenter": "010_rbd//040_rbd/10"
+      },
+      {
+        "elapsed": 1.12,
+        "timestamp": 1541765310,
+        "presenter": "010_rbd//040_rbd/12"
+      },
+      {
+        "elapsed": 8.968,
+        "timestamp": 1541765319,
+        "presenter": "010_rbd//040_rbd/13"
+      },
+      {
+        "elapsed": 1.344,
+        "timestamp": 1541765321,
+        "presenter": "010_rbd//040_rbd/14"
+      },
+      {
+        "elapsed": 1.672,
+        "timestamp": 1541765324,
+        "presenter": "010_rbd//040_rbd/17"
+      },
+      {
+        "elapsed": 1.969,
+        "timestamp": 1541765328,
+        "presenter": "010_rbd//060_lab_libvirt/4"
+      },
+      {
+        "elapsed": 2.807,
+        "timestamp": 1541765331,
+        "presenter": "010_rbd//060_lab_libvirt/5"
+      },
+      {
+        "elapsed": 1.376,
+        "timestamp": 1541765332,
+        "presenter": "010_rbd//060_lab_libvirt/6"
+      },
+      {
+        "elapsed": 1.864,
+        "timestamp": 1541765334,
+        "presenter": "010_rbd//060_lab_libvirt/7"
+      },
+      {
+        "elapsed": 2.016,
+        "timestamp": 1541765337,
+        "presenter": "010_rbd//060_lab_libvirt/10"
+      },
+      {
+        "elapsed": 1.496,
+        "timestamp": 1541765339,
+        "presenter": "010_rbd//060_lab_libvirt/11"
+      },
+      {
+        "elapsed": 1.08,
+        "timestamp": 1541765348,
+        "presenter": "020_radosgw//000_toc"
+      },
+      {
+        "elapsed": 1.568,
+        "timestamp": 1541765350,
+        "presenter": "020_radosgw//005_overview/3"
+      },
+      {
+        "elapsed": 4.376,
+        "timestamp": 1541765358,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 5.432,
+        "timestamp": 1541765363,
+        "presenter": "020_radosgw//005_overview/12"
+      },
+      {
+        "elapsed": 8.088,
+        "timestamp": 1541765374,
+        "presenter": "025_cache_tier//001_cache_tier/3"
+      },
+      {
+        "elapsed": 1.224,
+        "timestamp": 1541765375,
+        "presenter": "025_cache_tier//001_cache_tier/5"
+      },
+      {
+        "elapsed": 1.2,
+        "timestamp": 1541765378,
+        "presenter": "030_operating//000_toc"
       }
     ],
     "127.0.0.1": [
