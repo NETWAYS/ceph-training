@@ -5110,6 +5110,71 @@
         "elapsed": 1.2,
         "timestamp": 1541765378,
         "presenter": "030_operating//000_toc"
+      },
+      {
+        "elapsed": 26.075,
+        "timestamp": 1542026506,
+        "presenter": ""
+      },
+      {
+        "elapsed": 7.862,
+        "timestamp": 1542026514,
+        "presenter": "global/Pre/Title/01_Title/2"
+      },
+      {
+        "elapsed": 1.009,
+        "timestamp": 1542026515,
+        "presenter": "001_introduction//000_toc"
+      },
+      {
+        "elapsed": 1.239,
+        "timestamp": 1542026522,
+        "presenter": "001_introduction//001_distributed_storage/11"
+      },
+      {
+        "elapsed": 1.385,
+        "timestamp": 1542026523,
+        "presenter": "001_introduction//001_distributed_storage/12"
+      },
+      {
+        "elapsed": 1.008,
+        "timestamp": 1542026524,
+        "presenter": "005_ceph_storage_cluster//000_toc"
+      },
+      {
+        "elapsed": 6.647,
+        "timestamp": 1542026531,
+        "presenter": "005_ceph_storage_cluster//001_history/2"
+      },
+      {
+        "elapsed": 3.241,
+        "timestamp": 1542026539,
+        "presenter": "005_ceph_storage_cluster//001_rados/5"
+      },
+      {
+        "elapsed": 1.248,
+        "timestamp": 1542026541,
+        "presenter": "005_ceph_storage_cluster//001_rados/4"
+      },
+      {
+        "elapsed": 98.939,
+        "timestamp": 1542026640,
+        "presenter": "005_ceph_storage_cluster//001_rados/3"
+      },
+      {
+        "elapsed": 12.037,
+        "timestamp": 1542026652,
+        "presenter": "005_ceph_storage_cluster//001_rados/4"
+      },
+      {
+        "elapsed": 3.12,
+        "timestamp": 1542026655,
+        "presenter": "005_ceph_storage_cluster//001_rados/5"
+      },
+      {
+        "elapsed": 8.336,
+        "timestamp": 1542026663,
+        "presenter": "005_ceph_storage_cluster//001_rados/4"
       }
     ],
     "127.0.0.1": [

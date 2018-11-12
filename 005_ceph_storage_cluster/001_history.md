@@ -23,6 +23,7 @@
 * 2018, May: Mimic released with new release cycle
 
 ~~~SECTION:notes~~~
+as of 12th of Nov. 2018: Ceph Foundation as part of Linux foundation <br/>
 funded by the United States Department of Energy and National Nuclear Security Administration
 also funded by Canonical <br/>
 new cycle since Mimic: LTS every 9 Months, before: every second release was LTS/stable<br/>
