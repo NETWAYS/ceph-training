@@ -171,6 +171,45 @@
         "timestamp": 1527857329,
         "presenter": null
       }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 221.033,
+        "timestamp": 1542103206,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 41.657,
+        "timestamp": 1542103249,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 7.158,
+        "timestamp": 1542103258,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 4.355,
+        "timestamp": 1542103348,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 11.869,
+        "timestamp": 1542103365,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 25.484,
+        "timestamp": 1542107326,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 5.882,
+        "timestamp": 1542112341,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      }
     ]
   },
   "005_ceph_storage_cluster//030_lab_install/8": {
@@ -185,6 +224,55 @@
         "timestamp": 1527857331,
         "presenter": null
       }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 2.203,
+        "timestamp": 1542103251,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 4.611,
+        "timestamp": 1542103263,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 5.097,
+        "timestamp": 1542103353,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 45.966,
+        "timestamp": 1542103512,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/9"
+      },
+      {
+        "elapsed": 4.543,
+        "timestamp": 1542103526,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/10"
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 396.773,
+        "timestamp": 1542105592,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 2.525,
+        "timestamp": 1542107329,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 3.585,
+        "timestamp": 1542112334,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 3.672,
+        "timestamp": 1542112344,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      }
     ]
   },
   "005_ceph_storage_cluster//030_lab_install/9": {
@@ -194,6 +282,30 @@
         "timestamp": 1527857333,
         "presenter": null
       }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 99.344,
+        "timestamp": 1542103467,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/9"
+      },
+      {
+        "elapsed": 4.142,
+        "timestamp": 1542103522,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/10"
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 1.138,
+        "timestamp": 1542112331,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 2.614,
+        "timestamp": 1542112347,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      }
     ]
   },
   "005_ceph_storage_cluster//030_lab_install/10": {
@@ -202,6 +314,30 @@
         "elapsed": 4.721,
         "timestamp": 1527857338,
         "presenter": null
+      }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 5.212,
+        "timestamp": 1542103518,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/10"
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 1.805,
+        "timestamp": 1542107299,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 6.511,
+        "timestamp": 1542112329,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 1.147,
+        "timestamp": 1542112348,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
       }
     ]
   },
@@ -229,6 +365,28 @@
         "timestamp": 1528212431,
         "presenter": "005_ceph_storage_cluster//001_rados/4"
       }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 239.371,
+        "timestamp": 1542106301,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 3.945,
+        "timestamp": 1542107297,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 2.13,
+        "timestamp": 1542112322,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 4.708,
+        "timestamp": 1542112353,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      }
     ]
   },
   "005_ceph_storage_cluster//030_lab_install/12": {
@@ -247,6 +405,23 @@
         "elapsed": 3.455,
         "timestamp": 1532522538,
         "presenter": null
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 1.928,
+        "timestamp": 1542106303,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 1.116,
+        "timestamp": 1542112320,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 12.564,
+        "timestamp": 1542112365,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
       }
     ]
   },
@@ -268,6 +443,38 @@
         "elapsed": 1.127,
         "timestamp": 1528212433,
         "presenter": "005_ceph_storage_cluster//001_rados/4"
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 988.606,
+        "timestamp": 1542107292,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 4990.14,
+        "timestamp": 1542112319,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 12.358,
+        "timestamp": 1542112378,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 5.564,
+        "timestamp": 1542112384,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 4.158,
+        "timestamp": 1542112389,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 195.699,
+        "timestamp": 1542113265,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
       }
     ]
   },
@@ -5175,6 +5382,1406 @@
         "elapsed": 8.336,
         "timestamp": 1542026663,
         "presenter": "005_ceph_storage_cluster//001_rados/4"
+      },
+      {
+        "elapsed": 22.837,
+        "timestamp": 1542093738,
+        "presenter": "global/Pre/Title/01_Title/1"
+      },
+      {
+        "elapsed": 1.001,
+        "timestamp": 1542093739,
+        "presenter": "global/Pre/Title/01_Title/2"
+      },
+      {
+        "elapsed": 3106.418,
+        "timestamp": 1542096845,
+        "presenter": "global/Pre/Title/01_Title/1"
+      },
+      {
+        "elapsed": 608.943,
+        "timestamp": 1542097454,
+        "presenter": "global/Pre/Title/01_Title/2"
+      },
+      {
+        "elapsed": 34.005,
+        "timestamp": 1542097488,
+        "presenter": "001_introduction//000_toc"
+      },
+      {
+        "elapsed": 44.664,
+        "timestamp": 1542097533,
+        "presenter": "001_introduction//001_distributed_storage/1"
+      },
+      {
+        "elapsed": 5.836,
+        "timestamp": 1542097539,
+        "presenter": "001_introduction//001_distributed_storage/2"
+      },
+      {
+        "elapsed": 22.489,
+        "timestamp": 1542097561,
+        "presenter": "001_introduction//001_distributed_storage/3"
+      },
+      {
+        "elapsed": 7.055,
+        "timestamp": 1542097568,
+        "presenter": "001_introduction//001_distributed_storage/4"
+      },
+      {
+        "elapsed": 36.481,
+        "timestamp": 1542097605,
+        "presenter": "001_introduction//001_distributed_storage/5"
+      },
+      {
+        "elapsed": 429.034,
+        "timestamp": 1542098034,
+        "presenter": "001_introduction//001_distributed_storage/6"
+      },
+      {
+        "elapsed": 4.719,
+        "timestamp": 1542098039,
+        "presenter": "001_introduction//001_distributed_storage/7"
+      },
+      {
+        "elapsed": 7.529,
+        "timestamp": 1542098046,
+        "presenter": "001_introduction//001_distributed_storage/8"
+      },
+      {
+        "elapsed": 3.953,
+        "timestamp": 1542098050,
+        "presenter": "001_introduction//001_distributed_storage/9"
+      },
+      {
+        "elapsed": 4.214,
+        "timestamp": 1542098054,
+        "presenter": "001_introduction//001_distributed_storage/10"
+      },
+      {
+        "elapsed": 37.009,
+        "timestamp": 1542098091,
+        "presenter": "001_introduction//001_distributed_storage/11"
+      },
+      {
+        "elapsed": 304.617,
+        "timestamp": 1542098396,
+        "presenter": "001_introduction//001_distributed_storage/12"
+      },
+      {
+        "elapsed": 190.731,
+        "timestamp": 1542098587,
+        "presenter": "001_introduction//001_distributed_storage/12"
+      },
+      {
+        "elapsed": 4.729,
+        "timestamp": 1542098592,
+        "presenter": "005_ceph_storage_cluster//000_toc"
+      },
+      {
+        "elapsed": 3.92,
+        "timestamp": 1542098596,
+        "presenter": "005_ceph_storage_cluster//001_history/1"
+      },
+      {
+        "elapsed": 304.675,
+        "timestamp": 1542098901,
+        "presenter": "005_ceph_storage_cluster//001_history/2"
+      },
+      {
+        "elapsed": 3.742,
+        "timestamp": 1542098904,
+        "presenter": "005_ceph_storage_cluster//001_history/3"
+      },
+      {
+        "elapsed": 1.503,
+        "timestamp": 1542098906,
+        "presenter": "005_ceph_storage_cluster//001_history/4"
+      },
+      {
+        "elapsed": 65.459,
+        "timestamp": 1542098971,
+        "presenter": "005_ceph_storage_cluster//001_history/5"
+      },
+      {
+        "elapsed": 1.018,
+        "timestamp": 1542098972,
+        "presenter": "005_ceph_storage_cluster//001_rados/1"
+      },
+      {
+        "elapsed": 6.388,
+        "timestamp": 1542098979,
+        "presenter": "005_ceph_storage_cluster//001_rados/2"
+      },
+      {
+        "elapsed": 33.088,
+        "timestamp": 1542099012,
+        "presenter": "005_ceph_storage_cluster//001_rados/3"
+      },
+      {
+        "elapsed": 61.088,
+        "timestamp": 1542099073,
+        "presenter": "005_ceph_storage_cluster//001_rados/4"
+      },
+      {
+        "elapsed": 24.369,
+        "timestamp": 1542099097,
+        "presenter": "005_ceph_storage_cluster//001_rados/5"
+      },
+      {
+        "elapsed": 309.832,
+        "timestamp": 1542099407,
+        "presenter": "005_ceph_storage_cluster//001_rados/6"
+      },
+      {
+        "elapsed": 307.982,
+        "timestamp": 1542099716,
+        "presenter": "005_ceph_storage_cluster//001_rados/6"
+      },
+      {
+        "elapsed": 173.68,
+        "timestamp": 1542099890,
+        "presenter": "005_ceph_storage_cluster//001_rados/6"
+      },
+      {
+        "elapsed": 13.288,
+        "timestamp": 1542099904,
+        "presenter": "005_ceph_storage_cluster//001_rados/7"
+      },
+      {
+        "elapsed": 30.444,
+        "timestamp": 1542099934,
+        "presenter": "005_ceph_storage_cluster//002_osd/1"
+      },
+      {
+        "elapsed": 81.181,
+        "timestamp": 1542100015,
+        "presenter": "005_ceph_storage_cluster//002_osd/2"
+      },
+      {
+        "elapsed": 155.209,
+        "timestamp": 1542100170,
+        "presenter": "005_ceph_storage_cluster//002_osd/3"
+      },
+      {
+        "elapsed": 10.273,
+        "timestamp": 1542100181,
+        "presenter": "005_ceph_storage_cluster//002_osd/3"
+      },
+      {
+        "elapsed": 46.376,
+        "timestamp": 1542100228,
+        "presenter": "005_ceph_storage_cluster//002_osd/4"
+      },
+      {
+        "elapsed": 247.233,
+        "timestamp": 1542100475,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/1"
+      },
+      {
+        "elapsed": 165.384,
+        "timestamp": 1542100640,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/2"
+      },
+      {
+        "elapsed": 76.929,
+        "timestamp": 1542100717,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/3"
+      },
+      {
+        "elapsed": 70.712,
+        "timestamp": 1542100788,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/4"
+      },
+      {
+        "elapsed": 17.416,
+        "timestamp": 1542100805,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/5"
+      },
+      {
+        "elapsed": 306.969,
+        "timestamp": 1542101112,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/6"
+      },
+      {
+        "elapsed": 128.312,
+        "timestamp": 1542101241,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/6"
+      },
+      {
+        "elapsed": 22.845,
+        "timestamp": 1542101264,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/7"
+      },
+      {
+        "elapsed": 21.979,
+        "timestamp": 1542101286,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/8"
+      },
+      {
+        "elapsed": 1171.141,
+        "timestamp": 1542102457,
+        "presenter": "005_ceph_storage_cluster//004_pool+pg/9"
+      },
+      {
+        "elapsed": 3.575,
+        "timestamp": 1542102461,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/1"
+      },
+      {
+        "elapsed": 182.649,
+        "timestamp": 1542102643,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/2"
+      },
+      {
+        "elapsed": 24.039,
+        "timestamp": 1542102667,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/3"
+      },
+      {
+        "elapsed": 45.601,
+        "timestamp": 1542102713,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/4"
+      },
+      {
+        "elapsed": 55.256,
+        "timestamp": 1542102768,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/5"
+      },
+      {
+        "elapsed": 405.331,
+        "timestamp": 1542103173,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/6"
+      },
+      {
+        "elapsed": 270.376,
+        "timestamp": 1542103444,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 20.608,
+        "timestamp": 1542103464,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/8"
+      },
+      {
+        "elapsed": 51.4,
+        "timestamp": 1542103516,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/9"
+      },
+      {
+        "elapsed": 39.424,
+        "timestamp": 1542103555,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/10"
+      },
+      {
+        "elapsed": 125.721,
+        "timestamp": 1542103681,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/11"
+      },
+      {
+        "elapsed": 231.28,
+        "timestamp": 1542103912,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/12"
+      },
+      {
+        "elapsed": 287.857,
+        "timestamp": 1542104200,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      },
+      {
+        "elapsed": 3016.003,
+        "timestamp": 1542107216,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 7258.587,
+        "timestamp": 1542114475,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 815.244,
+        "timestamp": 1542115290,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/16"
+      },
+      {
+        "elapsed": 1714.674,
+        "timestamp": 1542117005,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/17"
+      },
+      {
+        "elapsed": 26.527,
+        "timestamp": 1542117031,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/18"
+      },
+      {
+        "elapsed": 420.138,
+        "timestamp": 1542117451,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/19"
+      },
+      {
+        "elapsed": 411.511,
+        "timestamp": 1542117863,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/20"
+      },
+      {
+        "elapsed": 32.189,
+        "timestamp": 1542117895,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/1"
+      },
+      {
+        "elapsed": 8.207,
+        "timestamp": 1542117903,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/2"
+      },
+      {
+        "elapsed": 177.772,
+        "timestamp": 1542118081,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/3"
+      },
+      {
+        "elapsed": 11.007,
+        "timestamp": 1542118092,
+        "presenter": "005_ceph_storage_cluster//039_crush/1"
+      },
+      {
+        "elapsed": 53.984,
+        "timestamp": 1542118146,
+        "presenter": "005_ceph_storage_cluster//039_crush/2"
+      },
+      {
+        "elapsed": 60.264,
+        "timestamp": 1542118206,
+        "presenter": "005_ceph_storage_cluster//039_crush/3"
+      },
+      {
+        "elapsed": 110.704,
+        "timestamp": 1542118317,
+        "presenter": "005_ceph_storage_cluster//039_crush/4"
+      },
+      {
+        "elapsed": 6.769,
+        "timestamp": 1542118324,
+        "presenter": "005_ceph_storage_cluster//039_crush/5"
+      },
+      {
+        "elapsed": 6.169,
+        "timestamp": 1542118330,
+        "presenter": "005_ceph_storage_cluster//039_crush/3"
+      },
+      {
+        "elapsed": 87.969,
+        "timestamp": 1542118419,
+        "presenter": "005_ceph_storage_cluster//039_crush/5"
+      },
+      {
+        "elapsed": 127.753,
+        "timestamp": 1542118546,
+        "presenter": "005_ceph_storage_cluster//039_crush/6"
+      },
+      {
+        "elapsed": 304.531,
+        "timestamp": 1542118851,
+        "presenter": "005_ceph_storage_cluster//039_crush/7"
+      },
+      {
+        "elapsed": 1.646,
+        "timestamp": 1542118853,
+        "presenter": "005_ceph_storage_cluster//039_crush/8"
+      },
+      {
+        "elapsed": 47.679,
+        "timestamp": 1542118900,
+        "presenter": "005_ceph_storage_cluster//039_crush/7"
+      },
+      {
+        "elapsed": 26.792,
+        "timestamp": 1542118927,
+        "presenter": "005_ceph_storage_cluster//039_crush/8"
+      },
+      {
+        "elapsed": 309.095,
+        "timestamp": 1542119236,
+        "presenter": "005_ceph_storage_cluster//039_crush/9"
+      },
+      {
+        "elapsed": 796.969,
+        "timestamp": 1542120034,
+        "presenter": "005_ceph_storage_cluster//039_crush/9"
+      },
+      {
+        "elapsed": 48.487,
+        "timestamp": 1542120083,
+        "presenter": "005_ceph_storage_cluster//039_crush/9"
+      },
+      {
+        "elapsed": 27.537,
+        "timestamp": 1542120111,
+        "presenter": "005_ceph_storage_cluster//039_crush/10"
+      },
+      {
+        "elapsed": 92.84,
+        "timestamp": 1542120204,
+        "presenter": "005_ceph_storage_cluster//039_crush/11"
+      },
+      {
+        "elapsed": 13.648,
+        "timestamp": 1542120217,
+        "presenter": "005_ceph_storage_cluster//039_crush/12"
+      },
+      {
+        "elapsed": 101.272,
+        "timestamp": 1542120318,
+        "presenter": "005_ceph_storage_cluster//039_crush/13"
+      },
+      {
+        "elapsed": 10.256,
+        "timestamp": 1542120329,
+        "presenter": "005_ceph_storage_cluster//039_crush/14"
+      },
+      {
+        "elapsed": 7.911,
+        "timestamp": 1542120338,
+        "presenter": "005_ceph_storage_cluster//039_crush/14"
+      },
+      {
+        "elapsed": 12.441,
+        "timestamp": 1542120351,
+        "presenter": "005_ceph_storage_cluster//039_crush/13"
+      },
+      {
+        "elapsed": 167.152,
+        "timestamp": 1542120518,
+        "presenter": "005_ceph_storage_cluster//039_crush/14"
+      },
+      {
+        "elapsed": 5.688,
+        "timestamp": 1542120524,
+        "presenter": "005_ceph_storage_cluster//039_crush/15"
+      },
+      {
+        "elapsed": 29.688,
+        "timestamp": 1542120553,
+        "presenter": "005_ceph_storage_cluster//039_crush/16"
+      },
+      {
+        "elapsed": 7.544,
+        "timestamp": 1542120561,
+        "presenter": "005_ceph_storage_cluster//040_lab_crushmap/1"
+      },
+      {
+        "elapsed": 17.992,
+        "timestamp": 1542120579,
+        "presenter": "005_ceph_storage_cluster//045_what_else/1"
+      },
+      {
+        "elapsed": 64.824,
+        "timestamp": 1542120644,
+        "presenter": "005_ceph_storage_cluster//045_what_else/2"
+      },
+      {
+        "elapsed": 126.049,
+        "timestamp": 1542120770,
+        "presenter": "005_ceph_storage_cluster//045_what_else/3"
+      },
+      {
+        "elapsed": 51.432,
+        "timestamp": 1542120821,
+        "presenter": "005_ceph_storage_cluster//045_what_else/4"
+      },
+      {
+        "elapsed": 1.864,
+        "timestamp": 1542120823,
+        "presenter": "005_ceph_storage_cluster//045_what_else/5"
+      },
+      {
+        "elapsed": 35.986,
+        "timestamp": 1542120859,
+        "presenter": "005_ceph_storage_cluster//045_what_else/4"
+      },
+      {
+        "elapsed": 170.054,
+        "timestamp": 1542121029,
+        "presenter": "005_ceph_storage_cluster//045_what_else/5"
+      },
+      {
+        "elapsed": 42.681,
+        "timestamp": 1542121072,
+        "presenter": "005_ceph_storage_cluster//045_what_else/6"
+      },
+      {
+        "elapsed": 96.185,
+        "timestamp": 1542121168,
+        "presenter": "005_ceph_storage_cluster//045_what_else/7"
+      },
+      {
+        "elapsed": 85.376,
+        "timestamp": 1542121253,
+        "presenter": "005_ceph_storage_cluster//045_what_else/8"
+      },
+      {
+        "elapsed": 75.928,
+        "timestamp": 1542121329,
+        "presenter": "005_ceph_storage_cluster//045_what_else/9"
+      },
+      {
+        "elapsed": 3.439,
+        "timestamp": 1542121333,
+        "presenter": "005_ceph_storage_cluster//045_what_else/8"
+      },
+      {
+        "elapsed": 295.914,
+        "timestamp": 1542121629,
+        "presenter": "005_ceph_storage_cluster//045_what_else/9"
+      },
+      {
+        "elapsed": 89.032,
+        "timestamp": 1542121718,
+        "presenter": "005_ceph_storage_cluster//045_what_else/10"
+      },
+      {
+        "elapsed": 11.568,
+        "timestamp": 1542121729,
+        "presenter": "005_ceph_storage_cluster//045_what_else/11"
+      },
+      {
+        "elapsed": 3.728,
+        "timestamp": 1542121733,
+        "presenter": "005_ceph_storage_cluster//045_what_else/10"
+      },
+      {
+        "elapsed": 2.04,
+        "timestamp": 1542121735,
+        "presenter": "005_ceph_storage_cluster//045_what_else/11"
+      },
+      {
+        "elapsed": 3.464,
+        "timestamp": 1542121738,
+        "presenter": "005_ceph_storage_cluster//045_what_else/10"
+      },
+      {
+        "elapsed": 68.776,
+        "timestamp": 1542121807,
+        "presenter": "005_ceph_storage_cluster//045_what_else/11"
+      },
+      {
+        "elapsed": 285.706,
+        "timestamp": 1542122093,
+        "presenter": "005_ceph_storage_cluster//045_what_else/12"
+      },
+      {
+        "elapsed": 199.433,
+        "timestamp": 1542122292,
+        "presenter": "005_ceph_storage_cluster//045_what_else/13"
+      },
+      {
+        "elapsed": 68.423,
+        "timestamp": 1542122361,
+        "presenter": "005_ceph_storage_cluster//045_what_else/14"
+      },
+      {
+        "elapsed": 101.361,
+        "timestamp": 1542122462,
+        "presenter": "005_ceph_storage_cluster//045_what_else/15"
+      },
+      {
+        "elapsed": 50.168,
+        "timestamp": 1542122512,
+        "presenter": "005_ceph_storage_cluster//045_what_else/16"
+      },
+      {
+        "elapsed": 170.706,
+        "timestamp": 1542122683,
+        "presenter": "005_ceph_storage_cluster//045_what_else/17"
+      },
+      {
+        "elapsed": 142.68,
+        "timestamp": 1542122826,
+        "presenter": "005_ceph_storage_cluster//045_what_else/18"
+      },
+      {
+        "elapsed": 29.656,
+        "timestamp": 1542122855,
+        "presenter": "005_ceph_storage_cluster//045_what_else/19"
+      },
+      {
+        "elapsed": 12.224,
+        "timestamp": 1542122868,
+        "presenter": "005_ceph_storage_cluster//045_what_else/20"
+      },
+      {
+        "elapsed": 360.745,
+        "timestamp": 1542123228,
+        "presenter": "005_ceph_storage_cluster//045_what_else/21"
+      },
+      {
+        "elapsed": 182.713,
+        "timestamp": 1542123411,
+        "presenter": "005_ceph_storage_cluster//045_what_else/22"
+      },
+      {
+        "elapsed": 166.665,
+        "timestamp": 1542123578,
+        "presenter": "005_ceph_storage_cluster//045_what_else/23"
+      },
+      {
+        "elapsed": 50.079,
+        "timestamp": 1542123628,
+        "presenter": "005_ceph_storage_cluster//045_what_else/24"
+      },
+      {
+        "elapsed": 39.569,
+        "timestamp": 1542123667,
+        "presenter": "005_ceph_storage_cluster//045_what_else/25"
+      },
+      {
+        "elapsed": 1.904,
+        "timestamp": 1542123670,
+        "presenter": "005_ceph_storage_cluster//045_what_else/25"
+      },
+      {
+        "elapsed": 9.912,
+        "timestamp": 1542123680,
+        "presenter": "005_ceph_storage_cluster//045_what_else/24"
+      },
+      {
+        "elapsed": 12.512,
+        "timestamp": 1542123693,
+        "presenter": "005_ceph_storage_cluster//045_what_else/26"
+      },
+      {
+        "elapsed": 1.648,
+        "timestamp": 1542123695,
+        "presenter": "010_rbd//000_toc"
+      },
+      {
+        "elapsed": 348.061,
+        "timestamp": 1542124043,
+        "presenter": "005_ceph_storage_cluster//045_what_else/26"
+      },
+      {
+        "elapsed": 57537.413,
+        "timestamp": 1542181580,
+        "presenter": "010_rbd//000_toc"
+      },
+      {
+        "elapsed": 1.207,
+        "timestamp": 1542181581,
+        "presenter": "010_rbd//040_rbd/1"
+      },
+      {
+        "elapsed": 1571.614,
+        "timestamp": 1542183153,
+        "presenter": "010_rbd//000_toc"
+      },
+      {
+        "elapsed": 2.246,
+        "timestamp": 1542183155,
+        "presenter": "010_rbd//040_rbd/1"
+      },
+      {
+        "elapsed": 15.575,
+        "timestamp": 1542183171,
+        "presenter": "010_rbd//040_rbd/2"
+      },
+      {
+        "elapsed": 24.744,
+        "timestamp": 1542183196,
+        "presenter": "010_rbd//040_rbd/3"
+      },
+      {
+        "elapsed": 63.073,
+        "timestamp": 1542183259,
+        "presenter": "010_rbd//040_rbd/4"
+      },
+      {
+        "elapsed": 14.44,
+        "timestamp": 1542183273,
+        "presenter": "010_rbd//040_rbd/5"
+      },
+      {
+        "elapsed": 39.704,
+        "timestamp": 1542183313,
+        "presenter": "010_rbd//040_rbd/6"
+      },
+      {
+        "elapsed": 7.344,
+        "timestamp": 1542183320,
+        "presenter": "010_rbd//040_rbd/7"
+      },
+      {
+        "elapsed": 36.529,
+        "timestamp": 1542183357,
+        "presenter": "010_rbd//040_rbd/6"
+      },
+      {
+        "elapsed": 29.137,
+        "timestamp": 1542183387,
+        "presenter": "010_rbd//040_rbd/3"
+      },
+      {
+        "elapsed": 133.089,
+        "timestamp": 1542183521,
+        "presenter": "010_rbd//040_rbd/7"
+      },
+      {
+        "elapsed": 25.599,
+        "timestamp": 1542183547,
+        "presenter": "010_rbd//040_rbd/8"
+      },
+      {
+        "elapsed": 113.681,
+        "timestamp": 1542183660,
+        "presenter": "010_rbd//040_rbd/9"
+      },
+      {
+        "elapsed": 40.728,
+        "timestamp": 1542183701,
+        "presenter": "010_rbd//040_rbd/10"
+      },
+      {
+        "elapsed": 90.625,
+        "timestamp": 1542183792,
+        "presenter": "010_rbd//040_rbd/11"
+      },
+      {
+        "elapsed": 299.641,
+        "timestamp": 1542184091,
+        "presenter": "010_rbd//040_rbd/12"
+      },
+      {
+        "elapsed": 409.777,
+        "timestamp": 1542184501,
+        "presenter": "010_rbd//040_rbd/13"
+      },
+      {
+        "elapsed": 170.033,
+        "timestamp": 1542184671,
+        "presenter": "010_rbd//040_rbd/14"
+      },
+      {
+        "elapsed": 35.712,
+        "timestamp": 1542184707,
+        "presenter": "010_rbd//040_rbd/15"
+      },
+      {
+        "elapsed": 81.464,
+        "timestamp": 1542184788,
+        "presenter": "010_rbd//040_rbd/16"
+      },
+      {
+        "elapsed": 1.554,
+        "timestamp": 1542184790,
+        "presenter": "010_rbd//040_rbd/15"
+      },
+      {
+        "elapsed": 42.896,
+        "timestamp": 1542184833,
+        "presenter": "010_rbd//040_rbd/17"
+      },
+      {
+        "elapsed": 5.962,
+        "timestamp": 1542184839,
+        "presenter": "010_rbd//040_rbd/16"
+      },
+      {
+        "elapsed": 1.486,
+        "timestamp": 1542184841,
+        "presenter": "010_rbd//040_rbd/17"
+      },
+      {
+        "elapsed": 83.953,
+        "timestamp": 1542184925,
+        "presenter": "010_rbd//040_rbd/18"
+      },
+      {
+        "elapsed": 69.264,
+        "timestamp": 1542184994,
+        "presenter": "010_rbd//040_rbd/19"
+      },
+      {
+        "elapsed": 4.712,
+        "timestamp": 1542184999,
+        "presenter": "010_rbd//060_lab_libvirt/1"
+      },
+      {
+        "elapsed": 36.368,
+        "timestamp": 1542185035,
+        "presenter": "010_rbd//060_lab_libvirt/2"
+      },
+      {
+        "elapsed": 21.264,
+        "timestamp": 1542185056,
+        "presenter": "010_rbd//060_lab_libvirt/3"
+      },
+      {
+        "elapsed": 83.122,
+        "timestamp": 1542185139,
+        "presenter": "010_rbd//060_lab_libvirt/4"
+      },
+      {
+        "elapsed": 8.245,
+        "timestamp": 1542185148,
+        "presenter": "010_rbd//060_lab_libvirt/3"
+      },
+      {
+        "elapsed": 1.362,
+        "timestamp": 1542185149,
+        "presenter": "010_rbd//060_lab_libvirt/2"
+      },
+      {
+        "elapsed": 23.601,
+        "timestamp": 1542185173,
+        "presenter": "010_rbd//060_lab_libvirt/4"
+      },
+      {
+        "elapsed": 234.676,
+        "timestamp": 1542185408,
+        "presenter": "010_rbd//060_lab_libvirt/5"
+      },
+      {
+        "elapsed": 1384.055,
+        "timestamp": 1542186793,
+        "presenter": "010_rbd//060_lab_libvirt/5"
+      },
+      {
+        "elapsed": 12.079,
+        "timestamp": 1542186805,
+        "presenter": "010_rbd//060_lab_libvirt/6"
+      },
+      {
+        "elapsed": 37.496,
+        "timestamp": 1542186842,
+        "presenter": "010_rbd//060_lab_libvirt/7"
+      },
+      {
+        "elapsed": 31.168,
+        "timestamp": 1542186874,
+        "presenter": "010_rbd//060_lab_libvirt/9"
+      },
+      {
+        "elapsed": 53.232,
+        "timestamp": 1542186927,
+        "presenter": "010_rbd//060_lab_libvirt/10"
+      },
+      {
+        "elapsed": 22.672,
+        "timestamp": 1542186950,
+        "presenter": "010_rbd//060_lab_libvirt/11"
+      },
+      {
+        "elapsed": 4.368,
+        "timestamp": 1542186954,
+        "presenter": "010_rbd//060_lab_libvirt/12"
+      },
+      {
+        "elapsed": 5.272,
+        "timestamp": 1542186960,
+        "presenter": "010_rbd//060_lab_libvirt/11"
+      },
+      {
+        "elapsed": 19.784,
+        "timestamp": 1542186979,
+        "presenter": "010_rbd//060_lab_libvirt/12"
+      },
+      {
+        "elapsed": 13.24,
+        "timestamp": 1542186995,
+        "presenter": "010_rbd//060_lab_libvirt/7"
+      },
+      {
+        "elapsed": 3.296,
+        "timestamp": 1542186998,
+        "presenter": "010_rbd//060_lab_libvirt/6"
+      },
+      {
+        "elapsed": 537.454,
+        "timestamp": 1542187536,
+        "presenter": "010_rbd//060_lab_libvirt/7"
+      },
+      {
+        "elapsed": 1.159,
+        "timestamp": 1542187537,
+        "presenter": "010_rbd//060_lab_libvirt/8"
+      },
+      {
+        "elapsed": 293.285,
+        "timestamp": 1542187830,
+        "presenter": "010_rbd//060_lab_libvirt/9"
+      },
+      {
+        "elapsed": 74.433,
+        "timestamp": 1542187905,
+        "presenter": "010_rbd//060_lab_libvirt/10"
+      },
+      {
+        "elapsed": 1.962,
+        "timestamp": 1542187907,
+        "presenter": "010_rbd//060_lab_libvirt/9"
+      },
+      {
+        "elapsed": 44.851,
+        "timestamp": 1542187952,
+        "presenter": "010_rbd//060_lab_libvirt/7"
+      },
+      {
+        "elapsed": 1.304,
+        "timestamp": 1542187954,
+        "presenter": "010_rbd//060_lab_libvirt/9"
+      },
+      {
+        "elapsed": 88.398,
+        "timestamp": 1542188042,
+        "presenter": "010_rbd//060_lab_libvirt/10"
+      },
+      {
+        "elapsed": 104.442,
+        "timestamp": 1542188147,
+        "presenter": "010_rbd//060_lab_libvirt/11"
+      },
+      {
+        "elapsed": 2.324,
+        "timestamp": 1542188149,
+        "presenter": "010_rbd//060_lab_libvirt/12"
+      },
+      {
+        "elapsed": 284.619,
+        "timestamp": 1542188434,
+        "presenter": "010_rbd//060_lab_libvirt/11"
+      },
+      {
+        "elapsed": 466.626,
+        "timestamp": 1542188900,
+        "presenter": "010_rbd//060_lab_libvirt/12"
+      },
+      {
+        "elapsed": 379.547,
+        "timestamp": 1542189280,
+        "presenter": "010_rbd//060_lab_libvirt/13"
+      },
+      {
+        "elapsed": 531.129,
+        "timestamp": 1542189811,
+        "presenter": "015_cephfs//000_toc"
+      },
+      {
+        "elapsed": 3.671,
+        "timestamp": 1542189815,
+        "presenter": "015_cephfs//005_overview/1"
+      },
+      {
+        "elapsed": 20.088,
+        "timestamp": 1542189835,
+        "presenter": "015_cephfs//005_overview/2"
+      },
+      {
+        "elapsed": 13.145,
+        "timestamp": 1542189848,
+        "presenter": "015_cephfs//005_overview/3"
+      },
+      {
+        "elapsed": 30.512,
+        "timestamp": 1542189878,
+        "presenter": "015_cephfs//005_overview/4"
+      },
+      {
+        "elapsed": 40.664,
+        "timestamp": 1542189919,
+        "presenter": "015_cephfs//010_components/1"
+      },
+      {
+        "elapsed": 57.568,
+        "timestamp": 1542189977,
+        "presenter": "015_cephfs//013_md/1"
+      },
+      {
+        "elapsed": 10.192,
+        "timestamp": 1542189987,
+        "presenter": "015_cephfs//013_md/2"
+      },
+      {
+        "elapsed": 17.688,
+        "timestamp": 1542190005,
+        "presenter": "015_cephfs//013_md/3"
+      },
+      {
+        "elapsed": 105.441,
+        "timestamp": 1542190110,
+        "presenter": "015_cephfs//013_md/4"
+      },
+      {
+        "elapsed": 70.864,
+        "timestamp": 1542190181,
+        "presenter": "015_cephfs//015_best_practice"
+      },
+      {
+        "elapsed": 61.768,
+        "timestamp": 1542190243,
+        "presenter": "015_cephfs//020_mds+fs"
+      },
+      {
+        "elapsed": 3.92,
+        "timestamp": 1542190248,
+        "presenter": "015_cephfs//013_md/4"
+      },
+      {
+        "elapsed": 1.657,
+        "timestamp": 1542190250,
+        "presenter": "015_cephfs//020_mds+fs"
+      },
+      {
+        "elapsed": 34.704,
+        "timestamp": 1542190285,
+        "presenter": "015_cephfs//30_ceph_clients"
+      },
+      {
+        "elapsed": 35.784,
+        "timestamp": 1542190321,
+        "presenter": "015_cephfs//015_best_practice"
+      },
+      {
+        "elapsed": 1.032,
+        "timestamp": 1542190322,
+        "presenter": "015_cephfs//020_mds+fs"
+      },
+      {
+        "elapsed": 1.88,
+        "timestamp": 1542190325,
+        "presenter": "020_radosgw//000_toc"
+      },
+      {
+        "elapsed": 90.088,
+        "timestamp": 1542190415,
+        "presenter": "015_cephfs//30_ceph_clients"
+      },
+      {
+        "elapsed": 10.688,
+        "timestamp": 1542190426,
+        "presenter": "020_radosgw//000_toc"
+      },
+      {
+        "elapsed": 121.497,
+        "timestamp": 1542190547,
+        "presenter": "020_radosgw//005_overview/1"
+      },
+      {
+        "elapsed": 9.36,
+        "timestamp": 1542190557,
+        "presenter": "020_radosgw//005_overview/2"
+      },
+      {
+        "elapsed": 113.984,
+        "timestamp": 1542190670,
+        "presenter": "020_radosgw//005_overview/3"
+      },
+      {
+        "elapsed": 14.816,
+        "timestamp": 1542190685,
+        "presenter": "020_radosgw//005_overview/4"
+      },
+      {
+        "elapsed": 25.113,
+        "timestamp": 1542190710,
+        "presenter": "020_radosgw//005_overview/5"
+      },
+      {
+        "elapsed": 67.704,
+        "timestamp": 1542190778,
+        "presenter": "020_radosgw//005_overview/6"
+      },
+      {
+        "elapsed": 19.192,
+        "timestamp": 1542190797,
+        "presenter": "020_radosgw//005_overview/7"
+      },
+      {
+        "elapsed": 23.032,
+        "timestamp": 1542190820,
+        "presenter": "020_radosgw//005_overview/8"
+      },
+      {
+        "elapsed": 8.864,
+        "timestamp": 1542190829,
+        "presenter": "020_radosgw//005_overview/9"
+      },
+      {
+        "elapsed": 47.04,
+        "timestamp": 1542190876,
+        "presenter": "020_radosgw//005_overview/10"
+      },
+      {
+        "elapsed": 28.209,
+        "timestamp": 1542190904,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 3.959,
+        "timestamp": 1542190908,
+        "presenter": "020_radosgw//005_overview/10"
+      },
+      {
+        "elapsed": 7.424,
+        "timestamp": 1542190916,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 8.648,
+        "timestamp": 1542190924,
+        "presenter": "020_radosgw//005_overview/12"
+      },
+      {
+        "elapsed": 73.416,
+        "timestamp": 1542190998,
+        "presenter": "025_cache_tier//000_toc"
+      },
+      {
+        "elapsed": 391.073,
+        "timestamp": 1542191390,
+        "presenter": "020_radosgw//005_overview/10"
+      },
+      {
+        "elapsed": 638.379,
+        "timestamp": 1542192029,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 15.039,
+        "timestamp": 1542192044,
+        "presenter": "020_radosgw//005_overview/10"
+      },
+      {
+        "elapsed": 325.978,
+        "timestamp": 1542192370,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 563.187,
+        "timestamp": 1542192933,
+        "presenter": "020_radosgw//005_overview/12"
+      },
+      {
+        "elapsed": 63.719,
+        "timestamp": 1542192997,
+        "presenter": "025_cache_tier//000_toc"
+      },
+      {
+        "elapsed": 10.359,
+        "timestamp": 1542193007,
+        "presenter": "025_cache_tier//001_cache_tier/1"
+      },
+      {
+        "elapsed": 50.712,
+        "timestamp": 1542193058,
+        "presenter": "025_cache_tier//001_cache_tier/2"
+      },
+      {
+        "elapsed": 24.113,
+        "timestamp": 1542193082,
+        "presenter": "025_cache_tier//001_cache_tier/3"
+      },
+      {
+        "elapsed": 1.168,
+        "timestamp": 1542193083,
+        "presenter": "025_cache_tier//001_cache_tier/4"
+      },
+      {
+        "elapsed": 5.456,
+        "timestamp": 1542193089,
+        "presenter": "025_cache_tier//001_cache_tier/3"
+      },
+      {
+        "elapsed": 9.113,
+        "timestamp": 1542193098,
+        "presenter": "025_cache_tier//001_cache_tier/4"
+      },
+      {
+        "elapsed": 55.951,
+        "timestamp": 1542193154,
+        "presenter": "025_cache_tier//001_cache_tier/5"
+      },
+      {
+        "elapsed": 28.241,
+        "timestamp": 1542193182,
+        "presenter": "025_cache_tier//001_cache_tier/6"
+      },
+      {
+        "elapsed": 109.711,
+        "timestamp": 1542193292,
+        "presenter": "025_cache_tier//001_cache_tier/7"
+      },
+      {
+        "elapsed": 28.545,
+        "timestamp": 1542193321,
+        "presenter": "025_cache_tier//001_cache_tier/5"
+      },
+      {
+        "elapsed": 2.143,
+        "timestamp": 1542193323,
+        "presenter": "025_cache_tier//001_cache_tier/7"
+      },
+      {
+        "elapsed": 13.385,
+        "timestamp": 1542193337,
+        "presenter": "025_cache_tier//001_cache_tier/8"
+      },
+      {
+        "elapsed": 24.738,
+        "timestamp": 1542193362,
+        "presenter": "025_cache_tier//001_cache_tier/9"
+      },
+      {
+        "elapsed": 35.167,
+        "timestamp": 1542193397,
+        "presenter": "025_cache_tier//001_cache_tier/10"
+      },
+      {
+        "elapsed": 23.559,
+        "timestamp": 1542193420,
+        "presenter": "025_cache_tier//001_cache_tier/11"
+      },
+      {
+        "elapsed": 4.48,
+        "timestamp": 1542193425,
+        "presenter": "025_cache_tier//001_cache_tier/12"
+      },
+      {
+        "elapsed": 1.656,
+        "timestamp": 1542193426,
+        "presenter": "025_cache_tier//001_cache_tier/11"
+      },
+      {
+        "elapsed": 23.672,
+        "timestamp": 1542193450,
+        "presenter": "025_cache_tier//001_cache_tier/12"
+      },
+      {
+        "elapsed": 24.267,
+        "timestamp": 1542193474,
+        "presenter": "025_cache_tier//001_cache_tier/13"
+      },
+      {
+        "elapsed": 48.055,
+        "timestamp": 1542193522,
+        "presenter": "025_cache_tier//001_cache_tier/14"
+      },
+      {
+        "elapsed": 7.344,
+        "timestamp": 1542193530,
+        "presenter": "030_operating//000_toc"
+      },
+      {
+        "elapsed": 613.418,
+        "timestamp": 1542194143,
+        "presenter": "030_operating//005_operating/1"
+      },
+      {
+        "elapsed": 41.647,
+        "timestamp": 1542194185,
+        "presenter": "030_operating//005_operating/2"
+      },
+      {
+        "elapsed": 1.168,
+        "timestamp": 1542194186,
+        "presenter": "030_operating//010_monitoring/1"
+      },
+      {
+        "elapsed": 5206.26,
+        "timestamp": 1542199392,
+        "presenter": "030_operating//010_monitoring/2"
+      },
+      {
+        "elapsed": 38.479,
+        "timestamp": 1542199431,
+        "presenter": "030_operating//010_monitoring/3"
+      },
+      {
+        "elapsed": 72.256,
+        "timestamp": 1542199503,
+        "presenter": "030_operating//010_monitoring/4"
+      },
+      {
+        "elapsed": 5.72,
+        "timestamp": 1542199509,
+        "presenter": "030_operating//015_metrics/1"
+      },
+      {
+        "elapsed": 38.8,
+        "timestamp": 1542199548,
+        "presenter": "030_operating//015_metrics/2"
+      },
+      {
+        "elapsed": 276.329,
+        "timestamp": 1542199824,
+        "presenter": "030_operating//015_metrics/3"
+      },
+      {
+        "elapsed": 93.728,
+        "timestamp": 1542199918,
+        "presenter": "030_operating//015_metrics/4"
+      },
+      {
+        "elapsed": 213.978,
+        "timestamp": 1542200132,
+        "presenter": "030_operating//015_metrics/5"
+      },
+      {
+        "elapsed": 766.611,
+        "timestamp": 1542200898,
+        "presenter": "030_operating//015_metrics/6"
+      },
+      {
+        "elapsed": 2.415,
+        "timestamp": 1542200901,
+        "presenter": "030_operating//025_sizing/1"
+      },
+      {
+        "elapsed": 34.168,
+        "timestamp": 1542200935,
+        "presenter": "030_operating//025_sizing/2"
+      },
+      {
+        "elapsed": 2623.867,
+        "timestamp": 1542203559,
+        "presenter": "030_operating//025_sizing/3"
+      },
+      {
+        "elapsed": 169.704,
+        "timestamp": 1542203728,
+        "presenter": "030_operating//025_sizing/4"
+      },
+      {
+        "elapsed": 67.463,
+        "timestamp": 1542203796,
+        "presenter": "030_operating//025_sizing/5"
+      },
+      {
+        "elapsed": 250.074,
+        "timestamp": 1542204046,
+        "presenter": "030_operating//025_sizing/7"
+      },
+      {
+        "elapsed": 129.544,
+        "timestamp": 1542204175,
+        "presenter": "030_operating//025_sizing/8"
+      },
+      {
+        "elapsed": 173.699,
+        "timestamp": 1542204349,
+        "presenter": "030_operating//025_sizing/9"
+      },
+      {
+        "elapsed": 1.806,
+        "timestamp": 1542204351,
+        "presenter": "030_operating//025_sizing/10"
+      },
+      {
+        "elapsed": 580.275,
+        "timestamp": 1542204932,
+        "presenter": "030_operating//025_sizing/10"
+      },
+      {
+        "elapsed": 1.336,
+        "timestamp": 1542204934,
+        "presenter": "030_operating//025_sizing/12"
       }
     ],
     "127.0.0.1": [
@@ -5915,6 +7522,13 @@
         "timestamp": 1540476365,
         "presenter": "020_radosgw//005_overview/11"
       }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 1.037,
+        "timestamp": 1542113064,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      }
     ]
   },
   "001_introduction//001_distributed_storage/3": {
@@ -6295,6 +7909,30 @@
         "timestamp": 1532522764,
         "presenter": null
       }
+    ],
+    "192.168.188.74": [
+      {
+        "elapsed": 2258.526,
+        "timestamp": 1542105174,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      }
+    ],
+    "192.168.188.64": [
+      {
+        "elapsed": 5.084,
+        "timestamp": 1542105194,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 466.168,
+        "timestamp": 1542106062,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/14"
+      },
+      {
+        "elapsed": 3.148,
+        "timestamp": 1542113068,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/13"
+      }
     ]
   },
   "005_ceph_storage_cluster//030_lab_install/15": {
@@ -6328,6 +7966,13 @@
         "timestamp": 1532522787,
         "presenter": null
       }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 7148.855,
+        "timestamp": 1542115242,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/16"
+      }
     ]
   },
   "005_ceph_storage_cluster//030_lab_install/17": {
@@ -6341,6 +7986,18 @@
         "elapsed": 1.472,
         "timestamp": 1532522780,
         "presenter": null
+      }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 4566.127,
+        "timestamp": 1542108093,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/17"
+      },
+      {
+        "elapsed": 272.534,
+        "timestamp": 1542115514,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/17"
       }
     ]
   },
@@ -6614,6 +8271,28 @@
         "timestamp": 1532523452,
         "presenter": null
       }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 73313.037,
+        "timestamp": 1542191386,
+        "presenter": "020_radosgw//005_overview/10"
+      },
+      {
+        "elapsed": 126.515,
+        "timestamp": 1542191627,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 5.427,
+        "timestamp": 1542192209,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 57.112,
+        "timestamp": 1542192325,
+        "presenter": "020_radosgw//005_overview/11"
+      }
     ]
   },
   "020_radosgw//005_overview/11": {
@@ -6623,6 +8302,28 @@
         "timestamp": 1532523455,
         "presenter": null
       }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 113.999,
+        "timestamp": 1542191501,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 509.315,
+        "timestamp": 1542192136,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 2.224,
+        "timestamp": 1542192204,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 2.435,
+        "timestamp": 1542192268,
+        "presenter": "020_radosgw//005_overview/11"
+      }
     ]
   },
   "020_radosgw//005_overview/12": {
@@ -6631,6 +8332,23 @@
         "elapsed": 1.174,
         "timestamp": 1532523456,
         "presenter": null
+      }
+    ],
+    "192.168.188.109": [
+      {
+        "elapsed": 65.146,
+        "timestamp": 1542192201,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 56.005,
+        "timestamp": 1542192265,
+        "presenter": "020_radosgw//005_overview/11"
+      },
+      {
+        "elapsed": 210.774,
+        "timestamp": 1542192537,
+        "presenter": "020_radosgw//005_overview/12"
       }
     ]
   },
@@ -6848,6 +8566,43 @@
         "elapsed": 4.048,
         "timestamp": 1532523551,
         "presenter": null
+      }
+    ]
+  },
+  "005_ceph_storage_cluster//030_lab_install/6": {
+    "192.168.188.109": [
+      {
+        "elapsed": 80.492,
+        "timestamp": 1542103343,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      },
+      {
+        "elapsed": 1.003,
+        "timestamp": 1542103366,
+        "presenter": "005_ceph_storage_cluster//030_lab_install/7"
+      }
+    ]
+  },
+  "005_ceph_storage_cluster//035_lab_rados/3": {
+    "192.168.188.109": [
+      {
+        "elapsed": 1982.539,
+        "timestamp": 1542118030,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/3"
+      },
+      {
+        "elapsed": 41.351,
+        "timestamp": 1542118072,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/3"
+      }
+    ]
+  },
+  "005_ceph_storage_cluster//039_crush/1": {
+    "192.168.188.109": [
+      {
+        "elapsed": 1.053,
+        "timestamp": 1542118073,
+        "presenter": "005_ceph_storage_cluster//035_lab_rados/3"
       }
     ]
   }

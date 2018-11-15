@@ -225,12 +225,13 @@ generate default config and monitor keyring
     $ mkdir my-cluster; cd my-cluster
     $ ceph-deploy new training-0xx [training-0xy]
 
-set public and cluster network
+set public and cluster network and reset clusterid/fsid (just in the LAB!)
     
     $ vim ceph.conf
     ...
     [global]
     mon_max_pg_per_osd = 800  # arbitrary number for training purposes
+    fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
     osd max pg per osd hard ratio = 10 # also arbitrary, introduced with mimic
     mon allow pool delete = true # without it you can't remove a pool
     mon_host: $localIP
@@ -238,12 +239,6 @@ set public and cluster network
     cluster_network = 192.168.78.0/24
     rbd_default_features = 1
     ...
-
-reset clusterid/fsid (just in the LAB!)
-
-    fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
-
----
 
 overwrite [ceph.mon.keyring](../file/_files/share/ceph.mon.keyring) (just in the LAB!)
 
