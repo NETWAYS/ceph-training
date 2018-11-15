@@ -31,7 +31,8 @@ Alternatively you might want to use fixed IPs instead of relying on an unreliabl
 
 Disclaimer:
 This training has been set up while Luminous was not released as LTS.
-You could get into several issues when trying to use the commands to deploy a Luminous cluster.
+While several changes have been made, you might find some relics from the jewel era.
+Feel free to let us know about them. 
 All installation steps have been run on CentOS 7. 
 
 

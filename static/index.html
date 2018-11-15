@@ -424,6 +424,7 @@ stress that Ceph offers all three kinds of Storage.
 </ul>
 
 <div class="notes"><p>
+as of 12th of Nov. 2018: Ceph Foundation as part of Linux foundation <br>
 funded by the United States Department of Energy and National Nuclear Security Administration
 also funded by Canonical <br>
 new cycle since Mimic: LTS every 9 Months, before: every second release was LTS/stable<br>
@@ -1293,12 +1294,13 @@ swift check with 'yum provides ceph-deploy'
 $ ceph-deploy new training-0xx [training-0xy]
 </code></pre>
 
-<p>set public and cluster network</p>
+<p>set public and cluster network and reset clusterid/fsid (just in the LAB!)</p>
 
 <pre><code>$ vim ceph.conf
 ...
 [global]
 mon_max_pg_per_osd = 800  # arbitrary number for training purposes
+fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
 osd max pg per osd hard ratio = 10 # also arbitrary, introduced with mimic
 mon allow pool delete = true # without it you can't remove a pool
 mon_host: $localIP
@@ -1307,13 +1309,6 @@ cluster_network = 192.168.78.0/24
 rbd_default_features = 1
 ...
 </code></pre>
-
-<p>reset clusterid/fsid (just in the LAB!)</p>
-
-<pre><code>fsid = dfbabe59-8ae3-4f41-896e-c0032c60e7dc
-</code></pre>
-
-<hr>
 
 <p>overwrite <a href="../file/_files/share/ceph.mon.keyring">ceph.mon.keyring</a> (just in the LAB!)</p>
 
@@ -3452,12 +3447,12 @@ id pool image    snap device
 <p>count the objects used by the RBD</p>
 
 <pre><code># rbd info myrbd
-# rados ls | grep &lt;prefix&gt; | wc -l
+# rados -p rbd ls | grep &lt;prefix&gt; | wc -l
 </code></pre>
 
 <p>insert data and count again</p>
 
-<pre><code># rados ls | grep &lt;prefix&gt; | wc -l
+<pre><code># rados -p rbd ls | grep &lt;prefix&gt; | wc -l
 </code></pre>
 
 <div id="net-footer">
